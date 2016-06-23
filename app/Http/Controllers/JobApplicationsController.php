@@ -35,9 +35,9 @@ class JobApplicationsController extends ApiController
     // Get all job applications
     $jobapps = JobApplication::all();
     // Return a response with a data array containing all results
-    return $this->respond([
-      'data' => $this->jobApplicationTransformer->transformCollection($jobapps->toArray())
-    ]);
+    return $this->respond(
+      $this->jobApplicationTransformer->transformCollection($jobapps->toArray())
+    );
   }
 
   public function show($id)

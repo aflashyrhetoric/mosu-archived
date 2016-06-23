@@ -10,16 +10,20 @@
 	<link rel="stylesheet" href="{{ url('css/app.css') }}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 </head>
 <body>
 	<div id="app"></div>
 
 	<script src="{{ url('js/bootstrap.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/mosu.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/app.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/ApplicationItem.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/ApplicationList.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/Mosu.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/Error.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/App.js') }}"></script>
 </body>
 </html>
