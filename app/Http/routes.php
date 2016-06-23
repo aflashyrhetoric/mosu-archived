@@ -17,6 +17,9 @@
 // Table Name:	jobapps
 // Route: 		jobapps
 
+
+Route::get('/', 'Controller@index');
+
 Route::group(['prefix'=>'api/v1'], function(){
     // Quote Resource Routes
     Route::resource('jobapplications', 'JobApplicationsController');
@@ -31,11 +34,6 @@ Route::group(['prefix'=>'api/v1'], function(){
     {
       Route::get('/', 'JobApplicationsController@create');
     });
-});
-
-
-Route::get('/', function () {
-      return view('welcome');
 });
 
 Route::get('/login', function () {

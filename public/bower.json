@@ -1,0 +1,15 @@
+{
+  "name": "mosuapp",
+  "homepage": "https://github.com/aflashyrhetoric/mosu",
+  "description": "A job application management board",
+  "dependencies": {
+	"normalize.css": "~3.0.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
