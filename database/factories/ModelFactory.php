@@ -31,7 +31,9 @@ $factory->define(App\JobApplication::class, function (Faker\Generator $faker) {
 		'hired'
 	];
     return [
-    	'user_id' => $faker->numberBetween(0,5),
+        'user_id' => function () {
+            return factory(App\User::class)->create()->id;
+        },
         'company' => $faker->name,
         'listing_url' => $faker->url,
         'phase' => array_rand($phases),

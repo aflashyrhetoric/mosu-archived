@@ -22,10 +22,12 @@ Route::group(['prefix'=>'api/v1'], function(){
     Route::resource('jobapplications', 'JobApplicationsController');
 
     // Post to /quotes
-    Route::post('/jobapps', 'JobApplicationsController@store');
+    Route::post('/jobapplications', 'JobApplicationsController@store');
 
+ 	Route::get('/jobapplications/create', 'JobApplicationsController@create');
     // Auth-locked views/routes
-    Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
+    Route::group(['prefix' => 'jobapps/create'], function()
+    // Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
     {
       Route::get('/', 'JobApplicationsController@create');
     });
