@@ -55,7 +55,7 @@
 				<div className="mosu-container container">
 					<App.Views.InspirationBox />
 					<App.Views.ApplicationList 
-						data={ this.state.data } 
+						responseData={ this.state.data } 
 						callbackAppSubmit={ this.handleApplicationSubmit }
 					/>
 		            <App.Views.NewApplicationForm 

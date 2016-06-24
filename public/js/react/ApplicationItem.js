@@ -2,15 +2,16 @@ App.Views.ApplicationItem = React.createClass({
   getInitialState: function() {
       return {
           data: {
-              company: '',
-              listing_url: '',
+              id: this.props.jobApp.id,
+              company: this.props.jobApp.company,
+              listing_url: this.props.jobApp.listing_url,
               phase: 'saved',
-              expected_salary: 0,
-              location: '',
-              inside_contact_name: '',
-              inside_contact_email: '',
-              notes: '',
-              remote: false
+              location: this.props.jobApp.location,
+              expected_salary: this.props.jobApp.expected_salary,
+              inside_contact_name: this.props.jobApp.inside_contact_name,
+              inside_contact_email: this.props.jobApp.inside_contact_email,
+              notes: this.props.jobApp.notes,
+              remote: this.props.jobApp.remote
           }
       };
   },
@@ -33,19 +34,19 @@ App.Views.ApplicationItem = React.createClass({
             break;
     }
   },
-  handleClick: function(){
-
+  showModal: function(){
+    $('#modifyApplicationForm' + this.props.jobApp.id).modal('toggle');
   },
   render: function() {
     return (
       <div className="application-item col-sm-6 col-md-3 col-md-offset-s1">
         <div 
         className={"card-panel " + this.state.data.phase}
-        onClick={this.handleClick}
+        onClick={this.showModal}
         >
-          	<p> { this.props.job_application.company } </p>
-            <App.Views.ModifyApplicationForm 
-                job_application={this.props.job_application} 
+          	<p> { this.props.jobApp.company } </p>
+            <App.Views.ModifyApplicationForm
+                jobApp={this.props.jobApp}
                 callbackAppSubmit={this.props.callbackAppSubmit}
                 />
         </div>

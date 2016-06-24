@@ -1,15 +1,16 @@
 App.Views.ModifyApplicationForm = React.createClass({
     getInitialState: function() {
       return {
-          company: this.props.job_application.company,
-          listing_url: '',
-          phase: 'saved',
-          location: '',
-          inside_contact_name: '',
-          inside_contact_email: '',
-          notes: '',
-          remote: false
-      };
+        company: this.props.jobApp.company,
+        listing_url: this.props.jobApp.listing_url,
+        phase: this.props.jobApp.phase,
+        location: this.props.jobApp.location,
+        expected_salary: this.props.jobApp.expected_salary,
+        inside_contact_name: this.props.jobApp.inside_contact_name,
+        inside_contact_email: this.props.jobApp.inside_contact_email,
+        notes: this.props.jobApp.notes,
+        remote: this.props.jobApp.remote
+      }
     },
     handleCompanyChange: function(e) {
         this.setState({ company: e.target.value});
@@ -54,8 +55,6 @@ App.Views.ModifyApplicationForm = React.createClass({
           return;
         }
 
-        $('#modifyApplicationForm').modal('toggle');
-
         this.props.callbackAppSubmit({
             company: company,
             listing_url: listing_url,
@@ -68,22 +67,14 @@ App.Views.ModifyApplicationForm = React.createClass({
             remote: remote,
             user_id: 3
         });
-        // Reset State
-        this.setState({
-            company: '',
-            listing_url: '',
-            phase: 'saved',
-            expected_salary: 0,
-            location: '',
-            inside_contact_name: '',
-            inside_contact_email: '',
-            notes: '',
-            remote: false
-        });
-  },
+    },
     render: function() {
         return (
-            <div className="modal fade" id="modifyApplicationForm" tabindex="-1" role="dialog">
+            <div 
+            className="modal fade" 
+            id={"modifyApplicationForm" + this.props.jobApp.id} 
+            tabindex="-1" 
+            role="dialog">
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -139,7 +130,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                           value={this.state.remote}
                           onChange={this.handleRemoteChange }
                         />
-                        <input className="btn btn-default" type="submit" value="Post" />
+                        <input className="btn btn-default" type="submit" value="Update" />
                       </form>
                   </div>
                   <div className="modal-footer">
