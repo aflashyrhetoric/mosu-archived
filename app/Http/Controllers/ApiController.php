@@ -89,7 +89,7 @@ class ApiController extends Controller {
    **/
   public function respondFailedValidation()
   {
-    return $this->setStatusCode(self::HTTP_FAILED_VALIDATION)->respondWithError('Parameters failed validation for a quote.');
+    return $this->setStatusCode(self::HTTP_FAILED_VALIDATION)->respondWithError('Parameters failed validation for a new job application.');
   }
 
 
@@ -102,7 +102,7 @@ class ApiController extends Controller {
    *
    * @return json
    **/
-  public function respondCreated($message = "Quote created!")
+  public function respondCreated($message = "New Job Application created!")
   {
     return $this->setStatusCode(self::HTTP_CREATED)->respond([
       'message' => $message,

@@ -24,10 +24,10 @@ Route::group(['prefix'=>'api/v1'], function(){
     // Quote Resource Routes
     Route::resource('jobapplications', 'JobApplicationsController');
 
-    // Post to /quotes
-    Route::post('/jobapplications', 'JobApplicationsController@store');
+    // Post to /jobapplications
 
- 	Route::get('/jobapplications/create', 'JobApplicationsController@create');
+    Route::post('/jobapplications/newApp', 'JobApplicationsController@store');
+
     // Auth-locked views/routes
     Route::group(['prefix' => 'jobapps/create'], function()
     // Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()

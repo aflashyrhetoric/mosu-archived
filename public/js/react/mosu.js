@@ -24,6 +24,20 @@
 				}.bind(this)
 			});
 		},
+		handleApplicationSubmit: function(jobApplication) {
+	        $.ajax({
+		      url: 'http://mosu.dev:8000/api/v1/jobapplications/newApp',
+		      dataType: 'json',
+		      type: 'POST',
+		      data: jobApplication,
+		      success: function(data) {
+		        this.setState({data: data});
+		      }.bind(this),
+		      error: function(xhr, status, err) {
+		        console.error(this.props.url, status, err.toString());
+		      }.bind(this)
+		    });
+		},
 		getInitialState: function() {
 			return {
 				loading: false,
@@ -40,7 +54,10 @@
 			return (
 				<div className="mosu-container container">
 					<App.Views.InspirationBox />
-					<App.Views.ApplicationList data={ this.state.data } />
+					<App.Views.ApplicationList 
+						data={ this.state.data } 
+						callbackNewAppSubmit={ this.handleApplicationSubmit }
+					/>
 				</div>
 			);
 		}

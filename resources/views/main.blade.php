@@ -24,6 +24,7 @@
 	<script src="{{ url('js/bootstrap.js') }}"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/babel" src="{{ url('js/react/Navbar.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/NewApplicationForm.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/InspirationBox.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/ApplicationItem.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/ApplicationList.js') }}"></script>

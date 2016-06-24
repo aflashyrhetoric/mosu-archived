@@ -2,8 +2,11 @@
   font-family: 'fira-sans-2', sans-serif;
   font-weight: bold; }
 
+.tac {
+  text-align: center; }
+
 body {
-  background-color: #B8E986 !important; }
+  background-color: #e3e3e3 !important; }
 
 .mosu-container p {
   font-size: 'Instant', sans-serif; }
@@ -14,7 +17,7 @@ body {
     margin-bottom: 1rem;
     text-align: center; }
     .mosu-container .application-list .application-item .card-panel {
-      background-color: #E99586;
+      background-color: #e3e3e3;
       color: #3A3B3D;
       padding: 2rem;
       padding-top: 4.5rem;
@@ -24,7 +27,23 @@ body {
         font-size: 2rem;
         font-family: 'program', sans-serif; }
       .mosu-container .application-list .application-item .card-panel:hover {
-        background-color: #e16f5b; }
+        background-color: #cacaca; }
+    .mosu-container .application-list .application-item .saved {
+      background-color: #C7F464; }
+      .mosu-container .application-list .application-item .saved:hover {
+        background-color: #b6f134; }
+    .mosu-container .application-list .application-item .applied {
+      background-color: #F4AB64; }
+      .mosu-container .application-list .application-item .applied:hover {
+        background-color: #f19134; }
+    .mosu-container .application-list .application-item .interviewing {
+      background-color: #FF6B6B; }
+      .mosu-container .application-list .application-item .interviewing:hover {
+        background-color: #ff3838; }
+    .mosu-container .application-list .application-item .offered {
+      background-color: #77CD62; }
+      .mosu-container .application-list .application-item .offered:hover {
+        background-color: #56bf3d; }
   .mosu-container .application-list .add-new-job-app {
     color: #5F6063; }
 

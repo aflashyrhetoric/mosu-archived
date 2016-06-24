@@ -74,12 +74,12 @@ class JobApplicationsController extends ApiController
    **/
   public function store(Request $request)
   {
-    if ( ! $request->has('jobapp')) 
+    if ( ! $request->has('company')) 
     {
       return $this->respondFailedValidation();
 
     } else {
-      Quote::create($request->all());
+      JobApplication::create($request->all());
       return $this->respondCreated();
     }
   }

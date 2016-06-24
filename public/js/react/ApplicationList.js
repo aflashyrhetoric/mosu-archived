@@ -1,8 +1,13 @@
 App.Views.ApplicationList = React.createClass({
   render: function() {
+    var callbackNewAppSubmit = this.props.callbackNewAppSubmit;
     var jobAppNodes = this.props.data.map(function(jobApp) {
-      return (
-        <App.Views.ApplicationItem key={jobApp.id} job_application={jobApp}> 
+      return  (
+        <App.Views.ApplicationItem 
+          key={jobApp.id} 
+          job_application={jobApp}
+          onNewAppSubmit={ callbackNewAppSubmit }
+          > 
           { jobApp.phase }
         </App.Views.ApplicationItem>
       );
@@ -12,9 +17,16 @@ App.Views.ApplicationList = React.createClass({
       application-list row 
       col-sm-12 col-md-l2 col-lg-12
       ">
+        <div className="panel panel-default tac">
+          <div className="panel-body">
+            <h2>Active Applications</h2>
+          </div>
+        </div>
         <div className="application-item col col-sm-6 col-md-3 col-md-offset-s3">
             <div className="card-panel small grey hover add-new-job-app">
-                <p> + Add Application</p>
+              <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
+               + Add New Application 
+              </button>
             </div>
         </div>
         {jobAppNodes}
