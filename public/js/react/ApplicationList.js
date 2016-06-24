@@ -1,17 +1,18 @@
 App.Views.ApplicationList = React.createClass({
   render: function() {
-    var callbackNewAppSubmit = this.props.callbackNewAppSubmit;
+    var callbackAppSubmit = this.props.callbackAppSubmit;
     var jobAppNodes = this.props.data.map(function(jobApp) {
-      return  (
+    return  (
         <App.Views.ApplicationItem 
           key={jobApp.id} 
           job_application={jobApp}
-          onNewAppSubmit={ callbackNewAppSubmit }
+          callbackAppSubmit={ callbackAppSubmit }
           > 
           { jobApp.phase }
         </App.Views.ApplicationItem>
       );
     });
+
     return (
       <div className="
       application-list row 
@@ -24,7 +25,7 @@ App.Views.ApplicationList = React.createClass({
         </div>
         <div className="application-item col col-sm-6 col-md-3 col-md-offset-s3">
             <div className="card-panel small grey hover add-new-job-app">
-              <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
+              <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#newApplicationForm">
                + Add New Application 
               </button>
             </div>

@@ -22,11 +22,11 @@ Route::get('/', 'Controller@index');
 
 Route::group(['prefix'=>'api/v1'], function(){
     // Quote Resource Routes
-    Route::resource('jobapplications', 'JobApplicationsController');
 
     // Post to /jobapplications
 
-    Route::post('/jobapplications/newApp', 'JobApplicationsController@store');
+    Route::get('/jobapplications', 'JobApplicationsController@index');
+    Route::post('/jobapplications', 'JobApplicationsController@store');
 
     // Auth-locked views/routes
     Route::group(['prefix' => 'jobapps/create'], function()

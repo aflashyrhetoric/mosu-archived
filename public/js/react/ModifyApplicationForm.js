@@ -1,7 +1,7 @@
-App.Views.NewApplicationForm = React.createClass({
+App.Views.ModifyApplicationForm = React.createClass({
     getInitialState: function() {
       return {
-          company: '',
+          company: this.props.job_application.company,
           listing_url: '',
           phase: 'saved',
           location: '',
@@ -54,9 +54,9 @@ App.Views.NewApplicationForm = React.createClass({
           return;
         }
 
-        $('#newApplicationForm').modal('toggle');
+        $('#modifyApplicationForm').modal('toggle');
 
-        this.props.onNewAppSubmit({
+        this.props.callbackAppSubmit({
             company: company,
             listing_url: listing_url,
             phase: phase,
@@ -83,7 +83,7 @@ App.Views.NewApplicationForm = React.createClass({
   },
     render: function() {
         return (
-            <div className="modal fade" id="newApplicationForm" tabindex="-1" role="dialog">
+            <div className="modal fade" id="modifyApplicationForm" tabindex="-1" role="dialog">
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">

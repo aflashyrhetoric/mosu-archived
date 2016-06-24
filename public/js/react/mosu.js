@@ -26,7 +26,7 @@
 		},
 		handleApplicationSubmit: function(jobApplication) {
 	        $.ajax({
-		      url: 'http://mosu.dev:8000/api/v1/jobapplications/newApp',
+		      url: this.props.url,
 		      dataType: 'json',
 		      type: 'POST',
 		      data: jobApplication,
@@ -56,8 +56,12 @@
 					<App.Views.InspirationBox />
 					<App.Views.ApplicationList 
 						data={ this.state.data } 
-						callbackNewAppSubmit={ this.handleApplicationSubmit }
+						callbackAppSubmit={ this.handleApplicationSubmit }
 					/>
+		            <App.Views.NewApplicationForm 
+		                data={this.state.data} 
+		                onNewAppSubmit={this.handleApplicationSubmit}
+		                />
 				</div>
 			);
 		}
