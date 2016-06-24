@@ -34,7 +34,7 @@ $factory->define(App\JobApplication::class, function (Faker\Generator $faker) {
         'user_id' => function () {
             return factory(App\User::class)->create()->id;
         },
-        'company' => $faker->name,
+        'company' => $faker->company,
         'listing_url' => $faker->url,
         'phase' => array_rand($phases),
 

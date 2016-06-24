@@ -5,6 +5,7 @@
 	ReactDOM.render(
 		(
 			<div>
+				<App.Views.Navbar />
 				<App.Views.Mosu url="/api/v1/jobapplications" myUserId="2" />
 			</div>
 		),

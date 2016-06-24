@@ -1,0 +1,60 @@
+$bgc: #e3e3e3;
+$color1: #556270;
+$color2: #4ECDC4;
+$color3: #C7F464;
+$color4: #FF6B6B;
+$color5: #C44D58;
+$mint: #B8E986;
+$salmon: #E99586;
+
+body {
+	background-color: $mint !important;
+}
+
+.mosu-container {
+
+	// General
+	p {
+		font-size: 'Instant', sans-serif;
+	}
+
+	.application-list {
+		margin: auto;
+		.application-item {
+			margin-bottom: 1rem;
+
+			text-align: center;
+			.card-panel {
+				background-color: $salmon;
+				color: #3A3B3D;
+				padding: 2rem;
+				padding-top: 4.5rem;
+				min-height: 14rem;
+				width: 23rem;
+				p {
+					font-size: 2rem;
+					font-family: 'program', sans-serif;
+				}
+				&:hover {
+					background-color: darken($salmon, 10);
+				}
+			}
+		}
+		.add-new-job-app {
+			color: #5F6063;
+		}
+	}
+
+	.inspiration-box {
+		text-align: center;
+		.quote-text {
+			
+		}
+		.quote-author {
+			font-weight: bold;
+		}
+	}
+
+}
+
+
