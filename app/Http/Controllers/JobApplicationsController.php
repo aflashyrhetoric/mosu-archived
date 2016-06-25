@@ -57,6 +57,26 @@ class JobApplicationsController extends ApiController
   }
 
   /**
+   * Update Job App
+   *
+   * @return void 
+   **/
+  public function update(Request $request, $id)
+  {
+    $jobapp = JobApplication::find($id);
+
+    // If nothing is found
+    if (! $jobapp) {
+      // Return failure response
+      return $this->respondNotFound('Sorries, this particular Job Application does not exist.');
+    }
+    else {
+      $jobapp->update($request->all());
+      return $this->respondUpdated();
+    }  
+  }
+
+  /**
    * Create a new quote
    *
    * @return quote/create page

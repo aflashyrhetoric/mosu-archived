@@ -1,6 +1,7 @@
 App.Views.ModifyApplicationForm = React.createClass({
     getInitialState: function() {
       return {
+        id: this.props.jobApp.id,
         company: this.props.jobApp.company,
         listing_url: this.props.jobApp.listing_url,
         phase: this.props.jobApp.phase,
@@ -13,65 +14,69 @@ App.Views.ModifyApplicationForm = React.createClass({
       }
     },
     handleCompanyChange: function(e) {
-        this.setState({ company: e.target.value});
+      this.setState({ company: e.target.value});
+      this.props.updateCompanyName(e.target.value);
     },
     handleUrlChange: function(e) {
-        this.setState({ listing_url: e.target.value});
+      this.setState({ listing_url: e.target.value});
     },   
     handlePhaseChange: function(e) {
-        this.setState({ phase: e.target.value});
+      this.setState({ phase: e.target.value});
     },   
     handleSalaryChange: function(e) {
-        this.setState({ listing_salary: e.target.value});
+      this.setState({ expected_salary: e.target.value});
     },    
     handleLocationChange: function(e) {
-        this.setState({ location: e.target.value});
+      this.setState({ location: e.target.value});
     },    
     handleContactNameChange: function(e) {
-        this.setState({ inside_contact_name: e.target.value});
+      this.setState({ inside_contact_name: e.target.value});
     },    
     handleContactEmailChange: function(e) {
-        this.setState({ inside_contact_email: e.target.value});
+      this.setState({ inside_contact_email: e.target.value});
     }, 
     handleNotesChange: function(e) {
-        this.setState({ notes: e.target.value});
+      this.setState({ notes: e.target.value});
     },      
     handleRemoteChange: function(e) {
-        this.setState({ remote: e.target.value});
+      this.setState({ remote: e.target.value});
     },      
+    handleCloseModal: function(){
+    },
     handleSubmit: function(e) {
-        e.preventDefault();
-        var company = this.state.company.trim();
-        var listing_url = this.state.listing_url.trim();
-        var phase = this.state.phase.trim();
-        var expected_salary = this.state.phase.trim();
-        var location = this.state.location.trim();
-        var inside_contact_name = this.state.inside_contact_name.trim();
-        var inside_contact_email = this.state.inside_contact_email.trim();
-        var notes = this.state.notes.trim();
-        var remote = this.state.remote;
-
-        if (!company || !listing_url) {
-          return;
-        }
-
-        this.props.callbackAppSubmit({
-            company: company,
-            listing_url: listing_url,
-            phase: phase,
-            expected_salary: expected_salary,
-            location: location,
-            inside_contact_name: inside_contact_name, 
-            inside_contact_email: inside_contact_email,
-            notes: notes,
-            remote: remote,
-            user_id: 3
-        });
+      e.preventDefault();
+      var id = this.state.id;
+      // Hide Modal after setting ID
+      $('#modifyApplicationForm' + id).modal('hide');
+      var company = this.state.company.trim();
+      var listing_url = this.state.listing_url.trim();
+      var phase = this.state.phase.trim();
+      var expected_salary = this.state.phase.trim();
+      var location = this.state.location.trim();
+      var inside_contact_name = this.state.inside_contact_name.trim();
+      var inside_contact_email = this.state.inside_contact_email.trim();
+      var notes = this.state.notes.trim();
+      var remote = this.state.remote;
+      if (!company || !listing_url) {
+        return;
+      }
+      this.props.callbackAppSubmit({
+          company: company,
+          listing_url: listing_url,
+          phase: phase,
+          expected_salary: expected_salary,
+          location: location,
+          inside_contact_name: inside_contact_name, 
+          inside_contact_email: inside_contact_email,
+          notes: notes,
+          remote: remote,
+          user_id: 3
+      }, id);
     },
     render: function() {
         return (
             <div 
-            className="modal fade" 
+            className="modal" 
             id={"modifyApplicationForm" + this.props.jobApp.id} 
             tabindex="-1" 
             role="dialog">
@@ -95,6 +100,12 @@ App.Views.ModifyApplicationForm = React.createClass({
                           value={this.state.listing_url}
                           onChange={this.handleUrlChange }
                         />
+                        <select onChange={this.handlePhaseChange} value={this.state.phase} name="select">
+                          <option value="saved">Saved</option> 
+                          <option value="applied">Applied</option>
+                          <option value="interviewed">Interviewing</option>
+                          <option value="offered">Offered</option>
+                        </select>
                         <input
                           type="text"
                           placeholder="60,000"
@@ -130,11 +141,17 @@ App.Views.ModifyApplicationForm = React.createClass({
                           value={this.state.remote}
                           onChange={this.handleRemoteChange }
                         />
-                        <input className="btn btn-default" type="submit" value="Update" />
+                        <input 
+                        className="btn btn-default" 
+                        type="submit" 
+                        value="Update" />
                       </form>
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" className="btn btn-default"
+                      data-dismiss="modal">
+                      Close
+                    </button>
                   </div>
                 </div>
               </div>

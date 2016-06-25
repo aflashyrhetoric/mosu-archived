@@ -6,7 +6,7 @@
 		(
 			<div>
 				<App.Views.Navbar />
-				<App.Views.Mosu url="/api/v1/jobapplications" />
+				<App.Views.Mosu url="/api/v1/jobapplications" pollInterval="1000" />
 			</div>
 		),
 		document.getElementById('app')

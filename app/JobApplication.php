@@ -32,8 +32,7 @@ class JobApplication extends Model
      *
      * @var array
      */
-    protected $hidden = [
-    ];
+    // protected $hidden = [];
     public function user()
 	{
 	    return $this->belongsTo('App\User', 'foreign_key', 'user_id');

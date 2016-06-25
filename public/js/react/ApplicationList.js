@@ -1,15 +1,12 @@
 App.Views.ApplicationList = React.createClass({
   render: function() {
     var callbackAppSubmit = this.props.callbackAppSubmit;
-    var all_job_applications = this.props.responseData;
-    var jobAppNodes = this.props.responseData.map(function(jobApp) {
-    return  (
+    var jobAppNodes = this.props.data.map(function(jobApp) {
+      return  ( 
         <App.Views.ApplicationItem 
           key={jobApp.id} 
-          all_job_applications={all_job_applications}
           jobApp={jobApp}
-          callbackAppSubmit={ callbackAppSubmit }
-        > 
+          callbackAppSubmit={ callbackAppSubmit }> 
           { jobApp.phase }
         </App.Views.ApplicationItem>
       );

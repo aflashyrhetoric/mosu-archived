@@ -27,6 +27,7 @@ Route::group(['prefix'=>'api/v1'], function(){
 
     Route::get('/jobapplications', 'JobApplicationsController@index');
     Route::post('/jobapplications', 'JobApplicationsController@store');
+    Route::post('/jobapplications/update/{id}', 'JobApplicationsController@update');
 
     // Auth-locked views/routes
     Route::group(['prefix' => 'jobapps/create'], function()
