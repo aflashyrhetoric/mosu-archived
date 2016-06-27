@@ -20,7 +20,6 @@
 				}.bind(this),
 				complete: function() {
 					this.setState({loading: false});
-					setTimeout(this.loadJobAppDataFromServer, this.props.pollInterval);
 				}.bind(this)
 			});
 		},

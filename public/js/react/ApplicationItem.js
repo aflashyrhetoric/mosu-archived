@@ -17,12 +17,13 @@ App.Views.ApplicationItem = React.createClass({
   },
   render: function() {
     return (
-      <div className="application-item col-xs-12 col-sm-6 col-md-3 col-md-offset-s1">
+      <div className="application-item col-xs-12 col-sm-6 col-md-6 col-lg-3">
         <div
-        className={"card-panel " + this.state.phase }>
+        className={"card card-block " + this.state.phase }>
             {/* Card Title: Company */}
-          	<h4> { this.state.company } </h4>
-            <button type="button" onClick={this.showModal} className="btn btn-default">Manage</button>
+          	<h4 className="card-title"> { this.state.company } </h4>
+            <p className="card-text"><a href={this.props.jobApp.listing_url}>Job Listing</a></p>
+            <button type="button" onClick={this.showModal} className="btn btn-secondary">Manage</button>
 
             <App.Views.ModifyApplicationForm
                 jobApp={this.props.jobApp}

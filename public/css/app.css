@@ -8,6 +8,9 @@
 body {
   background-color: #e3e3e3 !important; }
 
+.jumbotron {
+  padding: 2rem 2rem; }
+
 .mosu-container p {
   font-size: 'Instant', sans-serif; }
 
@@ -16,15 +19,14 @@ body {
   .mosu-container .application-list .application-item {
     margin-bottom: 1rem;
     text-align: center; }
-    .mosu-container .application-list .application-item .card-panel {
+    .mosu-container .application-list .application-item .card-block {
       background-color: #e3e3e3;
       color: #3A3B3D;
-      padding: 1rem;
-      min-height: 10rem; }
-      .mosu-container .application-list .application-item .card-panel h4 {
+      min-height: 12rem; }
+      .mosu-container .application-list .application-item .card-block h4 {
         font-family: 'program', sans-serif;
         margin-bottom: 1rem; }
-      .mosu-container .application-list .application-item .card-panel:hover {
+      .mosu-container .application-list .application-item .card-block:hover {
         background-color: #cacaca; }
     .mosu-container .application-list .application-item .modal {
       text-align: left; }
