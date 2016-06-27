@@ -10,10 +10,7 @@ App.Views.ApplicationItem = React.createClass({
     this.setState({ company: newCompanyName });
   },
   showModal: function(){
-    $('#modifyApplicationForm' + this.props.jobApp.id).modal('show');
-  },
-  hideModal: function(id){
-    $('#modifyApplicationForm' + id).modal('hide');
+    $('#modifyApplicationForm' + this.props.jobApp.id).modal('toggle');
   },
   updateItemColor: function(newPhase){
     this.setState({ phase: newPhase})
@@ -21,12 +18,11 @@ App.Views.ApplicationItem = React.createClass({
   render: function() {
     return (
       <div className="application-item col-xs-12 col-sm-6 col-md-3 col-md-offset-s1">
-        <div 
-        className={"card-panel " + this.state.phase }
-        onClick={this.showModal}
-        >
+        <div
+        className={"card-panel " + this.state.phase }>
             {/* Card Title: Company */}
-          	<p> { this.state.company } </p>
+          	<h4> { this.state.company } </h4>
+            <button type="button" onClick={this.showModal} className="btn btn-default">Manage</button>
 
             <App.Views.ModifyApplicationForm
                 jobApp={this.props.jobApp}

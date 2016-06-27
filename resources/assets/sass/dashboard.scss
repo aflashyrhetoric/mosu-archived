@@ -22,21 +22,26 @@ body {
 		margin: auto;
 		.application-item {
 			margin-bottom: 1rem;
-
 			text-align: center;
 			.card-panel {
 				background-color: $bgc;
 				color: #3A3B3D;
-				padding: 2rem;
-				padding-top: 4.5rem;
-				min-height: 14rem;
-				width: 23rem;
-				p {
-					font-size: 2rem;
+				padding: 1rem;
+				min-height: 10rem;
+				// width: 23rem;
+				h4 {
 					font-family: 'program', sans-serif;
+					margin-bottom: 1rem;
 				}
 				&:hover {
 					background-color: darken($bgc, 10);
+				}
+			}
+			.modal {
+				text-align: left;
+				label {
+					padding-left: 0.5rem;
+					font-weight: bold;
 				}
 			}
 			// Card's phase-conditional BGC

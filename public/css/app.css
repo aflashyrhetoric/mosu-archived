@@ -19,15 +19,18 @@ body {
     .mosu-container .application-list .application-item .card-panel {
       background-color: #e3e3e3;
       color: #3A3B3D;
-      padding: 2rem;
-      padding-top: 4.5rem;
-      min-height: 14rem;
-      width: 23rem; }
-      .mosu-container .application-list .application-item .card-panel p {
-        font-size: 2rem;
-        font-family: 'program', sans-serif; }
+      padding: 1rem;
+      min-height: 10rem; }
+      .mosu-container .application-list .application-item .card-panel h4 {
+        font-family: 'program', sans-serif;
+        margin-bottom: 1rem; }
       .mosu-container .application-list .application-item .card-panel:hover {
         background-color: #cacaca; }
+    .mosu-container .application-list .application-item .modal {
+      text-align: left; }
+      .mosu-container .application-list .application-item .modal label {
+        padding-left: 0.5rem;
+        font-weight: bold; }
     .mosu-container .application-list .application-item .saved {
       background-color: #C7F464; }
       .mosu-container .application-list .application-item .saved:hover {
