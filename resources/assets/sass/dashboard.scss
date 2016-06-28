@@ -10,6 +10,12 @@ $salmon: #E99586;
 body {
 	background-color: $bgc !important;
 }
+
+// Overriding Bootstrap default
+fieldset{
+	border: 0px;
+}
+
 .jumbotron {
 	padding: 2rem 2rem;
 }
@@ -20,6 +26,7 @@ body {
 	p {
 		font-size: 'Instant', sans-serif;
 	}
+
 
 	.application-list {
 		margin: auto;

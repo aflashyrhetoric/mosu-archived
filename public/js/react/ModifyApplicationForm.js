@@ -112,7 +112,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                       <form className="commentForm" 
                       onSubmit={this.handleSubmit} >
                         <div className="form-group">
-                        <label for="company-input">Company *</label>
+                        <label HtmlFor="company-input">Company *</label>
                        <input
                           className="form-control" 
                           type="text"
@@ -123,7 +123,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         />
                         </div>
                         <div className="form-group">
-                        <label for="listing-input">Job Listing URL *</label>
+                        <label HtmlFor="listing-input">Job Listing URL *</label>
                        <input
                           className="form-control" 
                           type="text"
@@ -134,7 +134,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         />
                         </div>
                         <div className="form-group">
-                        <label for="phase-input">Phase *</label>
+                        <label HtmlFor="phase-input">Phase *</label>
                         <select 
                         id="phase-input" 
                         className="form-control"
@@ -146,7 +146,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         </select>
                         </div>
                         <div className="form-group">
-                        <label for="salary-input">Salary</label>
+                        <label HtmlFor="salary-input">Salary</label>
                        <input
                           className="form-control" 
                           type="text"
@@ -157,7 +157,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         />
                         </div>
                         <div className="form-group">
-                        <label for="location-input">Location</label>
+                        <label HtmlFor="location-input">Location</label>
                        <input
                           className="form-control" 
                           type="text"
@@ -167,7 +167,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         />
                         </div>
                         <div className="form-group">
-                        <label for="contact-name-input">Internal Contact</label>
+                        <label HtmlFor="contact-name-input">Internal Contact</label>
                        <input
                           className="form-control" 
                           type="text"
@@ -178,7 +178,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         />
                         </div>
                         <div className="form-group">
-                        <label for="contact-email-input">Internal Contact Email</label>
+                        <label HtmlFor="contact-email-input">Internal Contact Email</label>
                        <input
                           className="form-control" 
                           type="text"
@@ -189,7 +189,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         />
                         </div>
                         <div className="form-group">
-                        <label for="notes-input">Notes</label>
+                        <label HtmlFor="notes-input">Notes</label>
                        <textarea
                           className="form-control" 
                           type="text"
@@ -200,7 +200,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         ></textarea>
                         </div>
                         <div className="form-group">
-                        <label for="remote-input">Remote</label>
+                        <label HtmlFor="remote-input">Remote</label>
                        <input
                           className="form-control" 
                           type="checkbox"

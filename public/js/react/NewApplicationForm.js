@@ -4,6 +4,7 @@ App.Views.NewApplicationForm = React.createClass({
           company: '',
           listing_url: '',
           phase: 'saved',
+          expected_salary: 0,
           location: '',
           inside_contact_name: '',
           inside_contact_email: '',
@@ -21,7 +22,7 @@ App.Views.NewApplicationForm = React.createClass({
         this.setState({ phase: e.target.value});
     },   
     handleSalaryChange: function(e) {
-        this.setState({ listing_salary: e.target.value});
+        this.setState({ expected_salary: e.target.value});
     },    
     handleLocationChange: function(e) {
         this.setState({ location: e.target.value});
@@ -43,7 +44,7 @@ App.Views.NewApplicationForm = React.createClass({
         var company = this.state.company.trim();
         var listing_url = this.state.listing_url.trim();
         var phase = this.state.phase.trim();
-        var expected_salary = this.state.phase.trim();
+        var expected_salary = this.state.expected_salary;
         var location = this.state.location.trim();
         var inside_contact_name = this.state.inside_contact_name.trim();
         var inside_contact_email = this.state.inside_contact_email.trim();
@@ -78,69 +79,136 @@ App.Views.NewApplicationForm = React.createClass({
             inside_contact_name: '',
             inside_contact_email: '',
             notes: '',
-            remote: false
+            remote: false,
+            user_id: 3
         });
-  },
+    },
+    capitalizeCompany: function(companyName) {
+      return companyName.charAt(0).toUpperCase() + companyName.slice(1);
+    },
+    generateTitle: function(companyName){
+      if(companyName == ''){
+        return 'New Company'
+      } else {
+        return this.capitalizeCompany(this.state.company);
+      }
+    },
     render: function() {
         return (
             <div className="modal fade" id="newApplicationForm" tabindex="-1" role="dialog">
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
-                    { this.state.company }
+                    { this.generateTitle(this.state.company) }
                   </div>
                   <div className="modal-body">
                       <form className="commentForm" 
                       onSubmit={this.handleSubmit} >
-                        <input
+                        <div className="form-group">
+                        <label for="company-input">Company *</label>
+                       <input
+                          className="form-control" 
                           type="text"
+                          id="company-input"
                           placeholder="Adelie, LLC"
                           value={this.state.company}
                           onChange={this.handleCompanyChange }
                         />
-                        <input
+                        </div>
+                        <div className="form-group">
+                        <label for="listing-input">Job Listing URL *</label>
+                       <input
+                          className="form-control" 
                           type="text"
+                          id="listing-input"
                           placeholder="http://jobs.com/listing/xxx"
                           value={this.state.listing_url}
                           onChange={this.handleUrlChange }
                         />
-                        <input
+                        </div>
+                        <div className="form-group">
+                        <label for="phase-input">Phase *</label>
+                        <select 
+                        id="phase-input" 
+                        className="form-control"
+                        onChange={this.handlePhaseChange} value={this.state.phase} name="select">
+                          <option value="saved">Saved</option> 
+                          <option value="applied">Applied</option>
+                          <option value="interviewing">Interviewing</option>
+                          <option value="offered">Offered</option>
+                        </select>
+                        </div>
+                        <div className="form-group">
+                        <label for="salary-input">Salary</label>
+                       <input
+                          className="form-control" 
                           type="text"
+                          id="salary-input"
                           placeholder="60,000"
                           value={this.state.expected_salary}
                           onChange={this.handleSalaryChange }
                         />
-                        <input
+                        </div>
+                        <div className="form-group">
+                        <label for="location-input">Location</label>
+                       <input
+                          className="form-control" 
                           type="text"
                           placeholder="New York, NY"
                           value={this.state.location}
                           onChange={this.handleLocationChange }
                         />
-                        <input
+                        </div>
+                        <div className="form-group">
+                        <label for="contact-name-input">Internal Contact</label>
+                       <input
+                          className="form-control" 
                           type="text"
+                          id="contact-name-input"
                           placeholder="Bob Jones"
                           value={this.state.inside_contact_name}
                           onChange={this.handleContactNameChange }
                         />
-                        <input
+                        </div>
+                        <div className="form-group">
+                        <label for="contact-email-input">Internal Contact Email</label>
+                       <input
+                          className="form-control" 
                           type="text"
+                          id="contact-email-input"
                           placeholder="bjones@jobs.com"
                           value={this.state.inside_contact_email}
                           onChange={this.handleContactEmailChange }
                         />
-                        <input
-                          type="textarea"
+                        </div>
+                        <div className="form-group">
+                        <label for="notes-input">Notes</label>
+                       <textarea
+                          className="form-control" 
+                          type="text"
+                          id="notes"
                           placeholder="Notes?"
                           value={this.state.notes}
                           onChange={this.handleNotesChange }
-                        />
-                        <input
+                        ></textarea>
+                        </div>
+                        <div className="form-group">
+                        <label for="remote-input">Remote</label>
+                       <input
+                          className="form-control" 
                           type="checkbox"
+                          id="remote-input"
                           value={this.state.remote}
                           onChange={this.handleRemoteChange }
                         />
-                        <input className="btn btn-default" type="submit" value="Post" />
-                      </form>
+                        </div>
+                        <div className="form-group">
+                        <input
+                        className="btn btn-default form-control" 
+                        type="submit" 
+                        value="Add New Job" />
+                        </div>
+                      </form>         
                   </div>
                   <div className="modal-footer">
                     <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>

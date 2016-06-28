@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
+use Auth;
 
 class Controller extends BaseController
 {
@@ -14,7 +15,10 @@ class Controller extends BaseController
 
 	public function index()
 	{
-		// Render app.
-		return view('main');
+		if (Auth::check()){
+			return view('main');
+		} else {
+			return view('signup');
+		}
 	}
 }

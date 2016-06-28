@@ -32,6 +32,9 @@ App.Views.ApplicationList = React.createClass({
                   </button>
             </div>
         </div>
+        <App.Views.NewApplicationForm 
+            onNewAppSubmit={this.props.onNewAppSubmit}
+            />
 
         {/* Render application list */}
         {jobAppNodes.reverse()}

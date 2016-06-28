@@ -25,7 +25,8 @@ Route::group(['prefix'=>'api/v1'], function(){
 
     // Post to /jobapplications
 
-    Route::get('/jobapplications', 'JobApplicationsController@index');
+    Route::get('/jobapplications/{id}', 
+        'JobApplicationsController@dashboard');
     Route::post('/jobapplications', 'JobApplicationsController@store');
     Route::post('/jobapplications/update/{id}', 'JobApplicationsController@update');
 

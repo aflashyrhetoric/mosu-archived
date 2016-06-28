@@ -8,6 +8,7 @@ use Auth;
 use App\Adelie\Transformers\JobApplicationTransformer;
 use Illuminate\Http\Request;
 use App\JobApplication as JobApplication;
+use App\User as User;
 use App\Http\Requests;
 
 class JobApplicationsController extends ApiController
@@ -24,16 +25,13 @@ class JobApplicationsController extends ApiController
 
   }
 
-  public function index()
+  public function dashboard($id)
   {
-    // 1. All (results) at once is bad
-    // 2. No easy way to attach meta-information
-    // 3. 100% mimics our data-base structure
-    // 4. No way to signal headers/response codes
-    // return Quote::all();
 
     // Get all job applications
-    $jobapps = JobApplication::all();
+    // $jobapps = JobApplication::all();
+    $jobapps = User::find($id)->applications;
+
     // Return a response with a data array containing all results
     return $this->respond(
       $this->jobApplicationTransformer->transformCollection($jobapps->toArray())
@@ -94,6 +92,7 @@ class JobApplicationsController extends ApiController
    **/
   public function store(Request $request)
   {
+    dd('hit');
     if ( ! $request->has('company')) 
     {
       return $this->respondFailedValidation();

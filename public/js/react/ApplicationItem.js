@@ -22,7 +22,7 @@ App.Views.ApplicationItem = React.createClass({
         className={"card card-block " + this.state.phase }>
             {/* Card Title: Company */}
           	<h4 className="card-title"> { this.state.company } </h4>
-            <p className="card-text"><a href={this.props.jobApp.listing_url}>Job Listing</a></p>
+            <p className="card-text"><a href={this.props.jobApp.listing_url}>Job Listing {this.props.jobApp.id} </a></p>
             <button type="button" onClick={this.showModal} className="btn btn-secondary">Manage</button>
 
             <App.Views.ModifyApplicationForm

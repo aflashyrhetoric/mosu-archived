@@ -8,6 +8,9 @@
 body {
   background-color: #e3e3e3 !important; }
 
+fieldset {
+  border: 0px; }
+
 .jumbotron {
   padding: 2rem 2rem; }
 
