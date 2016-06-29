@@ -24,6 +24,8 @@
 	<!-- Bootstrap file for the app, not for Twitter Bootstrap -->
 	<script src="{{ url('js/bootstrap.js') }}"></script>
 
+	<!-- React Stuff -->
+	<script type="text/babel" src="{{ url('js/react/utils/Alert.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/auth/Navbar.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/auth/SignUp.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/auth/Login.js') }}"></script>

@@ -92,7 +92,6 @@ class JobApplicationsController extends ApiController
    **/
   public function store(Request $request)
   {
-    dd('hit');
     if ( ! $request->has('company')) 
     {
       return $this->respondFailedValidation();

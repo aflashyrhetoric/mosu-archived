@@ -1,6 +1,7 @@
 var App = {
 	Views: {},
-	Auth: {}
+	Auth: {},
+	Utils: {}
 };
 
 $.ajaxSetup({

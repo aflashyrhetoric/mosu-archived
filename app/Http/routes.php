@@ -21,18 +21,19 @@
 Route::get('/', 'Controller@index');
 
 Route::group(['prefix'=>'api/v1'], function(){
-    // Quote Resource Routes
-
-    // Post to /jobapplications
-
+    // Main App
     Route::get('/jobapplications/{id}', 
         'JobApplicationsController@dashboard');
+    // Sign Up To Mosu
+    Route::post('/signup', 'Auth\AuthController@create');
+    // Create New JobApp
     Route::post('/jobapplications', 'JobApplicationsController@store');
+    // Edit JobApp
     Route::post('/jobapplications/update/{id}', 'JobApplicationsController@update');
 
     // Auth-locked views/routes
-    Route::group(['prefix' => 'jobapps/create'], function()
-    // Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
+    // Route::group(['prefix' => 'jobapps/create'], function(){});
+    Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
     {
       Route::get('/', 'JobApplicationsController@create');
     });
