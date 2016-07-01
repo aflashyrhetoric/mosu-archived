@@ -1,6 +1,8 @@
 App.Views.Navbar = React.createClass({
   logout: function(){
     localStorage.removeItem("api_token");
+    // Refresh the page
+    window.location.href = "/";
   },
   render: function() {
     return (

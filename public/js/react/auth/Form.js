@@ -28,6 +28,8 @@ App.Auth.Form = React.createClass({
         }.bind(this),
         complete: function() {
             this.setState({loading: false});
+            // Refresh the page
+            window.location.href = "/";
         }.bind(this)
     });
   },
@@ -56,6 +58,8 @@ App.Auth.Form = React.createClass({
         }.bind(this),
         complete: function() {
             this.setState({loading: false});
+            // Refresh the page
+            window.location.href = "/";
         }.bind(this)
     });
   },
