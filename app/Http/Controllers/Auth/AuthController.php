@@ -34,7 +34,7 @@ class AuthController extends ApiController
      *
      * @var string
      */
-    protected $redirectTo = '/app';
+    protected $redirectTo = '';
 
     /**
      * Create a new authentication controller instance.
@@ -91,7 +91,6 @@ class AuthController extends ApiController
         // grab credentials from the request
         $credentials = [
             'email' => $request['email'],
-            // 'password' => bcrypt($request['password'])
             'password' => $request['password']
         ];
         // return $this->respond(bcrypt($request['password']));

@@ -22,14 +22,17 @@ Route::get('/', 'Controller@index');
 Route::get('/logout', 'Auth\AuthController@logout');
 
 Route::group(['prefix'=>'api/v1'], function(){
-    // Main App
-    Route::get('/jobapplications/{id}', 
-        'JobApplicationsController@dashboard');
     // Sign Up To Mosu
     Route::post('/signup', 'Auth\AuthController@create');
     Route::post('/login', 'Auth\AuthController@login');
+
+    // Main App
+    Route::get('/jobapplications', 
+        'JobApplicationsController@index');
+
     // Create New JobApp
     Route::post('/jobapplications', 'JobApplicationsController@store');
+
     // Edit JobApp
     Route::post('/jobapplications/update/{id}', 'JobApplicationsController@update');
 
@@ -40,8 +43,3 @@ Route::group(['prefix'=>'api/v1'], function(){
       // Route::get('/', 'JobApplicationsController@create');
     // });
 });
-
-Route::get('/login', function () {
-      return view('login');
-});
-

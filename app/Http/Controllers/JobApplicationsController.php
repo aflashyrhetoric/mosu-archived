@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use App\JobApplication as JobApplication;
 use App\User as User;
 use App\Http\Requests;
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+
 
 class JobApplicationsController extends ApiController
 {
@@ -25,12 +28,19 @@ class JobApplicationsController extends ApiController
 
   }
 
-  public function dashboard($id)
+  /* 
+   * Get all job applications for current user
+   */
+  public function index()
   {
 
-    // Get all job applications
+    $user = JWTAuth::parseToken()->authenticate();
+    // return $this->respond($user->id);
+    $jobapps = User::find($user->id)->applications;
+
     // $jobapps = JobApplication::all();
-    $jobapps = User::find($id)->applications;
+    // return $this->respond(typeof($user));
+    // $jobapps = User::find($user->id)->applications();
 
     // Return a response with a data array containing all results
     return $this->respond(
@@ -38,8 +48,9 @@ class JobApplicationsController extends ApiController
     );
   }
 
-  public function show($id)
+  public function show(Request $request)
   {
+
     $jobapp = JobApplication::find($id);
 
     // If nothing is found
@@ -75,16 +86,6 @@ class JobApplicationsController extends ApiController
   }
 
   /**
-   * Create a new quote
-   *
-   * @return quote/create page
-   **/
-  public function create()
-  {
-    return view('welcome');
-  }
-
-  /**
    * Stores a new quote
    *
    * @return void
@@ -97,8 +98,26 @@ class JobApplicationsController extends ApiController
       return $this->respondFailedValidation();
 
     } else {
-      JobApplication::create($request->all());
+      $user = JWTAuth::parseToken()->authenticate();
+      // return $this->respond($user->id);
+      JobApplication::create([
+            'company' => $request['company'],
+            'listing_url' => $request['listing_url'],
+            'phase' => $request['phase'],
+            'expected_salary' => $request['expected_salary'],
+            'location' => $request['location'],
+            'inside_contact_name' => $request['inside_contact_name'],
+            'inside_contact_email' => $request['inside_contact_email'],
+            'notes' => $request['notes'],
+            'remote' => $request['remote'],
+            'user_id' => $user->id
+        ]);
       return $this->respondCreated();
     }
+  }
+
+  public function user()
+  {
+    return $this->belongsTo('App\User');
   }
 }

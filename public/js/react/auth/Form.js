@@ -14,12 +14,12 @@ App.Auth.Form = React.createClass({
         dataType: 'json',
         type: 'POST',
         data: newUser,
+        // Token gets sent. Blank ? Signup : Main
+        beforeSend: function (xhr) {
+          var authHeaderText = "Bearer " + localStorage.getItem('api_token');
+          xhr.setRequestHeader('Authorization', authHeaderText);
+        },
         success: function(data) {
-            // if (typeof data.error !== 'undefined') {
-            //     this.setState({error: data.error});
-            // } else {
-            //     this.setState({ data: data, ajaxError: null});
-            // }
             // Set false so login renders
             this.setState({ newUser: false });
         }.bind(this),
@@ -39,7 +39,9 @@ App.Auth.Form = React.createClass({
         type: 'POST',
         data: loginInfo,
         success: function(data) {
-          console.log(data);
+          // Save api_key data to localStorage
+          localStorage.setItem('api_token', data);
+          console.log(localStorage.getItem('api_token'));
             // if (typeof data.error !== 'undefined') {
             //     this.setState({error: data.error});
             // } else {

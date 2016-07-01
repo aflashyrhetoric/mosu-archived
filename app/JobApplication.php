@@ -24,7 +24,8 @@ class JobApplication extends Model
         'inside_contact_name',
         'inside_contact_email',
         'notes',
-        'remote'
+        'remote',
+        'user_id'
     ];
 
     /**

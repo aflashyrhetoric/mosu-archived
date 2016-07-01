@@ -1,20 +1,15 @@
-// Initialize the app via SIAF with final Render statement.
-
-(function(App) {
-	ReactDOM.render(
-		(
+App.Views.Auth = React.createClass({
+	render: function(){
+		return (
 			<div className="container">
-				<App.Auth.Navbar />
 				<div className="row">
 					<div className="col-xs-12 col-md-4 col-md-offset-4 tac">
-						<h1>Sign Up</h1>
-						<p>To use Mosu, please sign up.</p>
+						<h1>Mosu</h1>
 					</div>
 				</div>
 
 				<App.Auth.Form />
 			</div>
-		),
-		document.getElementById('auth')
-	);
-})(App);
+		);
+	}
+});

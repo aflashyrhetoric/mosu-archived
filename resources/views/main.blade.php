@@ -27,6 +27,14 @@
 	<!-- Redux -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js"></script>
+	<!-- Mosu Auth Components -->
+	<script type="text/babel" src="{{ url('js/react/utils/Alert.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/auth/Navbar.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/auth/SignUp.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/auth/Login.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/auth/Form.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/auth/Auth.js') }}"></script>
+	
 	<!-- Mosu Components -->	
 	<script type="text/javascript" src="{{ url('js/scripts.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/Navbar.js') }}"></script>
