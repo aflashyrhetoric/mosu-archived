@@ -8,7 +8,7 @@ App.Auth.Form = React.createClass({
   	var toggle = !this.state.newUser;
   	this.setState({ newUser: toggle });
   },
-  handleNewUserSubmit: function(newUser){
+  handleUserSignup: function(newUser){
     $.ajax({
         url: '/api/v1/signup',
         dataType: 'json',
@@ -20,6 +20,34 @@ App.Auth.Form = React.createClass({
             // } else {
             //     this.setState({ data: data, ajaxError: null});
             // }
+            // Set false so login renders
+            this.setState({ newUser: false });
+        }.bind(this),
+        error: function(xhr, status, err) {
+            console.error(this.props.url, status, err.toString());
+        }.bind(this),
+        complete: function() {
+            this.setState({loading: false});
+        }.bind(this)
+    });
+  },
+  handleUserLogin: function(loginInfo){
+    console.log(loginInfo);
+    $.ajax({
+        url: '/api/v1/login',
+        dataType: 'json',
+        type: 'POST',
+        data: loginInfo,
+        success: function(data) {
+          console.log(data);
+            // if (typeof data.error !== 'undefined') {
+            //     this.setState({error: data.error});
+            // } else {
+            //     this.setState({ data: data, ajaxError: null});
+            // }
+            // setTimeout(function() {
+            //   window.location.href = "mosu.dev/app";
+            // }, 2000);
         }.bind(this),
         error: function(xhr, status, err) {
             console.error(this.props.url, status, err.toString());
@@ -33,11 +61,11 @@ App.Auth.Form = React.createClass({
   	var formToBeUsed;
   	var prompt;
   	if(this.state.newUser){
-  		formToBeUsed = <App.Auth.SignUp handleNewUserSubmit={this.handleNewUserSubmit} />
-  		prompt = ["Already a user?", "Login"]
+      formToBeUsed = <App.Auth.Login handleUserLogin={this.handleUserLogin} />;
+      prompt = ["New to Mosu?", "Sign Up"];
   	} else {
-  		formToBeUsed = <App.Auth.Login />
-  		prompt = ["New to Mosu?", "Sign Up"]
+      formToBeUsed = <App.Auth.SignUp handleUserSignup={this.handleUserSignup} />;
+      prompt = ["Already a user?", "Login"];
   	}
     return (
 		<div id="signup" className="container">

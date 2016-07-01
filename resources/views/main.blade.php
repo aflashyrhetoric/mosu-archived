@@ -22,8 +22,12 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-	<!-- Bootstrap file for the app, not for Twitter Bootstrap -->
+	<!-- Bootstrap file for the app, not Twitter Bootstrap -->
 	<script src="{{ url('js/bootstrap.js') }}"></script>
+	<!-- Redux -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js"></script>
+	<!-- Mosu Components -->	
 	<script type="text/javascript" src="{{ url('js/scripts.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/Navbar.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/NewApplicationForm.js') }}"></script>

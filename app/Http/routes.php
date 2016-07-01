@@ -19,6 +19,7 @@
 
 
 Route::get('/', 'Controller@index');
+Route::get('/logout', 'Auth\AuthController@logout');
 
 Route::group(['prefix'=>'api/v1'], function(){
     // Main App
@@ -26,6 +27,7 @@ Route::group(['prefix'=>'api/v1'], function(){
         'JobApplicationsController@dashboard');
     // Sign Up To Mosu
     Route::post('/signup', 'Auth\AuthController@create');
+    Route::post('/login', 'Auth\AuthController@login');
     // Create New JobApp
     Route::post('/jobapplications', 'JobApplicationsController@store');
     // Edit JobApp
@@ -33,10 +35,10 @@ Route::group(['prefix'=>'api/v1'], function(){
 
     // Auth-locked views/routes
     // Route::group(['prefix' => 'jobapps/create'], function(){});
-    Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
-    {
-      Route::get('/', 'JobApplicationsController@create');
-    });
+    // Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
+    // {
+      // Route::get('/', 'JobApplicationsController@create');
+    // });
 });
 
 Route::get('/login', function () {

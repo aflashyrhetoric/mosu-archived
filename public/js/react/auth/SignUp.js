@@ -32,7 +32,8 @@ App.Auth.SignUp = React.createClass({
             return;
         }
 
-        this.props.handleNewUserSubmit({
+        // Call user signup handler on Form.js
+        this.props.handleUserSignup({
             name: name,
             email: email,
             password: password

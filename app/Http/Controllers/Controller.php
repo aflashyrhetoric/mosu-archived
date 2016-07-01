@@ -21,4 +21,8 @@ class Controller extends BaseController
 			return view('signup');
 		}
 	}
+
+	public function app(){
+		return view('main');
+	}
 }

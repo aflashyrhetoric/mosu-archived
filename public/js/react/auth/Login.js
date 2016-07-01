@@ -12,8 +12,23 @@ App.Auth.Login = React.createClass({
   handlePasswordChange: function(e) {
       this.setState({ password: e.target.value});
   },   
-  submitLoginForm: function(){
-  	// TODO: Handle AJAX for submitting a new User
+  submitLoginForm: function(e){
+    e.preventDefault();
+    var email = this.state.email.trim();
+    var password = this.state.password.trim();
+
+    // Super basic validation
+    if (!email || !password) {
+        this.setState({ error: "Input wasn't valid. Please try again." });
+        return;
+    }
+
+    // Call user login handler on Form.js
+    this.props.handleUserLogin({
+      email: email,
+      password: password
+    });
+
   },
   render: function() {
     var errorBox;
@@ -28,6 +43,8 @@ App.Auth.Login = React.createClass({
     }
     return (
       <form onSubmit={ this.submitLoginForm } >
+        {/* Conditionally display error messages */}
+        { errorBox }
         <fieldset className="form-group">
           <label htmlFor="email">Email</label>
           <input 
