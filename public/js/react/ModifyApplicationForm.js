@@ -68,8 +68,7 @@ App.Views.ModifyApplicationForm = React.createClass({
           inside_contact_name: inside_contact_name, 
           inside_contact_email: inside_contact_email,
           notes: notes,
-          remote: remote,
-          user_id: 3
+          remote: remote
       }, id);
     },
     capitalizeCompany: function(companyName) {
