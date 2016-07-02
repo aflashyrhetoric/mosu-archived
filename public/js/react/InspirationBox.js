@@ -59,21 +59,28 @@ App.Views.InspirationBox = React.createClass({
     ];
 
     var randomNumber = this.randomIndex(quotes.length);
+    var quote = quotes[randomNumber].quote;
+    var author = quotes[randomNumber].author;
+
+    return {
+      quote: quote,
+      author: author,
+    };
+
+  },
+  componentDidMount: function() {
+  },
+  render: function() {
+    var quote = this.getQuote();
     return (
       <div className="inspiration-box jumbotron">
         <p className="quote-text">
-          {quotes[randomNumber].quote}
+          { quote.quote }
         </p>
         <p className="quote-author">
-          {quotes[randomNumber].author}
+          { quote.author }
         </p>
       </div>
     );
-  },
-  componentDidMount: function() {
-
-  },
-  render: function() {
-    return this.getQuote();
   }
 });

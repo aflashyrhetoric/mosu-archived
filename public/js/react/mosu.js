@@ -91,7 +91,6 @@
 		render: function() {
 			return (
 				<div className="mosu-container container">
-					<App.Views.InspirationBox />
 
 					<App.Views.ApplicationList 
 						data={ this.state.data } 
