@@ -39,6 +39,6 @@ class CreateJobApplicationsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('job_applications');
     }
 }

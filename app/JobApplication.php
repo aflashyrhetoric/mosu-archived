@@ -24,7 +24,8 @@ class JobApplication extends Model
         'inside_contact_name',
         'inside_contact_email',
         'notes',
-        'remote'
+        'remote',
+        'user_id'
     ];
 
     /**
@@ -32,12 +33,10 @@ class JobApplication extends Model
      *
      * @var array
      */
-    protected $hidden = [
-        'id'
-    ];
+    // protected $hidden = [];
     public function user()
 	{
-	    return $this->belongsTo('App\User', 'foreign_key', 'other_key');
+	    return $this->belongsTo('App\User', 'foreign_key', 'user_id');
 	}
 
 

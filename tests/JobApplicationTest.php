@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use App\JobApplication as JobApplication;
 
 class JobApplicationTest extends TestCase
 {
@@ -19,8 +20,9 @@ class JobApplicationTest extends TestCase
         $users = factory(App\User::class, 5)
                    ->create()
                    ->each(function($u) {
-                        $u->applications()->save(factory(App\JobApplication::class)->make());
+                        $u->applications()->save(factory(App\JobApplication::class, 15)->make());
                     });
-        
+        $jobApps = JobApplication::all();
+        $this->assertEquals($jobApps->count(), 5); 
     }
 }

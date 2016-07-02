@@ -10,6 +10,7 @@ class ApiController extends Controller {
   const HTTP_INTERNAL_ERROR = 500;
   const HTTP_OK = 200;
   const HTTP_CREATED = 201;
+  const HTTP_UPDATED = 204;
   const HTTP_FAILED_VALIDATION = 422;
 
   /**
@@ -89,7 +90,7 @@ class ApiController extends Controller {
    **/
   public function respondFailedValidation()
   {
-    return $this->setStatusCode(self::HTTP_FAILED_VALIDATION)->respondWithError('Parameters failed validation for a quote.');
+    return $this->setStatusCode(self::HTTP_FAILED_VALIDATION)->respondWithError('Parameters failed validation for a new job application.');
   }
 
 
@@ -102,9 +103,22 @@ class ApiController extends Controller {
    *
    * @return json
    **/
-  public function respondCreated($message = "Quote created!")
+  public function respondCreated($message = "New Job Application created!")
   {
     return $this->setStatusCode(self::HTTP_CREATED)->respond([
+      'message' => $message,
+      'status_code' => $this->getStatusCode()
+    ]);    
+  }
+
+  /**
+   * Successfully Updated
+   *
+   * @return json
+   **/
+  public function respondUpdated($message = "Record Updated!")
+  {
+    return $this->setStatusCode(self::HTTP_UPDATED)->respond([
       'message' => $message,
       'status_code' => $this->getStatusCode()
     ]);    

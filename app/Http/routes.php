@@ -17,26 +17,29 @@
 // Table Name:	jobapps
 // Route: 		jobapps
 
-Route::group(['prefix'=>'api/v1'], function(){
-    // Quote Resource Routes
-    Route::resource('jobapplications', 'JobApplicationsController');
 
-    // Post to /quotes
-    Route::post('/jobapps', 'JobApplicationsController@store');
+Route::get('/', 'Controller@index');
+Route::get('/logout', 'Auth\AuthController@logout');
+
+Route::group(['prefix'=>'api/v1'], function(){
+    // Sign Up To Mosu
+    Route::post('/signup', 'Auth\AuthController@create');
+    Route::post('/login', 'Auth\AuthController@login');
+
+    // Main App
+    Route::get('/jobapplications', 
+        'JobApplicationsController@index');
+
+    // Create New JobApp
+    Route::post('/jobapplications', 'JobApplicationsController@store');
+
+    // Edit JobApp
+    Route::post('/jobapplications/update/{id}', 'JobApplicationsController@update');
 
     // Auth-locked views/routes
-    Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
-    {
-      Route::get('/', 'JobApplicationsController@create');
-    });
+    // Route::group(['prefix' => 'jobapps/create'], function(){});
+    // Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
+    // {
+      // Route::get('/', 'JobApplicationsController@create');
+    // });
 });
-
-
-Route::get('/', function () {
-      return view('welcome');
-});
-
-Route::get('/login', function () {
-      return view('login');
-});
-

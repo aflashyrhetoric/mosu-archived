@@ -3,12 +3,18 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-class AuthController extends Controller
+// JWT Auth Stuff
+use JWTAuth;
+use Auth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+
+class AuthController extends ApiController
 {
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +34,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '';
 
     /**
      * Create a new authentication controller instance.
@@ -38,6 +44,15 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+    }
+
+    /**
+     * Logs out the current user. (ko)
+     *
+     * @return void
+     */
+    public function logout(){
+        Auth::guard($this->getGuard())->logout();
     }
 
     /**
@@ -57,16 +72,43 @@ class AuthController extends Controller
 
     /**
      * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
         ]);
+        // Returns created response
+        return $this->respondCreated();
     }
+    /**
+     * Logs in a user
+     */
+    protected function login(Request $request)
+    {
+        // grab credentials from the request
+        $credentials = [
+            'email' => $request['email'],
+            'password' => $request['password']
+        ];
+        // return $this->respond(bcrypt($request['password']));
+        // return $this->respond(JWTAuth::attempt($credentials));
+        return $this->respond(JWTAuth::attempt($credentials));
+        // return $this->respond($credentials);
+        try {
+            // attempt to verify the credentials and create a token for the user
+            if (! $token = JWTAuth::attempt($credentials)) {
+                return response()->json(['error' => 'invalid_credentials'], 401);
+            }
+        } catch (JWTException $e) {
+            // something went wrong whilst attempting to encode the token
+            return response()->json(['error' => 'could_not_create_token'], 500);
+        }
+        // all good so return the token
+        return response()->json(compact('token'));
+    }
+
+
 }

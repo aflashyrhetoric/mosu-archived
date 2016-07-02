@@ -12,9 +12,11 @@ class JobApplicationTransformer extends Transformer {
   public function transform($jobapp)
   {
       return [
+        'id' => $jobapp['id'],
         'company' => $jobapp['company'],
         'listing_url' => $jobapp['listing_url'],
         'phase' => $jobapp['phase'],
+        'user_id' => $jobapp['user_id'],
 
         'expected_salary' => $jobapp['expected_salary'],
         'location' => $jobapp['location'],

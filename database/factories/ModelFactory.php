@@ -23,18 +23,16 @@ $factory->define(App\JobApplication::class, function (Faker\Generator $faker) {
 	$phases = [
 		'saved',
 		'applied',
-		'interview 1',
-		'interview 2',
-		'interview 3',
-		'interview 4',
-		'offered',
-		'hired'
+		'interviewing',
+		'offered'
 	];
     return [
-    	'user_id' => $faker->numberBetween(0,5),
-        'company' => $faker->name,
+        'user_id' => function () {
+            return factory(App\User::class)->create()->id;
+        },
+        'company' => $faker->company,
         'listing_url' => $faker->url,
-        'phase' => array_rand($phases),
+        'phase' => $phases[array_rand($phases, 1)],
 
         'expected_salary' => $faker->numberBetween(42000, 80000),
         'location' => $faker->city,
