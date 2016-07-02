@@ -210,7 +210,7 @@ App.Views.ModifyApplicationForm = React.createClass({
                         </div>
                         <div className="form-group">
                         <input
-                        className="btn btn-default form-control" 
+                        className="btn btn-primary form-control" 
                         type="submit" 
                         value="Update" />
                         </div>
