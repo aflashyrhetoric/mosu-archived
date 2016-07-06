@@ -34,7 +34,7 @@ App.Auth.Form = React.createClass({
     });
   },
   handleUserLogin: function(loginInfo){
-    console.log(loginInfo);
+    // console.log(loginInfo);
     $.ajax({
         url: '/api/v1/login',
         dataType: 'json',

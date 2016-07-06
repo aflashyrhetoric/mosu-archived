@@ -93,9 +93,18 @@ class AuthController extends ApiController
             'email' => $request['email'],
             'password' => $request['password']
         ];
-        // return $this->respond(bcrypt($request['password']));
+
+        // If user doesn't exist, invalid error.
+        // try {
+        //     $user = JWTAuth::parseToken()->authenticate();
+        //     $userCheck = User::findOrFail($user->id);
+        // } catch (ModelNotFoundException $e){
+        //     if (! $token = JWTAuth::attempt($credentials)) {
+        //         return response()->json(['error' => 'invalid_credentials'], 401);
+        //     }
+        // }
+        
         // return $this->respond(JWTAuth::attempt($credentials));
-        return $this->respond(JWTAuth::attempt($credentials));
         // return $this->respond($credentials);
         try {
             // attempt to verify the credentials and create a token for the user
@@ -107,7 +116,8 @@ class AuthController extends ApiController
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
         // all good so return the token
-        return response()->json(compact('token'));
+        // return response()->json(compact('token'));
+        return $this->respond($token);
     }
 
 
