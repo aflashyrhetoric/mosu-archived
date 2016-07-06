@@ -11,6 +11,7 @@ App.Views.ApplicationList = React.createClass({
         </App.Views.ApplicationItem>
       );
     });
+    var plural = (jobAppNodes.length == 0 || jobAppNodes.length > 1) ? 's' : ''
 
     return (
       <div className="
@@ -19,7 +20,7 @@ App.Views.ApplicationList = React.createClass({
       ">
         {/* Heading */}
         <div className="card card-block tac">
-            <h2 className="card-title">Active Applications</h2>
+            <h2 className="card-title"> { jobAppNodes.length } Active Application{plural}</h2>
         </div>
 
         { /* Job Application Item */ }
