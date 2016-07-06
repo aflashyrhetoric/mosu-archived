@@ -40,7 +40,7 @@ App.Views.ModifyApplicationForm = React.createClass({
       this.setState({ notes: e.target.value});
     },      
     handleRemoteChange: function(e) {
-      this.setState({ remote: e.target.value});
+      this.setState({ remote: e.target.checked });
     },      
     handleSubmit: function(e) {
       e.preventDefault();
@@ -55,10 +55,16 @@ App.Views.ModifyApplicationForm = React.createClass({
       var inside_contact_name = this.state.inside_contact_name.trim();
       var inside_contact_email = this.state.inside_contact_email.trim();
       var notes = this.state.notes.trim();
-      var remote = this.state.remote;
+      if(this.state.remote){
+        var remote = 1;
+      } else {
+        var remote = 0;
+      }
+
       if (!company || !listing_url) {
         return;
       }
+
       this.props.callbackAppSubmit({
           company: company,
           listing_url: listing_url,
@@ -199,20 +205,20 @@ App.Views.ModifyApplicationForm = React.createClass({
                         ></textarea>
                         </div>
                         <div className="form-group">
-                        <label HtmlFor="remote-input">Remote</label>
+                        <label HtmlFor="remote">Remote</label>
                        <input
                           className="form-control" 
                           type="checkbox"
-                          id="remote-input"
-                          value={this.state.remote}
+                          id="remote"
+                          checked={ this.state.remote } 
                           onChange={this.handleRemoteChange }
                         />
                         </div>
                         <div className="form-group">
                         <input
-                        className="btn btn-primary form-control" 
-                        type="submit" 
-                        value="Update" />
+                          className="btn btn-primary form-control" 
+                          type="submit" 
+                          value="Update" />
                         </div>
                       </form>
                   </div>

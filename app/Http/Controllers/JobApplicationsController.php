@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use App\JobApplication as JobApplication;
 use App\User as User;
 use App\Http\Requests;
-use JWTAuth;
+use JWTAuth;  
 use Tymon\JWTAuth\Exceptions\JWTException;
 
 
@@ -80,13 +80,24 @@ class JobApplicationsController extends ApiController
       return $this->respondNotFound('Sorries, this particular Job Application does not exist.');
     }
     else {
-      $jobapp->update($request->all());
+      $jobapp->update([
+        'company' => $request['company'],
+        'listing_url' => $request['listing_url'],
+        'phase' => $request['phase'],
+        'expected_salary' => $request['expected_salary'],
+        'location' => $request['location'],
+        'inside_contact_name' => $request['inside_contact_name'],
+        'inside_contact_email' => $request['inside_contact_email'],
+        'notes' => $request['notes'],
+        'remote' => $request['remote']
+      ]);
+
       return $this->respondUpdated();
     }  
   }
 
   /**
-   * Stores a new quote
+   * Stores a new Job Application
    *
    * @return void
    * @author 

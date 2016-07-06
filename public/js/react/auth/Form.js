@@ -43,15 +43,7 @@ App.Auth.Form = React.createClass({
         success: function(data) {
           // Save api_key data to localStorage
           localStorage.setItem('api_token', data);
-          console.log(localStorage.getItem('api_token'));
-            // if (typeof data.error !== 'undefined') {
-            //     this.setState({error: data.error});
-            // } else {
-            //     this.setState({ data: data, ajaxError: null});
-            // }
-            // setTimeout(function() {
-            //   window.location.href = "mosu.dev/app";
-            // }, 2000);
+          
         }.bind(this),
         error: function(xhr, status, err) {
             console.error(this.props.url, status, err.toString());

@@ -9,7 +9,7 @@ App.Views.NewApplicationForm = React.createClass({
           inside_contact_name: '',
           inside_contact_email: '',
           notes: '',
-          remote: false
+          remote: 0
       };
     },
     handleCompanyChange: function(e) {
@@ -37,7 +37,7 @@ App.Views.NewApplicationForm = React.createClass({
         this.setState({ notes: e.target.value});
     },      
     handleRemoteChange: function(e) {
-        this.setState({ remote: e.target.value});
+        this.setState({ remote: e.target.checked });
     },      
     handleSubmit: function(e) {
         e.preventDefault();
@@ -191,12 +191,12 @@ App.Views.NewApplicationForm = React.createClass({
                         ></textarea>
                         </div>
                         <div className="form-group">
-                        <label for="remote-input">Remote</label>
+                        <label for="remote">Remote</label>
                        <input
                           className="form-control" 
                           type="checkbox"
-                          id="remote-input"
-                          value={this.state.remote}
+                          id="remote"
+                          defaultChecked={this.state.remote}
                           onChange={this.handleRemoteChange }
                         />
                         </div>
