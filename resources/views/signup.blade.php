@@ -25,6 +25,7 @@
 	<script src="{{ url('js/bootstrap.js') }}"></script>
 
 	<!-- React Stuff -->
+	<script type="text/babel" src="{{ url('js/react/Introduction.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/utils/Alert.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/auth/Navbar.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/auth/SignUp.js') }}"></script>
