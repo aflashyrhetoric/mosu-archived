@@ -1,6 +1,5 @@
 .mosu-logo {
-  font-family: 'fira-sans-2', sans-serif;
-  font-weight: bold; }
+  font-family: 'fira-sans-2', sans-serif; }
 
 .tac {
   text-align: center; }
@@ -22,6 +21,11 @@ fieldset {
   .mosu-container .application-list .application-item {
     margin-bottom: 1rem;
     text-align: center; }
+    @media (min-width: 47.9em) {
+      .mosu-container .application-list .application-item .btn_viewListing {
+        margin-right: 0.5rem; } }
+    .mosu-container .application-list .application-item .btn__viewInfo {
+      margin-bottom: 1rem; }
     .mosu-container .application-list .application-item .card-block {
       background-color: #e3e3e3;
       color: #3A3B3D;

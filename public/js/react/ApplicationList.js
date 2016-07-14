@@ -26,7 +26,7 @@ App.Views.ApplicationList = React.createClass({
         </div>
 
         { /* Job Application Item */ }
-        <div className="application-item col col-sm-6 col-md-6 col-lg-3">
+        <div className="application-item col col-sm-6 col-md-6 col-lg-4">
             <div
             className="card card-block add-new-job-app">
                   <p className="card-text">Whatcha waiting for?</p>

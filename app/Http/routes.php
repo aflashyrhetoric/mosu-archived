@@ -25,6 +25,7 @@ Route::group(['prefix'=>'api/v1'], function(){
     // Sign Up To Mosu
     Route::post('/signup', 'Auth\AuthController@create');
     Route::post('/login', 'Auth\AuthController@login');
+    Route::post('/authcheck', 'Auth\AuthController@isLoggedIn');
 
     // Main App
     Route::get('/jobapplications', 

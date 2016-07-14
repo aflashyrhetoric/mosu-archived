@@ -107,8 +107,13 @@ class AuthController extends ApiController
         // return $this->respond(JWTAuth::attempt($credentials));
         // return $this->respond($credentials);
         try {
+            // Create expiry date, 7 days; 24 hours; 60 minutes; 60 seconds
+            $expiryDate = time() + (7 * 24 * 60 * 60);
+            $claims = [
+                'exp' => $expiryDate
+            ];
             // attempt to verify the credentials and create a token for the user
-            if (! $token = JWTAuth::attempt($credentials)) {
+            if (! $token = JWTAuth::attempt($credentials, $claims)) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
@@ -120,5 +125,14 @@ class AuthController extends ApiController
         return $this->respond($token);
     }
 
+    protected function isLoggedIn(Request $request)
+    {
+        $user = JWTAuth::parseToken()->authenticate();
+        if($user){
+            return $this->respond("User is logged in.");
+        } else {
+            return $this->respondWithError("ERROR: Invalid User.");
+        }
+    }
 
 }

@@ -33,6 +33,17 @@ fieldset{
 		.application-item {
 			margin-bottom: 1rem;
 			text-align: center;
+			// "View Listing" button
+			.btn_viewListing {
+				@media (min-width: 47.9em) {
+					margin-right: 0.5rem;
+				}
+				@media (max-width: 47.9em) {
+				}
+			}
+			.btn__viewInfo {
+				margin-bottom: 1rem;
+			}
 			.card-block {
 				background-color: $bgc;
 				color: #3A3B3D;

@@ -1,16 +1,16 @@
 App.Views.ModifyApplicationForm = React.createClass({
     getInitialState: function() {
       return {
-        id: this.props.jobApp.id,
-        company: this.props.jobApp.company,
-        listing_url: this.props.jobApp.listing_url,
-        phase: this.props.jobApp.phase,
-        location: this.props.jobApp.location,
+        id:             this.props.jobApp.id,
+        company:        this.props.jobApp.company,
+        listing_url:    this.props.jobApp.listing_url,
+        phase:          this.props.jobApp.phase,
+        location:       this.props.jobApp.location,
         expected_salary: this.props.jobApp.expected_salary,
         inside_contact_name: this.props.jobApp.inside_contact_name,
         inside_contact_email: this.props.jobApp.inside_contact_email,
-        notes: this.props.jobApp.notes,
-        remote: this.props.jobApp.remote
+        notes:          this.props.jobApp.notes,
+        remote:         this.props.jobApp.remote
       }
     },
     handleCompanyChange: function(e) {
@@ -19,6 +19,7 @@ App.Views.ModifyApplicationForm = React.createClass({
     },
     handleUrlChange: function(e) {
       this.setState({ listing_url: e.target.value});
+      this.props.updateListingUrl( e.target.value );
     },   
     handlePhaseChange: function(e) {
       this.setState({ phase: e.target.value});
@@ -60,11 +61,9 @@ App.Views.ModifyApplicationForm = React.createClass({
       } else {
         var remote = 0;
       }
-
       if (!company || !listing_url) {
         return;
       }
-
       this.props.callbackAppSubmit({
           company: company,
           listing_url: listing_url,
@@ -133,17 +132,6 @@ App.Views.ModifyApplicationForm = React.createClass({
                         />
                         </div>
                         <div className="form-group">
-                        <label HtmlFor="listing-input">Job Listing URL *</label>
-                       <input
-                          className="form-control" 
-                          type="text"
-                          id="listing-input"
-                          placeholder="http://jobs.com/listing/xxx"
-                          value={this.state.listing_url}
-                          onChange={this.handleUrlChange }
-                        />
-                        </div>
-                        <div className="form-group">
                         <label HtmlFor="phase-input">Phase *</label>
                         <select 
                         id="phase-input" 
@@ -154,6 +142,35 @@ App.Views.ModifyApplicationForm = React.createClass({
                           <option value="interviewing">Interviewing</option>
                           <option value="offered">Offered</option>
                         </select>
+                        </div>
+                        <div className="form-group">
+                        <label HtmlFor="notes-input">Notes</label>
+                        <textarea
+                          className="form-control" 
+                          type="text"
+                          id="notes"
+                          placeholder="Notes?"
+                          value={this.state.notes}
+                          onChange={this.handleNotesChange }
+                        ></textarea>
+                        </div>
+
+                        <a href="#collapsedInfo" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapsedInfo" className="btn__viewInfo btn btn-info-outline">Edit Details</a>
+
+                        <div className="collapse" id="collapsedInfo">
+                          <div className="well">
+                            
+
+                        <div className="form-group">
+                        <label HtmlFor="listing-input">Job Listing URL *</label>
+                       <input
+                          className="form-control" 
+                          type="text"
+                          id="listing-input"
+                          placeholder="http://jobs.com/listing/xxx"
+                          value={this.state.listing_url}
+                          onChange={this.handleUrlChange }
+                        />
                         </div>
                         <div className="form-group">
                         <label HtmlFor="salary-input">Salary</label>
@@ -199,17 +216,6 @@ App.Views.ModifyApplicationForm = React.createClass({
                         />
                         </div>
                         <div className="form-group">
-                        <label HtmlFor="notes-input">Notes</label>
-                       <textarea
-                          className="form-control" 
-                          type="text"
-                          id="notes"
-                          placeholder="Notes?"
-                          value={this.state.notes}
-                          onChange={this.handleNotesChange }
-                        ></textarea>
-                        </div>
-                        <div className="form-group">
                         <label HtmlFor="remote">Remote</label>
                        <input
                           className="form-control" 
@@ -219,9 +225,15 @@ App.Views.ModifyApplicationForm = React.createClass({
                           onChange={this.handleRemoteChange }
                         />
                         </div>
+
+
+                          </div>
+                        </div>
+
+
                         <div className="form-group">
                         <input
-                          className="btn btn-primary form-control" 
+                          className="btn btn-primary btn-lg form-control" 
                           type="submit" 
                           value="Update" />
                         </div>
