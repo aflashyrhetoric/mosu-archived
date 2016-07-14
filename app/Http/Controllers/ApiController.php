@@ -51,6 +51,19 @@ class ApiController extends Controller {
   }
 
   /**
+   * Responds with 200 OK (if deleted successfully)
+   *
+   * @return json
+   **/
+  public function respondDeleted($message = 'Successfully deleted.')
+  {
+    return $this->setStatusCode(self::HTTP_OK)->respond([
+      'message' => $message,
+      'status_code' => $this->getStatusCode()
+    ]);    
+  }
+
+  /**
    * Responds with internal error
    *
    * @return json

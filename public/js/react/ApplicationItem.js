@@ -28,6 +28,7 @@ App.Views.ApplicationItem = React.createClass({
             <App.Views.ModifyApplicationForm
                 jobApp={this.props.jobApp}
                 callbackAppSubmit={this.props.callbackAppSubmit}
+                handleDelete={this.props.handleDelete}
                 updateCompanyName={ this.updateCompanyName }
                 showModal={ this.showModal }
                 updateItemColor={this.updateItemColor}

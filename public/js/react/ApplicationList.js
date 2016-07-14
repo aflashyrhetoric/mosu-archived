@@ -1,11 +1,13 @@
 App.Views.ApplicationList = React.createClass({
   render: function() {
     var callbackAppSubmit = this.props.callbackAppSubmit;
+    var handleDelete = this.props.handleDelete;
     var jobAppNodes = this.props.data.map(function(jobApp) {
       return  ( 
         <App.Views.ApplicationItem 
           key={jobApp.id} 
           jobApp={jobApp}
+          handleDelete= { handleDelete }
           callbackAppSubmit={ callbackAppSubmit }> 
           { jobApp.phase }
         </App.Views.ApplicationItem>
@@ -37,7 +39,7 @@ App.Views.ApplicationList = React.createClass({
             onNewAppSubmit={this.props.onNewAppSubmit}
             />
 
-        {/* Render application list */}
+        {/* Render application list with newest jobs first */}
         {jobAppNodes.reverse()}
       </div>
     );

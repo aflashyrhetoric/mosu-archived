@@ -77,6 +77,11 @@ App.Views.ModifyApplicationForm = React.createClass({
           remote: remote
       }, id);
     },
+    handleDelete: function(){
+      var id = this.state.id;
+      // Delete record
+      this.props.handleDelete(id);
+    },
     capitalizeCompany: function(companyName) {
       return companyName.charAt(0).toUpperCase() + companyName.slice(1);
     },
@@ -223,6 +228,14 @@ App.Views.ModifyApplicationForm = React.createClass({
                       </form>
                   </div>
                   <div className="modal-footer">
+                    <button 
+                    type="button" 
+                    data-dismiss="modal"
+                    style={{ float: 'left' }}
+                    onClick={ this.handleDelete }
+                    className="btn btn-danger">
+                     Delete 
+                    </button>
                     <button 
                     type="button" 
                     data-dismiss="modal"

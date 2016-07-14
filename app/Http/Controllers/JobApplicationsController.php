@@ -127,6 +127,22 @@ class JobApplicationsController extends ApiController
     }
   }
 
+  public function delete($id)
+  {
+    $jobapp = JobApplication::find($id);
+
+    // If nothing is found
+    if (! $jobapp) {
+      // Return failure response
+      return $this->respondNotFound('Sorries, this particular Job Application does not exist.');
+    }
+    else {
+      // Otherwise, delete the record and return 200 OK
+      $jobapp->delete(); 
+      return $this->respondDeleted();
+    }
+  }
+
   public function user()
   {
     return $this->belongsTo('App\User');

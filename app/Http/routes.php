@@ -36,6 +36,9 @@ Route::group(['prefix'=>'api/v1'], function(){
     // Edit JobApp
     Route::post('/jobapplications/update/{id}', 'JobApplicationsController@update');
 
+    // Delete JobApp
+    Route::post('/jobapplications/delete/{id}', 'JobApplicationsController@delete');
+
     // Auth-locked views/routes
     // Route::group(['prefix' => 'jobapps/create'], function(){});
     // Route::group(['prefix' => 'jobapps/create', 'middleware' => 'auth'], function()
