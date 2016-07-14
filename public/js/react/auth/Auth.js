@@ -38,7 +38,7 @@ App.Views.Auth = React.createClass({
 				</div>
 				<div className="row">
 					<div className="alert alert-info tac">
-						<p>Coded with love by Kevin Oh. Logo by Rebecca Choi. UI/UX revised by Rachel Choi.</p>
+						<p>Coded with love by Kevin Oh. Logo by Rebecca Choi.</p>
 					</div>
 				</div>
 			</div>
