@@ -15,7 +15,7 @@ ReactDOM.render(
 		<div>
 			<App.Views.Navbar />
 			{ !hasToken ? 
-				<div className="mosu-container">
+				<div className="container__mosu">
 					<App.Views.InspirationBox />
 				</div> : null
 			}

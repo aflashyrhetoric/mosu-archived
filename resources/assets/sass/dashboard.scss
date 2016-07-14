@@ -20,14 +20,11 @@ fieldset{
 	padding: 2rem 2rem;
 }
 
-.mosu-container {
-
+.container__mosu{
 	// General
 	p {
-		font-size: 'Instant', sans-serif;
+		font-size: 'proxima nova', sans-serif;
 	}
-
-
 	.application-list {
 		margin: auto;
 		.application-item {
@@ -50,7 +47,7 @@ fieldset{
 				min-height: 12rem;
 				// width: 23rem;
 				h4 {
-					font-family: 'program', sans-serif;
+					font-family: 'proxima nova', sans-serif;
 					margin-bottom: 1rem;
 				}
 				&:hover {

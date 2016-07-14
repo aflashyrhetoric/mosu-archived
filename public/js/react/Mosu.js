@@ -120,7 +120,7 @@ App.Views.Mosu = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="mosu-container container">
+			<div className="container__mosu container">
 
 				<App.Views.ApplicationList 
 					data={ this.state.data } 

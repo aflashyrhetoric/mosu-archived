@@ -10,7 +10,7 @@ App.Views.Navbar = React.createClass({
         <div className="container-fluid">
           <div className="navbar-header">
             <a className="navbar-brand" href="#">
-              <p className="mosu-logo">MOSU</p>
+              <p className="mosu-logo">MOSU v0.1.6</p>
             </a>
           </div>
           <div className="pull-right">

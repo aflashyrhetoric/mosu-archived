@@ -41,6 +41,7 @@
 	<!-- Mosu Components -->	
 	<script type="text/javascript" src="{{ url('js/scripts.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/Navbar.js') }}"></script>
+	<script type="text/babel" src="{{ url('js/react/Introduction.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/NewApplicationForm.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/ModifyApplicationForm.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/InspirationBox.js') }}"></script>

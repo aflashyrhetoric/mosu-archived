@@ -57,29 +57,34 @@ App.Auth.Form = React.createClass({
   },
   render: function() {
   	var formToBeUsed;
+    var headingToBeUsed;
   	var prompt;
   	if(this.state.newUser){
       formToBeUsed = <App.Auth.Login handleUserLogin={this.handleUserLogin} />;
+      headingToBeUsed = "Login";
       prompt = ["New to Mosu?", "Sign Up"];
   	} else {
       formToBeUsed = <App.Auth.SignUp handleUserSignup={this.handleUserSignup} />;
+      headingToBeUsed = "Welcome To Mosu!";
       prompt = ["Already a user?", "Login"];
   	}
     return (
-		<div id="signup" className="container">
-			<div className="row">
-				<div className="col-xs-12 col-md-4 col-md-offset-4 tac">
-				  <div className="auth-signup">
-				  { formToBeUsed }
-				  </div>
-				  <br/>
-					<p>
-						{ prompt[0] +" "}
-						<a onClick={this.toggleSignUpAndLogin} 
-						href="#">{ prompt[1] }</a></p>
-				</div>
+			<div className="
+        col-xs-12 
+        col-md-5 
+        col-lg-3 col-lg-offset-3
+        container__introduction-right
+        tac">
+        <h1 className="heading__join"> { headingToBeUsed } </h1>
+			  <div className="auth-signup">
+			  { formToBeUsed }
+			  </div>
+			  <br/>
+				<p>
+					{ prompt[0] +" "}
+					<a onClick={this.toggleSignUpAndLogin} 
+					href="#">{ prompt[1] }</a></p>
 			</div>
-		</div>
     );
   }
 });

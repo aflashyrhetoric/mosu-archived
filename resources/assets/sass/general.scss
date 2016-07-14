@@ -1,9 +1,57 @@
+$mosu-color: #9375A4;
+
 .mosu-logo {
 	// font-family: 'fira-sans-2', sans-serif;
-	font-family: 'instant', sans-serif;
+	font-family: 'hydrophilia-iced', sans-serif;
 	// Same as "interviewing" color
-	color: #77CD62;
-	font-weight: bold;
+	color: $mosu-color;
+	font-weight: 'iced';
+}
+
+.container__introduction {
+	// General
+	p {
+		font-family: 'proxima nova', sans-serif;
+	}
+	// Set border on first section
+	.row {
+		padding-bottom: 3rem;
+		&:first-child(){
+			border-bottom: 3px solid $mosu-color;
+		}
+		&:nth-child(3){
+			padding-bottom: 0rem;
+			border-bottom: none;
+			.alert {
+				margin-bottom: 0rem; // Override .alert
+			}
+		}
+	}
+	.heading {
+		&__join {
+			font-family: 'proxima nova', sans-serif;
+			font-weight: 'iced';
+			color: $mosu-color;
+		}
+		&__tagline {
+			font-family: 'proxima nova', sans-serif;	
+			&--bold{
+				font-weight: bold;
+			}
+		}
+	}
+	img {
+		margin-top: 1rem;
+	}	
+	.container__introduction {
+		&-left{
+			margin-top: 3rem;
+		}
+		&-right{
+			margin-top: 3rem;
+		}
+	}
+
 }
 
 .tac {
