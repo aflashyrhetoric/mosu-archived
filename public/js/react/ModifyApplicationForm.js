@@ -155,9 +155,15 @@ App.Views.ModifyApplicationForm = React.createClass({
                         ></textarea>
                         </div>
 
-                        <a href="#collapsedInfo" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapsedInfo" className="btn__viewInfo btn btn-info-outline">Edit Details</a>
+                        <a 
+                        href={"#collapsedInfo" + this.props.jobApp.id} 
+                        role="button" data-toggle="collapse" aria-expanded="false" 
+                        aria-controls={"collapsedInfo" + this.props.jobApp.id}
+                        className="btn__viewInfo btn btn-info-outline">Edit Details</a>
 
-                        <div className="collapse" id="collapsedInfo">
+                        <div className="collapse" 
+                        id={"collapsedInfo" + this.props.jobApp.id} 
+                        >
                           <div className="well">
                             
 
