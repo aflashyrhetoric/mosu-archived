@@ -12,7 +12,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
-	public function index()
+	public function home()
+	{
+		return view('home');
+	}
+	public function app()
 	{
 		return view('main');
 	}

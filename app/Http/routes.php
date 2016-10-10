@@ -18,7 +18,8 @@
 // Route: 		jobapps
 
 
-Route::get('/', 'Controller@index');
+Route::get('/', 'Controller@home');
+Route::get('/app', 'Controller@app');
 Route::get('/logout', 'Auth\AuthController@logout');
 
 Route::group(['prefix'=>'api/v1'], function(){
