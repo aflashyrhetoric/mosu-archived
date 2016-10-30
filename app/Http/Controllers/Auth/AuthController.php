@@ -107,8 +107,8 @@ class AuthController extends ApiController
         // return $this->respond(JWTAuth::attempt($credentials));
         // return $this->respond($credentials);
         try {
-            // Create expiry date, 7 days; 24 hours; 60 minutes; 60 seconds
-            $expiryDate = time() + (7 * 24 * 60 * 60);
+            // Create expiry date, 90 days; 24 hours; 60 minutes; 60 seconds
+            $expiryDate = time() + (90 * 24 * 60 * 60);
             $claims = [
                 'exp' => $expiryDate
             ];
