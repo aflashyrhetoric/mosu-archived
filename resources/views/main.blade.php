@@ -53,7 +53,8 @@
 	
 	<!-- Mosu Components -->	
 	<script type="text/javascript" src="{{ url('js/scripts.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/Navbar.js') }}"></script>
+	<script type="text/babel" src=" {{ url('js/app.js') }} "></script>
+{{-- 	<script type="text/babel" src="{{ url('js/react/Navbar.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/Introduction.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/NewApplicationForm.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/ModifyApplicationForm.js') }}"></script>
@@ -63,7 +64,7 @@
 	<script type="text/babel" src="{{ url('js/react/Mosu.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/Error.js') }}"></script>
 	<script type="text/babel" src="{{ url('js/react/App.js') }}"></script>
-	<script src="https://use.typekit.net/mqi8rfr.js"></script>
+ --}}	<script src="https://use.typekit.net/mqi8rfr.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </body>
 </html>
