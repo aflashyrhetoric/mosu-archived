@@ -90,10 +90,11 @@
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
+	__webpack_require__(1);
 	App.Utils.Alert = React.createClass({
 	  displayName: "Alert",
 
@@ -114,10 +115,11 @@
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
+	__webpack_require__(1);
 	App.Auth.Navbar = React.createClass({
 	  displayName: "Navbar",
 
@@ -148,10 +150,11 @@
 
 /***/ },
 /* 4 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	__webpack_require__(1);
 	App.Auth.SignUp = React.createClass({
 	    displayName: 'SignUp',
 
@@ -260,10 +263,11 @@
 
 /***/ },
 /* 5 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	__webpack_require__(1);
 	App.Auth.Login = React.createClass({
 	  displayName: 'Login',
 
@@ -349,10 +353,11 @@
 
 /***/ },
 /* 6 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	__webpack_require__(1);
 	App.Auth.Form = React.createClass({
 	    displayName: 'Form',
 
@@ -457,10 +462,11 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
+	__webpack_require__(1);
 	App.Views.Auth = React.createClass({
 		displayName: "Auth",
 
@@ -563,10 +569,11 @@
 
 /***/ },
 /* 8 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
+	__webpack_require__(1);
 	App.Views.Navbar = React.createClass({
 	  displayName: "Navbar",
 
@@ -621,10 +628,11 @@
 
 /***/ },
 /* 9 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
+	__webpack_require__(1);
 	App.Views.Introduction = React.createClass({
 		displayName: "Introduction",
 
@@ -651,10 +659,11 @@
 
 /***/ },
 /* 10 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	__webpack_require__(1);
 	App.Views.NewApplicationForm = React.createClass({
 	  displayName: 'NewApplicationForm',
 
@@ -969,10 +978,11 @@
 
 /***/ },
 /* 11 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	__webpack_require__(1);
 	App.Views.ModifyApplicationForm = React.createClass({
 	  displayName: 'ModifyApplicationForm',
 
@@ -1337,10 +1347,11 @@
 
 /***/ },
 /* 12 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
+	__webpack_require__(1);
 	App.Views.InspirationBox = React.createClass({
 	  displayName: "InspirationBox",
 
@@ -1420,10 +1431,11 @@
 
 /***/ },
 /* 13 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	__webpack_require__(1);
 	App.Views.ApplicationItem = React.createClass({
 	  displayName: 'ApplicationItem',
 
@@ -1499,10 +1511,11 @@
 
 /***/ },
 /* 14 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	__webpack_require__(1);
 	App.Views.ApplicationList = React.createClass({
 	  displayName: 'ApplicationList',
 
@@ -1566,10 +1579,11 @@
 
 /***/ },
 /* 15 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	__webpack_require__(1);
 	App.Views.Mosu = React.createClass({
 		displayName: 'Mosu',
 
@@ -1708,38 +1722,39 @@
 
 /***/ },
 /* 16 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
+	__webpack_require__(1);
 	(function (App) {
 
 		App.Views.Error = React.createClass({
-			displayName: "Error",
+			displayName: 'Error',
 
 			render: function render() {
 				var content = React.createElement(
-					"div",
-					{ "class": "error-message" },
-					"Error: Whoops looks like something went wrong."
+					'div',
+					{ 'class': 'error-message' },
+					'Error: Whoops looks like something went wrong.'
 				);
 
 				if (this.props.type == 'OauthTokenError') {
 					content = React.createElement(
-						"div",
-						{ className: "error-message" },
+						'div',
+						{ className: 'error-message' },
 						this.props.data.service,
-						" authentication required:\xA0",
+						' authentication required:\xA0',
 						React.createElement(
-							"a",
+							'a',
 							{ href: this.props.data.auth_url },
-							"Authenticate now"
+							'Authenticate now'
 						)
 					);
 				}
 
 				return React.createElement(
-					"div",
+					'div',
 					{ className: 'error error-' + this.props.type.toLowerCase() },
 					content
 				);
@@ -1749,10 +1764,11 @@
 
 /***/ },
 /* 17 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
+	__webpack_require__(1);
 	var page;
 	var hasToken;
 	// If API_TOKEN is undefined, display login

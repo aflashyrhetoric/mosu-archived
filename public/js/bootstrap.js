@@ -1,4 +1,4 @@
-let App = {
+var App = {
 	Views: {},
 	Auth: {},
 	Utils: {}
