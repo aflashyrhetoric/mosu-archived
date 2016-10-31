@@ -1,6 +1,9 @@
 // App.js
 // Import all the other stuff.
 
+// Bootstrap
+require('./bootstrap');
+
 // Mosu Auth
 require('./react/utils/Alert');
 require('./react/auth/Navbar');

@@ -49,16 +49,18 @@
 	// App.js
 	// Import all the other stuff.
 
-	// Mosu Auth
+	// Bootstrap
 	__webpack_require__(1);
+
+	// Mosu Auth
 	__webpack_require__(2);
 	__webpack_require__(3);
 	__webpack_require__(4);
 	__webpack_require__(5);
 	__webpack_require__(6);
+	__webpack_require__(7);
 
 	// Mosu Main
-	__webpack_require__(7);
 	__webpack_require__(8);
 	__webpack_require__(9);
 	__webpack_require__(10);
@@ -68,9 +70,26 @@
 	__webpack_require__(14);
 	__webpack_require__(15);
 	__webpack_require__(16);
+	__webpack_require__(17);
 
 /***/ },
 /* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var App = {
+		Views: {},
+		Auth: {},
+		Utils: {}
+	};
+
+	$.ajaxSetup({
+		timeout: 30000
+	});
+
+/***/ },
+/* 2 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -94,7 +113,7 @@
 	});
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -128,7 +147,7 @@
 	});
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -240,7 +259,7 @@
 	});
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -329,7 +348,7 @@
 	});
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -437,7 +456,7 @@
 	});
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -543,7 +562,7 @@
 	});
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -601,7 +620,7 @@
 	});
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -631,7 +650,7 @@
 	});
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -949,7 +968,7 @@
 	});
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1317,7 +1336,7 @@
 	});
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1400,7 +1419,7 @@
 	});
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1479,7 +1498,7 @@
 	});
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1546,7 +1565,7 @@
 	});
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1688,7 +1707,7 @@
 	});
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1729,7 +1748,7 @@
 	})(App);
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	"use strict";
