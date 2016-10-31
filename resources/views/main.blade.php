@@ -15,29 +15,31 @@
 	<link rel="stylesheet" href="{{ url('css/app.css') }}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 </head>
 <body>
+
+	<!-- MOSU APP -->
 	<div id="app"></div>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-	<!-- Bootstrap file for the app, not Twitter Bootstrap -->
-	<script src="{{ url('js/bootstrap.js') }}"></script>
+	<!-- React -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
 	<!-- Redux -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js"></script>
-	<!-- Mosu Auth Components -->
-	<script type="text/babel" src="{{ url('js/react/utils/Alert.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/auth/Navbar.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/auth/SignUp.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/auth/Login.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/auth/Form.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/auth/Auth.js') }}"></script>
+	<!-- Babel -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+	<!-- Google Fonts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Twitter Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+	<!-- Bootstrap file for the app, not Twitter Bootstrap -->
+	<script src="{{ url('js/bootstrap.js') }}"></script>
+	<!-- Mosu Components -->	
+	<script type="text/babel" src=" {{ url('js/app.js') }} "></script>
+	<!-- Assorted Scripts -->	
+	{{-- <script type="text/javascript" src="{{ url('js/scripts.js') }}"></script> --}}
 
 	<!-- Tracking Code -->
 	<script>
@@ -50,19 +52,6 @@
 	  ga('send', 'pageview');
 
 	</script>
-	
-	<!-- Mosu Components -->	
-	<script type="text/javascript" src="{{ url('js/scripts.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/Navbar.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/Introduction.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/NewApplicationForm.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/ModifyApplicationForm.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/InspirationBox.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/ApplicationItem.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/ApplicationList.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/Mosu.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/Error.js') }}"></script>
-	<script type="text/babel" src="{{ url('js/react/App.js') }}"></script>
 	<script src="https://use.typekit.net/mqi8rfr.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </body>
