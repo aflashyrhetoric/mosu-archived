@@ -1,6 +1,9 @@
 // App.js
 // Import all the other stuff.
 
+// SCSS
+require ('./../sass/app.scss');
+
 // Bootstrap
 require('./bootstrap');
 
