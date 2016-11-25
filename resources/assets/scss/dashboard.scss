@@ -1,0 +1,107 @@
+$bgc: #e3e3e3;
+$saved: #C7F464;
+$applied: #F4AB64;
+$interviewing: #FF6B6B;
+$offered: #77CD62;
+
+$mint: #B8E986;
+$salmon: #E99586;
+
+body {
+	background-color: $bgc !important;
+}
+
+// Overriding Bootstrap default
+fieldset{
+	border: 0px;
+}
+
+.jumbotron {
+	padding: 2rem 2rem;
+}
+
+.container__mosu{
+	// General
+	p {
+		font-size: 'proxima nova', sans-serif;
+	}
+	.application-list {
+		margin: auto;
+		.application-item {
+			margin-bottom: 1rem;
+			text-align: center;
+			// "View Listing" button
+			.btn_viewListing {
+				@media (min-width: 47.9em) {
+					margin-right: 0.5rem;
+				}
+				@media (max-width: 47.9em) {
+				}
+			}
+			.btn__viewInfo {
+				margin-bottom: 1rem;
+			}
+			.card-block {
+				background-color: $bgc;
+				color: #3A3B3D;
+				min-height: 12rem;
+				// width: 23rem;
+				h4 {
+					font-family: 'proxima nova', sans-serif;
+					margin-bottom: 1rem;
+				}
+				&:hover {
+					background-color: darken($bgc, 10);
+				}
+			}
+			.modal {
+				text-align: left;
+				label {
+					padding-left: 0.5rem;
+					font-weight: bold;
+				}
+			}
+			// Card's phase-conditional BGC
+			.saved {
+				background-color: $saved;
+				&:hover {
+					background-color: darken($saved, 10);
+				}
+			}
+			.applied {
+				background-color: $applied;
+				&:hover {
+					background-color: darken($applied, 10);
+				}
+			}
+			.interviewing {
+				background-color: $interviewing;
+				&:hover {
+					background-color: darken($interviewing, 10);
+				}
+			}
+			.offered {
+				background-color: $offered;
+				&:hover {
+					background-color: darken($offered, 10);
+				}
+			}
+		}
+		.add-new-job-app {
+			color: #5F6063;
+		}
+	}
+
+	.inspiration-box {
+		text-align: center;
+		.quote-text {
+			
+		}
+		.quote-author {
+			font-weight: bold;
+		}
+	}
+
+}
+
+
