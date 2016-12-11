@@ -47,23 +47,24 @@
 	'use strict';
 
 	// App.js
-	// Import all the other stuff.
+	// Import everything using WebPack
 
 	// SCSS
 	__webpack_require__(1);
 
 	// Bootstrap
-	__webpack_require__(5);
+	__webpack_require__(4);
 
 	// Mosu Auth
+	__webpack_require__(5);
 	__webpack_require__(6);
 	__webpack_require__(7);
 	__webpack_require__(8);
 	__webpack_require__(9);
 	__webpack_require__(10);
-	__webpack_require__(11);
 
 	// Mosu Main
+	__webpack_require__(11);
 	__webpack_require__(12);
 	__webpack_require__(13);
 	__webpack_require__(14);
@@ -73,7 +74,6 @@
 	__webpack_require__(18);
 	__webpack_require__(19);
 	__webpack_require__(20);
-	__webpack_require__(21);
 
 /***/ },
 /* 1 */
@@ -82,10 +82,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(2);
+	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./app.scss\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
+	var update = __webpack_require__(3)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -102,76 +102,8 @@
 	}
 
 /***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".mosu-logo {\n  font-family: 'hydrophilia-iced', sans-serif;\n  color: #9375A4;\n  font-weight: 'iced'; }\n\n.container__introduction p {\n  font-family: 'proxima nova', sans-serif; }\n\n.container__introduction .row {\n  padding-bottom: 3rem; }\n  .container__introduction .row:first-child() {\n    border-bottom: 3px solid #9375A4; }\n  .container__introduction .row:nth-child(3) {\n    padding-bottom: 0rem;\n    border-bottom: none; }\n    .container__introduction .row:nth-child(3) .alert {\n      margin-bottom: 0rem; }\n\n.container__introduction .heading__join {\n  font-family: 'proxima nova', sans-serif;\n  font-weight: 'iced';\n  color: #9375A4; }\n\n.container__introduction .heading__tagline {\n  font-family: 'proxima nova', sans-serif; }\n  .container__introduction .heading__tagline--bold {\n    font-weight: bold; }\n\n.container__introduction img {\n  margin-top: 1rem; }\n\n.container__introduction .container__introduction-left {\n  margin-top: 3rem; }\n\n.container__introduction .container__introduction-right {\n  margin-top: 3rem; }\n\n.tac {\n  text-align: center; }\n\nbody {\n  background-color: #e3e3e3 !important; }\n\nfieldset {\n  border: 0px; }\n\n.jumbotron {\n  padding: 2rem 2rem; }\n\n.container__mosu p {\n  font-family: 'raleway', sans-serif; }\n\n.container__mosu .application-list {\n  margin: auto; }\n  .container__mosu .application-list .application-item {\n    margin-bottom: 1rem;\n    text-align: center; }\n    @media (min-width: 47.9em) {\n      .container__mosu .application-list .application-item .btn_viewListing {\n        margin-right: 0.5rem; } }\n    .container__mosu .application-list .application-item .btn__viewInfo {\n      margin-bottom: 1rem; }\n    .container__mosu .application-list .application-item .card-block {\n      background-color: #e3e3e3;\n      color: #3A3B3D;\n      min-height: 12rem; }\n      .container__mosu .application-list .application-item .card-block h4 {\n        font-family: 'proxima nova', sans-serif;\n        margin-bottom: 1rem; }\n      .container__mosu .application-list .application-item .card-block:hover {\n        background-color: #cacaca; }\n    .container__mosu .application-list .application-item .modal {\n      text-align: left; }\n      .container__mosu .application-list .application-item .modal label {\n        padding-left: 0.5rem;\n        font-weight: bold; }\n    .container__mosu .application-list .application-item .saved {\n      background-color: #C7F464; }\n      .container__mosu .application-list .application-item .saved:hover {\n        background-color: #b6f134; }\n    .container__mosu .application-list .application-item .applied {\n      background-color: #F4AB64; }\n      .container__mosu .application-list .application-item .applied:hover {\n        background-color: #f19134; }\n    .container__mosu .application-list .application-item .interviewing {\n      background-color: #FF6B6B; }\n      .container__mosu .application-list .application-item .interviewing:hover {\n        background-color: #ff3838; }\n    .container__mosu .application-list .application-item .offered {\n      background-color: #77CD62; }\n      .container__mosu .application-list .application-item .offered:hover {\n        background-color: #56bf3d; }\n  .container__mosu .application-list .add-new-job-app {\n    color: #5F6063; }\n\n.container__mosu .inspiration-box {\n  text-align: center; }\n  .container__mosu .inspiration-box .quote-author {\n    font-weight: bold; }\n", ""]);
-
-	// exports
-
-
-/***/ },
+/* 2 */,
 /* 3 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function () {
-		var list = [];
-
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for (var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if (item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-
-		// import a list of modules into the list
-		list.i = function (modules, mediaQuery) {
-			if (typeof modules === "string") modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for (var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if (typeof id === "number") alreadyImportedModules[id] = true;
-			}
-			for (i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if (typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if (mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if (mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-/***/ },
-/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -423,10 +355,13 @@
 
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports) {
 
 	"use strict";
+
+	// Bootstrap.js
+	// Sets a useless global variable, refactor later
 
 	var App = {
 		Views: {},
@@ -439,7 +374,7 @@
 	});
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -463,7 +398,7 @@
 	});
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -497,7 +432,7 @@
 	});
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -609,7 +544,7 @@
 	});
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -698,7 +633,7 @@
 	});
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -806,7 +741,7 @@
 	});
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -912,7 +847,7 @@
 	});
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -970,10 +905,13 @@
 	});
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";
+
+	// Introduction.jsx
+	// Intro page
 
 	App.Views.Introduction = React.createClass({
 		displayName: "Introduction",
@@ -1000,10 +938,13 @@
 	});
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports) {
 
 	'use strict';
+
+	// NewApplicationForm.jsx
+	// Handles submit logic for submitting new forms.
 
 	App.Views.NewApplicationForm = React.createClass({
 	  displayName: 'NewApplicationForm',
@@ -1318,378 +1259,427 @@
 	});
 
 /***/ },
-/* 15 */
-/***/ function(module, exports) {
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	App.Views.ModifyApplicationForm = React.createClass({
-	  displayName: 'ModifyApplicationForm',
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
-	  getInitialState: function getInitialState() {
-	    return {
-	      id: this.props.jobApp.id,
-	      company: this.props.jobApp.company,
-	      listing_url: this.props.jobApp.listing_url,
-	      phase: this.props.jobApp.phase,
-	      location: this.props.jobApp.location,
-	      expected_salary: this.props.jobApp.expected_salary,
-	      inside_contact_name: this.props.jobApp.inside_contact_name,
-	      inside_contact_email: this.props.jobApp.inside_contact_email,
-	      notes: this.props.jobApp.notes,
-	      remote: this.props.jobApp.remote
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // ModifyApplicationForm.jsx
+	// Handles submit logic for modifying existing applications
+	// Renders ModifyApplicationForm
+
+	var ModifyApplicationForm = function (_React$components) {
+	  _inherits(ModifyApplicationForm, _React$components);
+
+	  function ModifyApplicationForm(props) {
+	    _classCallCheck(this, ModifyApplicationForm);
+
+	    var _this = _possibleConstructorReturn(this, (ModifyApplicationForm.__proto__ || Object.getPrototypeOf(ModifyApplicationForm)).call(this, props));
+
+	    _this.state = {
+	      id: _this.props.jobApp.id,
+	      company: _this.props.jobApp.company,
+	      listing_url: _this.props.jobApp.listing_url,
+	      phase: _this.props.jobApp.phase,
+	      location: _this.props.jobApp.location,
+	      expected_salary: _this.props.jobApp.expected_salary,
+	      inside_contact_name: _this.props.jobApp.inside_contact_name,
+	      inside_contact_email: _this.props.jobApp.inside_contact_email,
+	      notes: _this.props.jobApp.notes,
+	      remote: _this.props.jobApp.remote
 	    };
-	  },
-	  handleCompanyChange: function handleCompanyChange(e) {
-	    this.setState({ company: e.target.value });
-	    this.props.updateCompanyName(e.target.value);
-	  },
-	  handleUrlChange: function handleUrlChange(e) {
-	    this.setState({ listing_url: e.target.value });
-	    this.props.updateListingUrl(e.target.value);
-	  },
-	  handlePhaseChange: function handlePhaseChange(e) {
-	    this.setState({ phase: e.target.value });
-	    this.props.updateItemColor(e.target.value);
-	  },
-	  handleSalaryChange: function handleSalaryChange(e) {
-	    this.setState({ expected_salary: e.target.value });
-	  },
-	  handleLocationChange: function handleLocationChange(e) {
-	    this.setState({ location: e.target.value });
-	  },
-	  handleContactNameChange: function handleContactNameChange(e) {
-	    this.setState({ inside_contact_name: e.target.value });
-	  },
-	  handleContactEmailChange: function handleContactEmailChange(e) {
-	    this.setState({ inside_contact_email: e.target.value });
-	  },
-	  handleNotesChange: function handleNotesChange(e) {
-	    this.setState({ notes: e.target.value });
-	  },
-	  handleRemoteChange: function handleRemoteChange(e) {
-	    this.setState({ remote: e.target.checked });
-	  },
-	  handleSubmit: function handleSubmit(e) {
-	    e.preventDefault();
-	    var id = this.state.id;
-	    // Hide Modal after setting ID
-	    $('#modifyApplicationForm' + id).modal('hide');
-	    var company = this.state.company.trim();
-	    var listing_url = this.state.listing_url.trim();
-	    var phase = this.state.phase.trim();
-	    var expected_salary = this.state.expected_salary;
-	    var location = this.state.location.trim();
-	    var inside_contact_name = this.state.inside_contact_name.trim();
-	    var inside_contact_email = this.state.inside_contact_email.trim();
-	    var notes = this.state.notes.trim();
-	    if (this.state.remote) {
-	      var remote = 1;
-	    } else {
-	      var remote = 0;
-	    }
-	    if (!company || !listing_url) {
-	      return;
-	    }
-	    this.props.callbackAppSubmit({
-	      company: company,
-	      listing_url: listing_url,
-	      phase: phase,
-	      expected_salary: expected_salary,
-	      location: location,
-	      inside_contact_name: inside_contact_name,
-	      inside_contact_email: inside_contact_email,
-	      notes: notes,
-	      remote: remote
-	    }, id);
-	  },
-	  handleDelete: function handleDelete() {
-	    var id = this.state.id;
-	    // Delete record
-	    this.props.handleDelete(id);
-	  },
-	  capitalizeCompany: function capitalizeCompany(companyName) {
-	    return companyName.charAt(0).toUpperCase() + companyName.slice(1);
-	  },
-	  generateTitle: function generateTitle(companyName) {
-	    if (companyName == '') {
-	      return 'New Company';
-	    } else {
-	      return this.capitalizeCompany(this.state.company);
-	    }
-	  },
-	  // closeModal: function(id){
-	  //   jQuery('#modifyApplicationForm' + id).on('click', function(){
-	  //      jQuery('#modifyApplicationForm' + id).hide();
-	  //      jQuery('.modal-backdrop').remove();
-	  //   });
-	  // },
-	  // hideModal: function(){
-	  //   $('.open').removeClass('modal-open');
-	  //   $('.modal-backdrop').hide();
-	  //   $('#modifyApplicationForm' + this.state.id).removeClass("in");
-	  //   $('#modifyApplicationForm' + this.state.id).css({ "display": "none", 'padding-left': "0px" });
-	  //   console.log(this.state.id);
+	    return _this;
+	  }
 
-	  // },
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      {
-	        className: 'modal fade',
-	        id: "modifyApplicationForm" + this.props.jobApp.id,
-	        tabindex: '-1',
-	        role: 'dialog' },
-	      React.createElement(
+	  _createClass(ModifyApplicationForm, [{
+	    key: 'handleCompanyChange',
+	    value: function handleCompanyChange(e) {
+	      this.setState({ company: e.target.value });
+	      this.props.updateCompanyName(e.target.value);
+	    }
+	  }, {
+	    key: 'handleUrlChange',
+	    value: function handleUrlChange(e) {
+	      this.setState({ listing_url: e.target.value });
+	      this.props.updateListingUrl(e.target.value);
+	    }
+	  }, {
+	    key: 'handlePhaseChange',
+	    value: function handlePhaseChange(e) {
+	      this.setState({ phase: e.target.value });
+	      this.props.updateItemColor(e.target.value);
+	    }
+	  }, {
+	    key: 'handleSalaryChange',
+	    value: function handleSalaryChange(e) {
+	      this.setState({ expected_salary: e.target.value });
+	    }
+	  }, {
+	    key: 'handleLocationChange',
+	    value: function handleLocationChange(e) {
+	      this.setState({ location: e.target.value });
+	    }
+	  }, {
+	    key: 'handleContactNameChange',
+	    value: function handleContactNameChange(e) {
+	      this.setState({ inside_contact_name: e.target.value });
+	    }
+	  }, {
+	    key: 'handleContactEmailChange',
+	    value: function handleContactEmailChange(e) {
+	      this.setState({ inside_contact_email: e.target.value });
+	    }
+	  }, {
+	    key: 'handleNotesChange',
+	    value: function handleNotesChange(e) {
+	      this.setState({ notes: e.target.value });
+	    }
+	  }, {
+	    key: 'handleRemoteChange',
+	    value: function handleRemoteChange(e) {
+	      this.setState({ remote: e.target.checked });
+	    }
+	  }, {
+	    key: 'handleSubmit',
+	    value: function handleSubmit(e) {
+	      e.preventDefault();
+	      var id = this.state.id;
+	      // Hide Modal after setting ID
+	      $('#modifyApplicationForm' + id).modal('hide');
+	      var company = this.state.company.trim();
+	      var listing_url = this.state.listing_url.trim();
+	      var phase = this.state.phase.trim();
+	      var expected_salary = this.state.expected_salary;
+	      var location = this.state.location.trim();
+	      var inside_contact_name = this.state.inside_contact_name.trim();
+	      var inside_contact_email = this.state.inside_contact_email.trim();
+	      var notes = this.state.notes.trim();
+	      if (this.state.remote) {
+	        var remote = 1;
+	      } else {
+	        var remote = 0;
+	      }
+	      if (!company || !listing_url) {
+	        return;
+	      }
+	      this.props.callbackAppSubmit({
+	        company: company,
+	        listing_url: listing_url,
+	        phase: phase,
+	        expected_salary: expected_salary,
+	        location: location,
+	        inside_contact_name: inside_contact_name,
+	        inside_contact_email: inside_contact_email,
+	        notes: notes,
+	        remote: remote
+	      }, id);
+	    }
+	  }, {
+	    key: 'handleDelete',
+	    value: function handleDelete() {
+	      var id = this.state.id;
+	      // Delete record
+	      this.props.handleDelete(id);
+	    }
+	  }, {
+	    key: 'capitalizeCompany',
+	    value: function capitalizeCompany(companyName) {
+	      return companyName.charAt(0).toUpperCase() + companyName.slice(1);
+	    }
+	  }, {
+	    key: 'generateTitle',
+	    value: function generateTitle(companyName) {
+	      if (companyName == '') {
+	        return 'New Company';
+	      } else {
+	        return this.capitalizeCompany(this.state.company);
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
 	        'div',
-	        { className: 'modal-dialog' },
-	        React.createElement(
+	        {
+	          className: 'modal fade',
+	          id: "modifyApplicationForm" + this.props.jobApp.id,
+	          tabindex: '-1',
+	          role: 'dialog' },
+	        _react2.default.createElement(
 	          'div',
-	          { className: 'modal-content' },
-	          React.createElement(
+	          { className: 'modal-dialog' },
+	          _react2.default.createElement(
 	            'div',
-	            { className: 'modal-header' },
-	            this.generateTitle(this.state.company)
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'modal-body' },
-	            React.createElement(
-	              'form',
-	              { className: 'commentForm',
-	                onSubmit: this.handleSubmit },
-	              React.createElement(
-	                'div',
-	                { className: 'form-group' },
-	                React.createElement(
-	                  'label',
-	                  { HtmlFor: 'company-input' },
-	                  'Company *'
-	                ),
-	                React.createElement('input', {
-	                  className: 'form-control',
-	                  type: 'text',
-	                  id: 'company-input',
-	                  placeholder: 'Adelie, LLC',
-	                  value: this.state.company,
-	                  onChange: this.handleCompanyChange
-	                })
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'form-group' },
-	                React.createElement(
-	                  'label',
-	                  { HtmlFor: 'phase-input' },
-	                  'Phase *'
-	                ),
-	                React.createElement(
-	                  'select',
-	                  {
-	                    id: 'phase-input',
-	                    className: 'form-control',
-	                    onChange: this.handlePhaseChange, value: this.state.phase, name: 'select' },
-	                  React.createElement(
-	                    'option',
-	                    { value: 'saved' },
-	                    'Saved'
-	                  ),
-	                  React.createElement(
-	                    'option',
-	                    { value: 'applied' },
-	                    'Applied'
-	                  ),
-	                  React.createElement(
-	                    'option',
-	                    { value: 'interviewing' },
-	                    'Interviewing'
-	                  ),
-	                  React.createElement(
-	                    'option',
-	                    { value: 'offered' },
-	                    'Offered'
-	                  )
-	                )
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'form-group' },
-	                React.createElement(
-	                  'label',
-	                  { HtmlFor: 'notes-input' },
-	                  'Notes'
-	                ),
-	                React.createElement('textarea', {
-	                  className: 'form-control',
-	                  type: 'text',
-	                  id: 'notes',
-	                  placeholder: 'Notes?',
-	                  value: this.state.notes,
-	                  onChange: this.handleNotesChange
-	                })
-	              ),
-	              React.createElement(
-	                'a',
-	                {
-	                  href: "#collapsedInfo" + this.props.jobApp.id,
-	                  role: 'button', 'data-toggle': 'collapse', 'aria-expanded': 'false',
-	                  'aria-controls': "collapsedInfo" + this.props.jobApp.id,
-	                  className: 'btn__viewInfo btn btn-info-outline' },
-	                'Edit Details'
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'collapse',
-	                  id: "collapsedInfo" + this.props.jobApp.id
-	                },
-	                React.createElement(
-	                  'div',
-	                  { className: 'well' },
-	                  React.createElement(
-	                    'div',
-	                    { className: 'form-group' },
-	                    React.createElement(
-	                      'label',
-	                      { HtmlFor: 'listing-input' },
-	                      'Job Listing URL *'
-	                    ),
-	                    React.createElement('input', {
-	                      className: 'form-control',
-	                      type: 'text',
-	                      id: 'listing-input',
-	                      placeholder: 'http://jobs.com/listing/xxx',
-	                      value: this.state.listing_url,
-	                      onChange: this.handleUrlChange
-	                    })
-	                  ),
-	                  React.createElement(
-	                    'div',
-	                    { className: 'form-group' },
-	                    React.createElement(
-	                      'label',
-	                      { HtmlFor: 'salary-input' },
-	                      'Salary'
-	                    ),
-	                    React.createElement('input', {
-	                      className: 'form-control',
-	                      type: 'text',
-	                      id: 'salary-input',
-	                      placeholder: '60,000',
-	                      value: this.state.expected_salary,
-	                      onChange: this.handleSalaryChange
-	                    })
-	                  ),
-	                  React.createElement(
-	                    'div',
-	                    { className: 'form-group' },
-	                    React.createElement(
-	                      'label',
-	                      { HtmlFor: 'location-input' },
-	                      'Location'
-	                    ),
-	                    React.createElement('input', {
-	                      className: 'form-control',
-	                      type: 'text',
-	                      placeholder: 'New York, NY',
-	                      value: this.state.location,
-	                      onChange: this.handleLocationChange
-	                    })
-	                  ),
-	                  React.createElement(
-	                    'div',
-	                    { className: 'form-group' },
-	                    React.createElement(
-	                      'label',
-	                      { HtmlFor: 'contact-name-input' },
-	                      'Internal Contact'
-	                    ),
-	                    React.createElement('input', {
-	                      className: 'form-control',
-	                      type: 'text',
-	                      id: 'contact-name-input',
-	                      placeholder: 'Bob Jones',
-	                      value: this.state.inside_contact_name,
-	                      onChange: this.handleContactNameChange
-	                    })
-	                  ),
-	                  React.createElement(
-	                    'div',
-	                    { className: 'form-group' },
-	                    React.createElement(
-	                      'label',
-	                      { HtmlFor: 'contact-email-input' },
-	                      'Internal Contact Email'
-	                    ),
-	                    React.createElement('input', {
-	                      className: 'form-control',
-	                      type: 'text',
-	                      id: 'contact-email-input',
-	                      placeholder: 'bjones@jobs.com',
-	                      value: this.state.inside_contact_email,
-	                      onChange: this.handleContactEmailChange
-	                    })
-	                  ),
-	                  React.createElement(
-	                    'div',
-	                    { className: 'form-group' },
-	                    React.createElement(
-	                      'label',
-	                      { HtmlFor: 'remote' },
-	                      'Remote'
-	                    ),
-	                    React.createElement('input', {
-	                      className: 'form-control',
-	                      type: 'checkbox',
-	                      id: 'remote',
-	                      checked: this.state.remote,
-	                      onChange: this.handleRemoteChange
-	                    })
-	                  )
-	                )
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'form-group' },
-	                React.createElement('input', {
-	                  className: 'btn btn-primary btn-lg form-control',
-	                  type: 'submit',
-	                  value: 'Update' })
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'modal-footer' },
-	            React.createElement(
-	              'button',
-	              {
-	                type: 'button',
-	                'data-dismiss': 'modal',
-	                style: { float: 'left' },
-	                onClick: this.handleDelete,
-	                className: 'btn btn-danger' },
-	              'Delete'
+	            { className: 'modal-content' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'modal-header' },
+	              this.generateTitle(this.state.company)
 	            ),
-	            React.createElement(
-	              'button',
-	              {
-	                type: 'button',
-	                'data-dismiss': 'modal',
-	                className: 'btn btn-primary' },
-	              'Close'
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'modal-body' },
+	              _react2.default.createElement(
+	                'form',
+	                { className: 'commentForm',
+	                  onSubmit: this.handleSubmit },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { HtmlFor: 'company-input' },
+	                    'Company *'
+	                  ),
+	                  _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    id: 'company-input',
+	                    placeholder: 'Adelie, LLC',
+	                    value: this.state.company,
+	                    onChange: this.handleCompanyChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { HtmlFor: 'phase-input' },
+	                    'Phase *'
+	                  ),
+	                  _react2.default.createElement(
+	                    'select',
+	                    {
+	                      id: 'phase-input',
+	                      className: 'form-control',
+	                      onChange: this.handlePhaseChange, value: this.state.phase, name: 'select' },
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'saved' },
+	                      'Saved'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'applied' },
+	                      'Applied'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'interviewing' },
+	                      'Interviewing'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'offered' },
+	                      'Offered'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { HtmlFor: 'notes-input' },
+	                    'Notes'
+	                  ),
+	                  _react2.default.createElement('textarea', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    id: 'notes',
+	                    placeholder: 'Notes?',
+	                    value: this.state.notes,
+	                    onChange: this.handleNotesChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'a',
+	                  {
+	                    href: "#collapsedInfo" + this.props.jobApp.id,
+	                    role: 'button', 'data-toggle': 'collapse', 'aria-expanded': 'false',
+	                    'aria-controls': "collapsedInfo" + this.props.jobApp.id,
+	                    className: 'btn__viewInfo btn btn-info-outline' },
+	                  'Edit Details'
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'collapse',
+	                    id: "collapsedInfo" + this.props.jobApp.id
+	                  },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'well' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'form-group' },
+	                      _react2.default.createElement(
+	                        'label',
+	                        { HtmlFor: 'listing-input' },
+	                        'Job Listing URL *'
+	                      ),
+	                      _react2.default.createElement('input', {
+	                        className: 'form-control',
+	                        type: 'text',
+	                        id: 'listing-input',
+	                        placeholder: 'http://jobs.com/listing/xxx',
+	                        value: this.state.listing_url,
+	                        onChange: this.handleUrlChange
+	                      })
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'form-group' },
+	                      _react2.default.createElement(
+	                        'label',
+	                        { HtmlFor: 'salary-input' },
+	                        'Salary'
+	                      ),
+	                      _react2.default.createElement('input', {
+	                        className: 'form-control',
+	                        type: 'text',
+	                        id: 'salary-input',
+	                        placeholder: '60,000',
+	                        value: this.state.expected_salary,
+	                        onChange: this.handleSalaryChange
+	                      })
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'form-group' },
+	                      _react2.default.createElement(
+	                        'label',
+	                        { HtmlFor: 'location-input' },
+	                        'Location'
+	                      ),
+	                      _react2.default.createElement('input', {
+	                        className: 'form-control',
+	                        type: 'text',
+	                        placeholder: 'New York, NY',
+	                        value: this.state.location,
+	                        onChange: this.handleLocationChange
+	                      })
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'form-group' },
+	                      _react2.default.createElement(
+	                        'label',
+	                        { HtmlFor: 'contact-name-input' },
+	                        'Internal Contact'
+	                      ),
+	                      _react2.default.createElement('input', {
+	                        className: 'form-control',
+	                        type: 'text',
+	                        id: 'contact-name-input',
+	                        placeholder: 'Bob Jones',
+	                        value: this.state.inside_contact_name,
+	                        onChange: this.handleContactNameChange
+	                      })
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'form-group' },
+	                      _react2.default.createElement(
+	                        'label',
+	                        { HtmlFor: 'contact-email-input' },
+	                        'Internal Contact Email'
+	                      ),
+	                      _react2.default.createElement('input', {
+	                        className: 'form-control',
+	                        type: 'text',
+	                        id: 'contact-email-input',
+	                        placeholder: 'bjones@jobs.com',
+	                        value: this.state.inside_contact_email,
+	                        onChange: this.handleContactEmailChange
+	                      })
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'form-group' },
+	                      _react2.default.createElement(
+	                        'label',
+	                        { HtmlFor: 'remote' },
+	                        'Remote'
+	                      ),
+	                      _react2.default.createElement('input', {
+	                        className: 'form-control',
+	                        type: 'checkbox',
+	                        id: 'remote',
+	                        checked: this.state.remote,
+	                        onChange: this.handleRemoteChange
+	                      })
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement('input', {
+	                    className: 'btn btn-primary btn-lg form-control',
+	                    type: 'submit',
+	                    value: 'Update' })
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'modal-footer' },
+	              _react2.default.createElement(
+	                'button',
+	                {
+	                  type: 'button',
+	                  'data-dismiss': 'modal',
+	                  style: { float: 'left' },
+	                  onClick: this.handleDelete,
+	                  className: 'btn btn-danger' },
+	                'Delete'
+	              ),
+	              _react2.default.createElement(
+	                'button',
+	                {
+	                  type: 'button',
+	                  'data-dismiss': 'modal',
+	                  className: 'btn btn-primary' },
+	                'Close'
+	              )
 	            )
 	          )
 	        )
-	      )
-	    );
-	  }
-	});
+	      );
+	    }
+	  }]);
+
+	  return ModifyApplicationForm;
+	}(_react2.default.components);
+
+	exports.default = ModifyApplicationForm;
+	;
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports) {
 
 	"use strict";
+
+	// InspirationBox.jsx 
+	// Renders a random quote.
 
 	App.Views.InspirationBox = React.createClass({
 	  displayName: "InspirationBox",
@@ -1769,7 +1759,7 @@
 	});
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1848,11 +1838,14 @@
 	});
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict';
 
+	// ApplicationList.jsx 
+	// Renders & passes props into ApplicationItems
+	// Renders NewApplicationForm.js
 	App.Views.ApplicationList = React.createClass({
 	  displayName: 'ApplicationList',
 
@@ -1915,10 +1908,15 @@
 	});
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports) {
 
 	'use strict';
+
+	// Mosu.jsx
+	// Renders & passes props into ApplicationList.js
+	// Handles new Applications and ModifyApplications
+
 
 	App.Views.Mosu = React.createClass({
 		displayName: 'Mosu',
@@ -2057,11 +2055,13 @@
 	});
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports) {
 
 	"use strict";
 
+	// Error.js
+	// Displays ERROR PAGE
 	(function (App) {
 
 		App.Views.Error = React.createClass({
@@ -2098,10 +2098,13 @@
 	})(App);
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports) {
 
 	"use strict";
+
+	// App.jsx 
+	// Conditionally displays Auth.js or Mosu.js
 
 	var page;
 	var hasToken;

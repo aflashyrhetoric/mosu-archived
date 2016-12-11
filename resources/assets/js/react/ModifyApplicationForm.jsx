@@ -2,10 +2,12 @@
 // Handles submit logic for modifying existing applications
 // Renders ModifyApplicationForm
 
+import React from 'react';
 
-App.Views.ModifyApplicationForm = React.createClass({
-    getInitialState: function() {
-      return {
+export default class ModifyApplicationForm extends React.components {
+    constructor(props) {
+      super(props);
+      this.state = {
         id:             this.props.jobApp.id,
         company:        this.props.jobApp.company,
         listing_url:    this.props.jobApp.listing_url,
@@ -16,39 +18,40 @@ App.Views.ModifyApplicationForm = React.createClass({
         inside_contact_email: this.props.jobApp.inside_contact_email,
         notes:          this.props.jobApp.notes,
         remote:         this.props.jobApp.remote
-      }
-    },
-    handleCompanyChange: function(e) {
+      };
+    }
+
+    handleCompanyChange(e) {
       this.setState({ company: e.target.value});
       this.props.updateCompanyName(e.target.value);
-    },
-    handleUrlChange: function(e) {
+    }
+    handleUrlChange(e) {
       this.setState({ listing_url: e.target.value});
       this.props.updateListingUrl( e.target.value );
-    },   
-    handlePhaseChange: function(e) {
+    }   
+    handlePhaseChange(e) {
       this.setState({ phase: e.target.value});
       this.props.updateItemColor( e.target.value );
-    },   
-    handleSalaryChange: function(e) {
+    }   
+    handleSalaryChange(e) {
       this.setState({ expected_salary: e.target.value});
-    },    
-    handleLocationChange: function(e) {
+    }    
+    handleLocationChange(e) {
       this.setState({ location: e.target.value});
-    },    
-    handleContactNameChange: function(e) {
+    }    
+    handleContactNameChange(e) {
       this.setState({ inside_contact_name: e.target.value});
-    },    
-    handleContactEmailChange: function(e) {
+    }    
+    handleContactEmailChange(e) {
       this.setState({ inside_contact_email: e.target.value});
-    }, 
-    handleNotesChange: function(e) {
+    } 
+    handleNotesChange(e) {
       this.setState({ notes: e.target.value});
-    },      
-    handleRemoteChange: function(e) {
+    }      
+    handleRemoteChange(e) {
       this.setState({ remote: e.target.checked });
-    },      
-    handleSubmit: function(e) {
+    }      
+    handleSubmit(e) {
       e.preventDefault();
       var id = this.state.id;
       // Hide Modal after setting ID
@@ -80,23 +83,23 @@ App.Views.ModifyApplicationForm = React.createClass({
           notes: notes,
           remote: remote
       }, id);
-    },
-    handleDelete: function(){
+    }
+    handleDelete() {
       var id = this.state.id;
       // Delete record
       this.props.handleDelete(id);
-    },
-    capitalizeCompany: function(companyName) {
+    }
+    capitalizeCompany(companyName) {
       return companyName.charAt(0).toUpperCase() + companyName.slice(1);
-    },
-    generateTitle: function(companyName){
+    }
+    generateTitle(companyName){
       if(companyName == ''){
         return 'New Company'
       } else {
         return this.capitalizeCompany(this.state.company);
       }
-    },
-    render: function() {
+    }
+    render() {
         return (
             <div 
             className="modal fade" 
@@ -257,4 +260,4 @@ App.Views.ModifyApplicationForm = React.createClass({
             </div>
     );
   }
-});
+};
