@@ -1,3 +1,6 @@
+// InspirationBox.jsx 
+// Renders a random quote.
+
 App.Views.InspirationBox = React.createClass({
   randomIndex: function(quoteBoxSize){
     return Math.floor((Math.random() * quoteBoxSize) + 1);

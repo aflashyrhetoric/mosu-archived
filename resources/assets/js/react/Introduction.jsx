@@ -1,3 +1,6 @@
+// Introduction.jsx
+// Intro page
+
 App.Views.Introduction = React.createClass({
 
 	render: function(){

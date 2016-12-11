@@ -1,3 +1,8 @@
+// Mosu.jsx
+// Renders & passes props into ApplicationList.js
+// Handles new Applications and ModifyApplications
+
+
 App.Views.Mosu = React.createClass({
 	getInitialState: function() {
 		return {

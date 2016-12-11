@@ -1,3 +1,7 @@
+// ApplicationList.jsx 
+// Renders & passes props into ApplicationItems
+// Renders NewApplicationForm.js
+
 App.Views.ApplicationList = React.createClass({
   render: function() {
     var callbackAppSubmit = this.props.callbackAppSubmit;

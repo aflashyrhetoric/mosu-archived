@@ -1,3 +1,6 @@
+// App.jsx 
+// Conditionally displays Auth.js or Mosu.js
+
 var page;
 var hasToken;
 // If API_TOKEN is undefined, display login

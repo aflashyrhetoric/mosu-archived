@@ -1,5 +1,5 @@
 // App.js
-// Import all the other stuff.
+// Import everything using WebPack
 
 // SCSS
 require ('./../sass/app.scss');

@@ -1,3 +1,8 @@
+// ModifyApplicationForm.jsx
+// Handles submit logic for modifying existing applications
+// Renders ModifyApplicationForm
+
+
 App.Views.ModifyApplicationForm = React.createClass({
     getInitialState: function() {
       return {
@@ -91,20 +96,6 @@ App.Views.ModifyApplicationForm = React.createClass({
         return this.capitalizeCompany(this.state.company);
       }
     },
-    // closeModal: function(id){
-    //   jQuery('#modifyApplicationForm' + id).on('click', function(){
-    //      jQuery('#modifyApplicationForm' + id).hide();
-    //      jQuery('.modal-backdrop').remove();
-    //   });
-    // },
-    // hideModal: function(){
-    //   $('.open').removeClass('modal-open');
-    //   $('.modal-backdrop').hide();
-    //   $('#modifyApplicationForm' + this.state.id).removeClass("in");
-    //   $('#modifyApplicationForm' + this.state.id).css({ "display": "none", 'padding-left': "0px" });
-    //   console.log(this.state.id);
-
-    // },
     render: function() {
         return (
             <div 

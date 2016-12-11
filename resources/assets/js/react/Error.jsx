@@ -1,3 +1,5 @@
+// Error.js
+// Displays ERROR PAGE
 (function(App) {
 
 	App.Views.Error = React.createClass({
