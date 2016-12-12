@@ -4,9 +4,10 @@
 
 import React from 'react';
 
-export default class ModifyApplicationForm extends React.components {
+export default class ModifyApplicationForm extends React.Component {
     constructor(props) {
       super(props);
+
       this.state = {
         id:             this.props.jobApp.id,
         company:        this.props.jobApp.company,
@@ -19,6 +20,21 @@ export default class ModifyApplicationForm extends React.components {
         notes:          this.props.jobApp.notes,
         remote:         this.props.jobApp.remote
       };
+      this.handleCompanyChange = this.handleCompanyChange.bind(this);
+      this.handleUrlChange = this.handleUrlChange.bind(this);
+      this.handlePhaseChange = this.handlePhaseChange.bind(this);
+      this.handleSalaryChange = this.handleSalaryChange.bind(this);
+      this.handleSalaryChange = this.handleSalaryChange.bind(this);
+      this.handleLocationChange = this.handleLocationChange.bind(this);
+      this.handleContactNameChange = this.handleContactNameChange.bind(this);
+      this.handleContactEmailChange = this.handleContactEmailChange.bind(this);
+      this.handleNotesChange = this.handleNotesChange.bind(this);
+      this.handleRemoteChange = this.handleRemoteChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleDelete = this.handleDelete.bind(this);
+      this.capitalizeCompany = this.capitalizeCompany.bind(this);
+      this.generateTitle = this.generateTitle.bind(this);
+
     }
 
     handleCompanyChange(e) {
