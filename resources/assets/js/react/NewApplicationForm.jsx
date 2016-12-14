@@ -1,9 +1,12 @@
 // NewApplicationForm.jsx
 // Handles submit logic for submitting new forms.
 
-App.Views.NewApplicationForm = React.createClass({
-  getInitialState: function() {
-    return {
+import React from 'react';
+
+export default class NewApplicationForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
         company: '',
         listing_url: '',
         phase: 'saved',
@@ -14,45 +17,45 @@ App.Views.NewApplicationForm = React.createClass({
         notes: '',
         remote: 0
     };
-  },
-  handleCompanyChange: function(e) {
+  }
+  handleCompanyChange(e) {
       this.setState({ company: e.target.value});
-  },
-  handleUrlChange: function(e) {
+  }
+  handleUrlChange(e) {
       this.setState({ listing_url: e.target.value});
-  },   
-  handlePhaseChange: function(e) {
+  }   
+  handlePhaseChange(e) {
       this.setState({ phase: e.target.value});
-  },   
-  handleSalaryChange: function(e) {
+  }   
+  handleSalaryChange(e) {
       this.setState({ expected_salary: e.target.value});
-  },    
-  handleLocationChange: function(e) {
+  }    
+  handleLocationChange(e) {
       this.setState({ location: e.target.value});
-  },    
-  handleContactNameChange: function(e) {
+  }    
+  handleContactNameChange(e) {
       this.setState({ inside_contact_name: e.target.value});
-  },    
-  handleContactEmailChange: function(e) {
+  }    
+  handleContactEmailChange(e) {
       this.setState({ inside_contact_email: e.target.value});
-  }, 
-  handleNotesChange: function(e) {
+  } 
+  handleNotesChange(e) {
       this.setState({ notes: e.target.value});
-  },      
-  handleRemoteChange: function(e) {
+  }      
+  handleRemoteChange(e) {
       this.setState({ remote: e.target.checked });
-  },      
-  handleSubmit: function(e) {
+  }      
+  handleSubmit(e) {
       e.preventDefault();
-      var company = this.state.company.trim();
-      var listing_url = this.state.listing_url.trim();
-      var phase = this.state.phase.trim();
-      var expected_salary = this.state.expected_salary;
-      var location = this.state.location.trim();
-      var inside_contact_name = this.state.inside_contact_name.trim();
-      var inside_contact_email = this.state.inside_contact_email.trim();
-      var notes = this.state.notes.trim();
-      var remote = this.state.remote;
+      let company = this.state.company.trim();
+      let listing_url = this.state.listing_url.trim();
+      let phase = this.state.phase.trim();
+      let expected_salary = this.state.expected_salary;
+      let location = this.state.location.trim();
+      let inside_contact_name = this.state.inside_contact_name.trim();
+      let inside_contact_email = this.state.inside_contact_email.trim();
+      let notes = this.state.notes.trim();
+      let remote = this.state.remote;
 
       if (!company || !listing_url) {
         return;
@@ -83,18 +86,18 @@ App.Views.NewApplicationForm = React.createClass({
           notes: '',
           remote: false,
       });
-  },
-  capitalizeCompany: function(companyName) {
+  }
+  capitalizeCompany(companyName) {
     return companyName.charAt(0).toUpperCase() + companyName.slice(1);
-  },
-  generateTitle: function(companyName){
+  }
+  generateTitle(companyName){
     if(companyName == ''){
       return 'New Company'
     } else {
       return this.capitalizeCompany(this.state.company);
     }
-  },
-  render: function() {
+  }
+  render() {
     return (
       <div className="modal fade" id="newApplicationForm" tabindex="-1" role="dialog">
         <div className="modal-dialog">
@@ -219,4 +222,4 @@ App.Views.NewApplicationForm = React.createClass({
       </div>
     );
   }
-});
+}

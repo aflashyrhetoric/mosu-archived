@@ -2,11 +2,11 @@
 // Renders & passes props into ApplicationItems
 // Renders NewApplicationForm.js
 
-App.Views.ApplicationList = React.createClass({
-  render: function() {
-    var callbackAppSubmit = this.props.callbackAppSubmit;
-    var handleDelete = this.props.handleDelete;
-    var jobAppNodes = this.props.data.map(function(jobApp) {
+export default class ApplicationList extends React.Component {
+  render() {
+    let callbackAppSubmit = this.props.callbackAppSubmit;
+    let handleDelete = this.props.handleDelete;
+    let jobAppNodes = this.props.data.map(function(jobApp) {
       return  ( 
         <App.Views.ApplicationItem 
           key={jobApp.id} 
@@ -17,7 +17,7 @@ App.Views.ApplicationList = React.createClass({
         </App.Views.ApplicationItem>
       );
     });
-    var plural = (jobAppNodes.length == 0 || jobAppNodes.length > 1) ? 's' : ''
+    let plural = (jobAppNodes.length == 0 || jobAppNodes.length > 1) ? 's' : ''
 
     return (
       <div className="
@@ -48,4 +48,4 @@ App.Views.ApplicationList = React.createClass({
       </div>
     );
   }
-});
+}

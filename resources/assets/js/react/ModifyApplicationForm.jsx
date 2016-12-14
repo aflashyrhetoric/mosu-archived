@@ -34,7 +34,6 @@ export default class ModifyApplicationForm extends React.Component {
       this.handleDelete = this.handleDelete.bind(this);
       this.capitalizeCompany = this.capitalizeCompany.bind(this);
       this.generateTitle = this.generateTitle.bind(this);
-
     }
 
     handleCompanyChange(e) {
@@ -69,21 +68,21 @@ export default class ModifyApplicationForm extends React.Component {
     }      
     handleSubmit(e) {
       e.preventDefault();
-      var id = this.state.id;
+      let id = this.state.id;
       // Hide Modal after setting ID
       $('#modifyApplicationForm' + id).modal('hide');
-      var company = this.state.company.trim();
-      var listing_url = this.state.listing_url.trim();
-      var phase = this.state.phase.trim();
-      var expected_salary = this.state.expected_salary;
-      var location = this.state.location.trim();
-      var inside_contact_name = this.state.inside_contact_name.trim();
-      var inside_contact_email = this.state.inside_contact_email.trim();
-      var notes = this.state.notes.trim();
+      let company = this.state.company.trim();
+      let listing_url = this.state.listing_url.trim();
+      let phase = this.state.phase.trim();
+      let expected_salary = this.state.expected_salary;
+      let location = this.state.location.trim();
+      let inside_contact_name = this.state.inside_contact_name.trim();
+      let inside_contact_email = this.state.inside_contact_email.trim();
+      let notes = this.state.notes.trim();
       if(this.state.remote){
-        var remote = 1;
+        let remote = 1;
       } else {
-        var remote = 0;
+        let remote = 0;
       }
       if (!company || !listing_url) {
         return;
@@ -101,7 +100,7 @@ export default class ModifyApplicationForm extends React.Component {
       }, id);
     }
     handleDelete() {
-      var id = this.state.id;
+      let id = this.state.id;
       // Delete record
       this.props.handleDelete(id);
     }
@@ -276,4 +275,4 @@ export default class ModifyApplicationForm extends React.Component {
             </div>
     );
   }
-};
+}

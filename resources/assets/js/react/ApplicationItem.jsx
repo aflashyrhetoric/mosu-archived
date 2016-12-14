@@ -1,30 +1,43 @@
-App.Views.ApplicationItem = React.createClass({
-  getInitialState: function() {
-      return {
-         company:     this.props.jobApp.company,
-         listing_url: this.props.jobApp.listing_url,
-         phase:       this.props.jobApp.phase  
-      };
-  },
-  updateCompanyName: function(newCompanyName){
-    // var job_applications = this.state.data;
+// ApplicationItem.jsx
+// Handles toggling of modal
+// Renders Application Item
+
+import React from 'react';
+
+export default class ApplicationItem extends React.component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+       company:     this.props.jobApp.company,
+       listing_url: this.props.jobApp.listing_url,
+       phase:       this.props.jobApp.phase  
+    }
+  }
+
+  updateCompanyName(newCompanyName) {
+    // let job_applications = this.state.data;
     this.setState({ company: newCompanyName });
-  },
-  updateListingUrl: function(newUrl){
+  }
+
+  updateListingUrl() {
     this.setState({ listing_url: newUrl });
-  },
-  showModal: function(){
+  }
+
+  showModal() {
     $('#modifyApplicationForm' + this.props.jobApp.id).modal('toggle');
-  },
-  updateItemColor: function(newPhase){
+  }
+
+  updateItemColor(newPhase) {
     this.setState({ phase: newPhase})
-  },
-  render: function() {
+  }
+
+  render() {
     // Set snippet
     if(this.props.jobApp.notes.length == 0) {
-      var snippet = String.fromCharCode('U+00A0');
+      let snippet = String.fromCharCode('U+00A0');
     } else {
-      var snippet = this.props.jobApp.notes.substring(0, 24) + " (...)";
+      let snippet = this.props.jobApp.notes.substring(0, 24) + " (...)";
     }
     return (
       <div className="application-item col-xs-12 col-sm-6 col-md-6 col-lg-4">
@@ -39,16 +52,16 @@ App.Views.ApplicationItem = React.createClass({
             <button type="button" onClick={this.showModal} className="btn btn-secondary">Manage</button>
 
             <App.Views.ModifyApplicationForm
-                jobApp={this.props.jobApp}
-                callbackAppSubmit={this.props.callbackAppSubmit}
-                handleDelete={this.props.handleDelete}
-                updateCompanyName={ this.updateCompanyName }
-                updateListingUrl={ this.updateListingUrl }
-                showModal={ this.showModal }
-                updateItemColor={this.updateItemColor}
-                />
+              jobApp={this.props.jobApp}
+              callbackAppSubmit={this.props.callbackAppSubmit}
+              handleDelete={this.props.handleDelete}
+              updateCompanyName={ this.updateCompanyName }
+              updateListingUrl={ this.updateListingUrl }
+              showModal={ this.showModal }
+              updateItemColor={this.updateItemColor}
+            />
         </div>
       </div>
     );
   }
-});
+};
