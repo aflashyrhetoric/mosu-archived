@@ -1,14 +1,24 @@
-App.Auth.Form = React.createClass({
-  getInitialState: function(){
-  	return {
-  		newUser: true
-  	}
-  },
-  toggleSignUpAndLogin: function(){
-  	var toggle = !this.state.newUser;
+// Form.jsx
+// Handles toggling of modal
+// Auth container component
+
+import React from 'react';
+
+export default class Form extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      newUser: true
+    };
+  }
+
+  toggleSignUpAndLogin() {
+  	let toggle = !this.state.newUser;
   	this.setState({ newUser: toggle });
-  },
-  handleUserSignup: function(newUser){
+  }
+  
+  handleUserSignup(newUser) {
     $.ajax({
         url: '/api/v1/signup',
         dataType: 'json',
@@ -16,7 +26,7 @@ App.Auth.Form = React.createClass({
         data: newUser,
         // Token gets sent. Blank ? Signup : Main
         beforeSend: function (xhr) {
-          var authHeaderText = "Bearer " + localStorage.getItem('api_token');
+          let authHeaderText = "Bearer " + localStorage.getItem('api_token');
           xhr.setRequestHeader('Authorization', authHeaderText);
         },
         success: function(data) {
@@ -32,8 +42,8 @@ App.Auth.Form = React.createClass({
             window.location.href = "/";
         }.bind(this)
     });
-  },
-  handleUserLogin: function(loginInfo){
+  }
+  handleUserLogin(loginInfo) {
     // console.log(loginInfo);
     $.ajax({
         url: '/api/v1/login',
@@ -54,11 +64,11 @@ App.Auth.Form = React.createClass({
             window.location.href = "/";
         }.bind(this)
     });
-  },
-  render: function() {
-  	var formToBeUsed;
-    var headingToBeUsed;
-  	var prompt;
+  }
+  render() {
+  	let formToBeUsed;
+    let headingToBeUsed;
+  	let prompt;
   	if(this.state.newUser){
       formToBeUsed = <App.Auth.Login handleUserLogin={this.handleUserLogin} />;
       headingToBeUsed = "Login";
@@ -77,7 +87,7 @@ App.Auth.Form = React.createClass({
         tac">
         <h1 className="heading__join"> { headingToBeUsed } </h1>
 			  <div className="auth-signup">
-			  { formToBeUsed }
+  			  { formToBeUsed }
 			  </div>
 			  <br/>
 				<p>
@@ -87,4 +97,4 @@ App.Auth.Form = React.createClass({
 			</div>
     );
   }
-});
+}

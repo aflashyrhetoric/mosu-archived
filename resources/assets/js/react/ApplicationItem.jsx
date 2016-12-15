@@ -3,8 +3,9 @@
 // Renders Application Item
 
 import React from 'react';
+import ModifyApplicationForm from './ModifyApplicationForm';
 
-export default class ApplicationItem extends React.component {
+export default class ApplicationItem extends React.Component {
 
   constructor(props) {
     super(props);
@@ -13,6 +14,10 @@ export default class ApplicationItem extends React.component {
        listing_url: this.props.jobApp.listing_url,
        phase:       this.props.jobApp.phase  
     }
+    this.updateCompanyName = this.updateCompanyName.bind(this);
+    this.updateListingUrl = this.updateListingUrl.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.updateItemColor = this.updateItemColor.bind(this);
   }
 
   updateCompanyName(newCompanyName) {
@@ -34,10 +39,12 @@ export default class ApplicationItem extends React.component {
 
   render() {
     // Set snippet
+    let snippet ='';
+
     if(this.props.jobApp.notes.length == 0) {
-      let snippet = String.fromCharCode('U+00A0');
+      snippet = String.fromCharCode('U+00A0');
     } else {
-      let snippet = this.props.jobApp.notes.substring(0, 24) + " (...)";
+      snippet = this.props.jobApp.notes.substring(0, 24) + " (...)";
     }
     return (
       <div className="application-item col-xs-12 col-sm-6 col-md-6 col-lg-4">
@@ -51,7 +58,7 @@ export default class ApplicationItem extends React.component {
             <a className="btn btn_viewListing btn-secondary" target="_blank" href={this.state.listing_url}> View Listing </a>
             <button type="button" onClick={this.showModal} className="btn btn-secondary">Manage</button>
 
-            <App.Views.ModifyApplicationForm
+            <ModifyApplicationForm
               jobApp={this.props.jobApp}
               callbackAppSubmit={this.props.callbackAppSubmit}
               handleDelete={this.props.handleDelete}
@@ -64,4 +71,4 @@ export default class ApplicationItem extends React.component {
       </div>
     );
   }
-};
+}

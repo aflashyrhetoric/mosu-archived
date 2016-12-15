@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch",
+    "prod": "webpack --production",
+    "dev": "webpack --watch",
     "test": "jest"
   },
   "devDependencies": {

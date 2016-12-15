@@ -17,6 +17,20 @@ export default class NewApplicationForm extends React.Component {
         notes: '',
         remote: 0
     };
+    // this.props = this.props.bind(this);
+    this.handleCompanyChange = this.handleCompanyChange.bind(this);
+    this.handleUrlChange = this.handleUrlChange.bind(this);
+    this.handlePhaseChange = this.handlePhaseChange.bind(this);
+    this.handleSalaryChange = this.handleSalaryChange.bind(this);
+    this.handleSalaryChange = this.handleSalaryChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleContactNameChange = this.handleContactNameChange.bind(this);
+    this.handleContactEmailChange = this.handleContactEmailChange.bind(this);
+    this.handleNotesChange = this.handleNotesChange.bind(this);
+    this.handleRemoteChange = this.handleRemoteChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.capitalizeCompany = this.capitalizeCompany.bind(this);
+    this.generateTitle = this.generateTitle.bind(this);
   }
   handleCompanyChange(e) {
       this.setState({ company: e.target.value});
@@ -99,7 +113,7 @@ export default class NewApplicationForm extends React.Component {
   }
   render() {
     return (
-      <div className="modal fade" id="newApplicationForm" tabindex="-1" role="dialog">
+      <div className="modal fade" id="newApplicationForm" tabIndex="-1" role="dialog">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -109,7 +123,7 @@ export default class NewApplicationForm extends React.Component {
                 <form className="commentForm" 
                 onSubmit={this.handleSubmit} >
                   <div className="form-group">
-                  <label for="company-input">Company *</label>
+                  <label htmlFor="company-input">Company *</label>
                  <input
                     className="form-control" 
                     type="text"
@@ -120,7 +134,7 @@ export default class NewApplicationForm extends React.Component {
                   />
                   </div>
                   <div className="form-group">
-                  <label for="listing-input">Job Listing URL *</label>
+                  <label htmlFor="listing-input">Job Listing URL *</label>
                  <input
                     className="form-control" 
                     type="text"
@@ -131,7 +145,7 @@ export default class NewApplicationForm extends React.Component {
                   />
                   </div>
                   <div className="form-group">
-                  <label for="phase-input">Phase *</label>
+                  <label htmlFor="phase-input">Phase *</label>
                   <select 
                   id="phase-input" 
                   className="form-control"
@@ -143,7 +157,7 @@ export default class NewApplicationForm extends React.Component {
                   </select>
                   </div>
                   <div className="form-group">
-                  <label for="salary-input">Salary</label>
+                  <label htmlFor="salary-input">Salary</label>
                  <input
                     className="form-control" 
                     type="text"
@@ -154,7 +168,7 @@ export default class NewApplicationForm extends React.Component {
                   />
                   </div>
                   <div className="form-group">
-                  <label for="location-input">Location</label>
+                  <label htmlFor="location-input">Location</label>
                  <input
                     className="form-control" 
                     type="text"
@@ -164,7 +178,7 @@ export default class NewApplicationForm extends React.Component {
                   />
                   </div>
                   <div className="form-group">
-                  <label for="contact-name-input">Internal Contact</label>
+                  <label htmlFor="contact-name-input">Internal Contact</label>
                  <input
                     className="form-control" 
                     type="text"
@@ -175,7 +189,7 @@ export default class NewApplicationForm extends React.Component {
                   />
                   </div>
                   <div className="form-group">
-                  <label for="contact-email-input">Internal Contact Email</label>
+                  <label htmlFor="contact-email-input">Internal Contact Email</label>
                  <input
                     className="form-control" 
                     type="text"
@@ -186,7 +200,7 @@ export default class NewApplicationForm extends React.Component {
                   />
                   </div>
                   <div className="form-group">
-                  <label for="notes-input">Notes</label>
+                  <label htmlFor="notes-input">Notes</label>
                  <textarea
                     className="form-control" 
                     type="text"
@@ -197,7 +211,7 @@ export default class NewApplicationForm extends React.Component {
                   ></textarea>
                   </div>
                   <div className="form-group">
-                  <label for="remote">Remote</label>
+                  <label htmlFor="remote">Remote</label>
                  <input
                     className="form-control" 
                     type="checkbox"

@@ -1,5 +1,8 @@
 module.exports = {
-	entry: './resources/assets/js/app.js',
+	entry: [
+		'./resources/assets/js/app.js'
+		// './resources/assets/js/react.js',
+	],
 	output: {
 		filename: 'public/js/app.js'       
 	},

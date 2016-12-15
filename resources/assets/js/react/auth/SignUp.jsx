@@ -1,23 +1,31 @@
-App.Auth.SignUp = React.createClass({
-    getInitialState: function(){
-      return {
+// SignUp.jsx
+// Handles logic for signup form
+// Renders Signup Form
+
+import React from 'react';
+
+export default class SignUp extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
           name: '',
           email: '',
           password: '',
           error: '',
           loading: false
-      };
-    },
-    handleNameChange: function(e) {
+        };
+    }
+    handleNameChange(e) {
         this.setState({ name: e.target.value});
-    },
-    handleEmailChange: function(e) {
+    }
+    handleEmailChange(e) {
         this.setState({ email: e.target.value});
-    },   
-    handlePasswordChange: function(e) {
+    }   
+    handlePasswordChange(e) {
         this.setState({ password: e.target.value});
-    },   
-    submitSignUpForm: function(e){
+    }
+    submitSignUpForm(e){
         e.preventDefault();
         // "Processing"
         this.setState({ loading: true });
@@ -39,8 +47,8 @@ App.Auth.SignUp = React.createClass({
             password: password
         });
 
-    },
-    render: function() {
+    }
+    render() {
     var errorBox;
     if(this.state.error){
         errorBox = <App.Utils.Alert 
@@ -80,4 +88,4 @@ App.Auth.SignUp = React.createClass({
         </form> 
     );
   }
-});
+}

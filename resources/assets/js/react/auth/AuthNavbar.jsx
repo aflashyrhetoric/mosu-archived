@@ -1,5 +1,13 @@
-App.Auth.Navbar = React.createClass({
-  render: function() {
+// AuthNavbar.jsx
+// Renders AuthNavbar
+
+import React from 'react';
+
+export default class AuthNavbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
@@ -12,4 +20,4 @@ App.Auth.Navbar = React.createClass({
       </nav>
     );
   }
-});
+}

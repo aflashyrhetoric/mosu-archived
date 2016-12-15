@@ -1,9 +1,11 @@
 // Introduction.jsx
-// Intro page
+// Renders introduction
 
-App.Views.Introduction = React.createClass({
+import React from 'react';
 
-	render: function(){
+export default class Introduction extends React.Component {
+
+	render() {
 		return (
 			<div className="
 		        col-xs-12 
@@ -19,4 +21,4 @@ App.Views.Introduction = React.createClass({
 			</div>
 		);
 	}
-});
+}

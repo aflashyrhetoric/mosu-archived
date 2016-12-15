@@ -9,10 +9,10 @@ require('./bootstrap');
 
 // Mosu Auth
 require('./react/utils/Alert');
-require('./react/auth/Navbar');
+require('./react/auth/AuthNavbar');
 require('./react/auth/SignUp');
 require('./react/auth/Login');
-require('./react/auth/Form');
+require('./react/auth/Form')	;
 require('./react/auth/Auth');
 
 // Mosu Main

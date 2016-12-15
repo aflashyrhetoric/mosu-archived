@@ -22,24 +22,26 @@
 	<div id="app"></div>
 
 
-	<!-- React -->
+{{-- 	<!-- React -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
-	<!-- Redux -->
+	Redux
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js"></script>
-	<!-- Babel -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+ --}}	<!-- Babel -->
+	{{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script> --}}
 	<!-- Google WebFonts -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	{{-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> --}}
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<!-- Twitter Bootstrap -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+	{{-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>  --}}
+
+	  <!-- Twitter Bootstrap --> 
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 	<!-- Bootstrap file for the app, not Twitter Bootstrap -->
 	<script src="{{ url('js/bootstrap.js') }}"></script>
 	<!-- Mosu Components -->	
-	<script type="text/babel" src=" {{ url('js/app.js') }} "></script>
+	<script type="text/javascript" src=" {{ url('js/app.js') }} "></script>
 	<!-- Assorted Scripts -->	
 	{{-- <script type="text/javascript" src="{{ url('js/scripts.js') }}"></script> --}}
 

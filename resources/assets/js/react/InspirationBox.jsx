@@ -1,12 +1,21 @@
 // InspirationBox.jsx 
 // Renders a random quote.
 
-App.Views.InspirationBox = React.createClass({
-  randomIndex: function(quoteBoxSize){
+import React from 'react';
+
+export default class InspirationBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.randomIndex = this.randomIndex.bind(this);
+    this.getQuote = this.getQuote.bind(this);
+  }
+
+  randomIndex(quoteBoxSize) {
     return Math.floor((Math.random() * quoteBoxSize) + 1);
-  },
-  getQuote: function(){
-    var quotes = [
+  }
+
+  getQuote() {
+    let quotes = [
         { 
           quote: "A little more persistence, a little more effort, and what seemed hopeless failure may turn to glorious success.",
           author: "Elbert Hubbard"
@@ -61,20 +70,21 @@ App.Views.InspirationBox = React.createClass({
         }
     ];
 
-    var randomNumber = this.randomIndex(quotes.length);
-    var quote = quotes[randomNumber].quote;
-    var author = quotes[randomNumber].author;
+    let randomNumber = this.randomIndex(quotes.length);
+    let quote = quotes[randomNumber].quote;
+    let author = quotes[randomNumber].author;
 
-    return {
+    let fullQuote = {
       quote: quote,
       author: author,
     };
+    
+    return fullQuote;
 
-  },
-  componentDidMount: function() {
-  },
-  render: function() {
-    var quote = this.getQuote();
+  }
+
+  render() {
+    let quote = this.getQuote();
     return (
       <div className="inspiration-box jumbotron">
         <p className="quote-text">
@@ -86,4 +96,4 @@ App.Views.InspirationBox = React.createClass({
       </div>
     );
   }
-});
+}

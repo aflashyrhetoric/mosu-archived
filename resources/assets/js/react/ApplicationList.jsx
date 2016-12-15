@@ -2,19 +2,26 @@
 // Renders & passes props into ApplicationItems
 // Renders NewApplicationForm.js
 
+import React from 'react';
+import NewApplicationForm from './NewApplicationForm';
+import ApplicationItem from './ApplicationItem';
+
 export default class ApplicationList extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     let callbackAppSubmit = this.props.callbackAppSubmit;
     let handleDelete = this.props.handleDelete;
     let jobAppNodes = this.props.data.map(function(jobApp) {
       return  ( 
-        <App.Views.ApplicationItem 
+        <ApplicationItem 
           key={jobApp.id} 
           jobApp={jobApp}
           handleDelete= { handleDelete }
           callbackAppSubmit={ callbackAppSubmit }> 
           { jobApp.phase }
-        </App.Views.ApplicationItem>
+        </ApplicationItem>
       );
     });
     let plural = (jobAppNodes.length == 0 || jobAppNodes.length > 1) ? 's' : ''
@@ -39,7 +46,7 @@ export default class ApplicationList extends React.Component {
                   </button>
             </div>
         </div>
-        <App.Views.NewApplicationForm 
+        <NewApplicationForm 
             onNewAppSubmit={this.props.onNewAppSubmit}
             />
 
