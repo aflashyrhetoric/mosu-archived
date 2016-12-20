@@ -3,14 +3,23 @@
 // Auth container component
 
 import React from 'react';
+import Introduction from './../Introduction';
+import Form from './Form';
 
 export default class Auth extends React.Component {
+    constructor(props) {
+        super(props);
+        
+        // this.state = {
+        // };
+    }
+
     render() {
         return (
             <div className="container-fluid container__introduction">
                 <div className="row">
-                    <Introduction />
-                    <Form />
+                    // <Introduction />
+                    // <Form />
                 </div>
                 <div className="row">
                     <div className="col-xs-12 
@@ -35,10 +44,18 @@ export default class Auth extends React.Component {
                             Random Goodies
                         </h1>
                         <ul className="list-group">
-                            <li className="list-group-item">Works on web & mobile!</li>
-                            <li className="list-group-item">Quotes for daily inspiration!</li>
-                            <li className="list-group-item">Better than pen & paper. Pen & Paper is basic.</li>
-                            <li className="list-group-item">Built w/ React, Bootstrap & Laravel!</li>
+                            <li className="list-group-item">
+                                Works on web & mobile!
+                            </li>
+                            <li className="list-group-item">
+                                Quotes for daily inspiration!
+                            </li>
+                            <li className="list-group-item">
+                                Better than pen & paper. Pen & Paper is basic.
+                            </li>
+                            <li className="list-group-item">
+                                Built w/ React, Bootstrap & Laravel!
+                            </li>
                         </ul>
                     </div>
                 </div>

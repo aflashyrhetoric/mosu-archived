@@ -27,7 +27,7 @@ export default class Navbar extends React.Component {
         <div className="container-fluid">
           <div className="navbar-header">
             <a className="navbar-brand" href="#">
-              <p className="mosu-logo">MOSU v0.2.0 alpha</p>
+              <p className="mosu-logo">MOSU v0.2.1 alpha</p>
             </a>
           </div>
           { 

@@ -3,6 +3,7 @@
 // Renders ModifyApplicationForm
 
 import React from 'react';
+import $ from 'jquery';
 
 export default class ModifyApplicationForm extends React.Component {
     constructor(props) {
@@ -20,8 +21,6 @@ export default class ModifyApplicationForm extends React.Component {
         notes:          this.props.jobApp.notes,
         remote:         this.props.jobApp.remote
       };
-      
-      // this.props = this.props.bind(this);
 
       this.handleCompanyChange = this.handleCompanyChange.bind(this);
       this.handleUrlChange = this.handleUrlChange.bind(this);
@@ -102,14 +101,17 @@ export default class ModifyApplicationForm extends React.Component {
           remote: remote
       }, id);
     }
+
     handleDelete() {
       let id = this.state.id;
       // Delete record
       this.props.handleDelete(id);
     }
+
     capitalizeCompany(companyName) {
       return companyName.charAt(0).toUpperCase() + companyName.slice(1);
     }
+
     generateTitle(companyName){
       if(companyName == ''){
         return 'New Company'
@@ -117,6 +119,7 @@ export default class ModifyApplicationForm extends React.Component {
         return this.capitalizeCompany(this.state.company);
       }
     }
+
     render() {
         return (
             <div 
