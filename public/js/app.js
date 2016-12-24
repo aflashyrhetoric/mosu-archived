@@ -70,12 +70,12 @@
 	__webpack_require__(189);
 
 	// Mosu Main
-	__webpack_require__(194);
+	__webpack_require__(199);
 	__webpack_require__(190);
-	__webpack_require__(195);
 	__webpack_require__(196);
 	__webpack_require__(193);
-	__webpack_require__(199);
+	__webpack_require__(198);
+	__webpack_require__(197);
 	__webpack_require__(192);
 	__webpack_require__(191);
 	// require('./react/Error');
@@ -4924,7 +4924,7 @@
 
 	var _SignUp2 = _interopRequireDefault(_SignUp);
 
-	var _jquery = __webpack_require__(197);
+	var _jquery = __webpack_require__(194);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -5081,11 +5081,11 @@
 
 	var _Mosu2 = _interopRequireDefault(_Mosu);
 
-	var _InspirationBox = __webpack_require__(193);
+	var _InspirationBox = __webpack_require__(198);
 
 	var _InspirationBox2 = _interopRequireDefault(_InspirationBox);
 
-	var _Navbar = __webpack_require__(194);
+	var _Navbar = __webpack_require__(199);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
@@ -22727,7 +22727,7 @@
 
 	var _ApplicationList2 = _interopRequireDefault(_ApplicationList);
 
-	var _jquery = __webpack_require__(197);
+	var _jquery = __webpack_require__(194);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -22927,15 +22927,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ModifyApplicationForm = __webpack_require__(196);
+	var _ModifyApplicationForm = __webpack_require__(193);
 
 	var _ModifyApplicationForm2 = _interopRequireDefault(_ModifyApplicationForm);
 
-	var _NewApplicationForm = __webpack_require__(195);
+	var _NewApplicationForm = __webpack_require__(196);
 
 	var _NewApplicationForm2 = _interopRequireDefault(_NewApplicationForm);
 
-	var _ApplicationItem = __webpack_require__(199);
+	var _ApplicationItem = __webpack_require__(197);
 
 	var _ApplicationItem2 = _interopRequireDefault(_ApplicationItem);
 
@@ -22945,9 +22945,8 @@
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // ApplicationList.jsx 
-	// Renders & passes props into ApplicationItems
-	// Renders NewApplicationForm.js
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // ApplicationList.jsx Renders & passes props into ApplicationItems Renders
+	// NewApplicationForm.js
 
 	var ApplicationList = function (_React$Component) {
 	  _inherits(ApplicationList, _React$Component);
@@ -22976,16 +22975,16 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: ' application-list row  col-sm-12 col-md-l2 col-lg-12 ' },
+	        {
+	          className: 'application-list row col-sm-12 col-md-l2 col-lg-12' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'card card-block tac' },
 	          _react2.default.createElement(
 	            'h2',
 	            { className: 'card-title' },
-	            ' ',
 	            jobAppNodes.length,
-	            ' Active Application',
+	            'Active Application',
 	            plural
 	          )
 	        ),
@@ -22994,8 +22993,7 @@
 	          { className: 'application-item col col-sm-6 col-md-6 col-lg-4' },
 	          _react2.default.createElement(
 	            'div',
-	            {
-	              className: 'card card-block add-new-job-app' },
+	            { className: 'card card-block add-new-job-app' },
 	            _react2.default.createElement(
 	              'p',
 	              { className: 'card-text' },
@@ -23003,14 +23001,17 @@
 	            ),
 	            _react2.default.createElement(
 	              'button',
-	              { type: 'button', className: 'btn btn-primary', 'data-toggle': 'modal', 'data-target': '#newApplicationForm' },
+	              {
+	                type: 'button',
+	                className: 'btn btn-primary',
+	                'data-toggle': 'modal',
+	                'data-target': '#newApplicationForm' },
 	              '+ Add New Application'
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_NewApplicationForm2.default, {
-	          onNewAppSubmit: this.props.onNewAppSubmit
-	        }),
+	        _react2.default.createElement(_NewApplicationForm2.default, { onNewAppSubmit: this.props.onNewAppSubmit }),
+	        ' ',
 	        jobAppNodes.reverse()
 	      );
 	    }
@@ -23025,231 +23026,6 @@
 /* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(7);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // InspirationBox.jsx 
-	// Renders a random quote.
-
-	var InspirationBox = function (_React$Component) {
-	  _inherits(InspirationBox, _React$Component);
-
-	  function InspirationBox(props) {
-	    _classCallCheck(this, InspirationBox);
-
-	    var _this = _possibleConstructorReturn(this, (InspirationBox.__proto__ || Object.getPrototypeOf(InspirationBox)).call(this, props));
-
-	    _this.randomIndex = _this.randomIndex.bind(_this);
-	    _this.getQuote = _this.getQuote.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(InspirationBox, [{
-	    key: "randomIndex",
-	    value: function randomIndex(quoteBoxSize) {
-	      return Math.floor(Math.random() * quoteBoxSize + 1);
-	    }
-	  }, {
-	    key: "getQuote",
-	    value: function getQuote() {
-	      var quotes = [{
-	        quote: "A little more persistence, a little more effort, and what seemed hopeless failure may turn to glorious success.",
-	        author: "Elbert Hubbard"
-	      }, {
-	        quote: "Success is the result of perfection, hard work, learning from failure, loyalty, and persistence. ",
-	        author: "Colin Powell"
-	      }, {
-	        quote: "Paralyze resistance with persistence.",
-	        author: "Woody Hayes"
-	      }, {
-	        quote: "Quantity and persistence will get you the outcomes you need.",
-	        author: "James Altucher"
-	      }, {
-	        quote: "Choose a job you love, and you will never have to work a day in your life.",
-	        author: "Confucius"
-	      }, {
-	        quote: "The beginning is the most important part of the work.",
-	        author: "Plato"
-	      }, {
-	        quote: "Opportunities are usually disguised as hard work, so most people don't recognize them.",
-	        author: "Ann Landers"
-	      }, {
-	        quote: "“One important key to success is self-confidence. An important key to self-confidence is preparation.”",
-	        author: "Arthur Ashe"
-	      }, {
-	        quote: "Success consists of going from failure to failure without loss of enthusiasm.",
-	        author: "Winston Churchill"
-	      }, {
-	        quote: "Do one thing everyday that scares you.",
-	        author: "Eleanor Roosevelt"
-	      }, {
-	        quote: "Take risks: if you win, you will be happy; if you lose, you will be wise.",
-	        author: "Unknown"
-	      }, {
-	        quote: "Only those who dare to fail greatly can ever achieve greatly.",
-	        author: "Robert F. Kennedy"
-	      }, {
-	        quote: "Whenever you are asked if you can do a job, tell ‘em, ‘Certainly I can!’ Then get busy and find out how to do it.",
-	        author: "Theodore Roosevelt"
-	      }];
-
-	      var randomNumber = this.randomIndex(quotes.length);
-	      var quote = quotes[randomNumber].quote;
-	      var author = quotes[randomNumber].author;
-
-	      var fullQuote = {
-	        quote: quote,
-	        author: author
-	      };
-
-	      return fullQuote;
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      var quote = this.getQuote();
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "inspiration-box jumbotron" },
-	        _react2.default.createElement(
-	          "p",
-	          { className: "quote-text" },
-	          quote.quote
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          { className: "quote-author" },
-	          quote.author
-	        )
-	      );
-	    }
-	  }]);
-
-	  return InspirationBox;
-	}(_react2.default.Component);
-
-	exports.default = InspirationBox;
-
-/***/ },
-/* 194 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(7);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Navbar.jsx
-	// Handles login and logout logic
-	// Renders Navbar
-
-	var Navbar = function (_React$Component) {
-	  _inherits(Navbar, _React$Component);
-
-	  function Navbar(props) {
-	    _classCallCheck(this, Navbar);
-
-	    var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
-
-	    _this.basicIsLoggedIn = _this.basicIsLoggedIn.bind(_this);
-	    _this.logout = _this.logout.bind(_this);
-	    return _this;
-	  }
-
-	  // Only checks for existence of token, not actual valid login.
-
-
-	  _createClass(Navbar, [{
-	    key: "basicIsLoggedIn",
-	    value: function basicIsLoggedIn() {
-	      if (localStorage.getItem("api_token")) {
-	        return true;
-	      } else {
-	        return false;
-	      }
-	    }
-	  }, {
-	    key: "logout",
-	    value: function logout() {
-	      localStorage.removeItem("api_token");
-	      // Refresh the page
-	      window.location.href = "/";
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "nav",
-	        { className: "navbar navbar-default" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "container-fluid" },
-	          _react2.default.createElement(
-	            "div",
-	            { className: "navbar-header" },
-	            _react2.default.createElement(
-	              "a",
-	              { className: "navbar-brand", href: "#" },
-	              _react2.default.createElement(
-	                "p",
-	                { className: "mosu-logo" },
-	                "MOSU v0.2.1 alpha"
-	              )
-	            )
-	          ),
-	          this.basicIsLoggedIn() ? _react2.default.createElement(
-	            "div",
-	            { className: "pull-right" },
-	            _react2.default.createElement(
-	              "a",
-	              {
-	                onClick: this.logout,
-	                className: "btn btn-secondary" },
-	              "Logout"
-	            )
-	          ) : null
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Navbar;
-	}(_react2.default.Component);
-
-	exports.default = Navbar;
-
-/***/ },
-/* 195 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -23262,395 +23038,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // NewApplicationForm.jsx
-	// Handles submit logic for submitting new forms.
-
-	var NewApplicationForm = function (_React$Component) {
-	  _inherits(NewApplicationForm, _React$Component);
-
-	  function NewApplicationForm(props) {
-	    _classCallCheck(this, NewApplicationForm);
-
-	    var _this = _possibleConstructorReturn(this, (NewApplicationForm.__proto__ || Object.getPrototypeOf(NewApplicationForm)).call(this, props));
-
-	    _this.state = {
-	      company: '',
-	      listing_url: '',
-	      phase: 'saved',
-	      expected_salary: 0,
-	      location: '',
-	      inside_contact_name: '',
-	      inside_contact_email: '',
-	      notes: '',
-	      remote: 0
-	    };
-	    // this.props = this.props.bind(this);
-	    _this.handleCompanyChange = _this.handleCompanyChange.bind(_this);
-	    _this.handleUrlChange = _this.handleUrlChange.bind(_this);
-	    _this.handlePhaseChange = _this.handlePhaseChange.bind(_this);
-	    _this.handleSalaryChange = _this.handleSalaryChange.bind(_this);
-	    _this.handleSalaryChange = _this.handleSalaryChange.bind(_this);
-	    _this.handleLocationChange = _this.handleLocationChange.bind(_this);
-	    _this.handleContactNameChange = _this.handleContactNameChange.bind(_this);
-	    _this.handleContactEmailChange = _this.handleContactEmailChange.bind(_this);
-	    _this.handleNotesChange = _this.handleNotesChange.bind(_this);
-	    _this.handleRemoteChange = _this.handleRemoteChange.bind(_this);
-	    _this.handleSubmit = _this.handleSubmit.bind(_this);
-	    _this.capitalizeCompany = _this.capitalizeCompany.bind(_this);
-	    _this.generateTitle = _this.generateTitle.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(NewApplicationForm, [{
-	    key: 'handleCompanyChange',
-	    value: function handleCompanyChange(e) {
-	      this.setState({ company: e.target.value });
-	    }
-	  }, {
-	    key: 'handleUrlChange',
-	    value: function handleUrlChange(e) {
-	      this.setState({ listing_url: e.target.value });
-	    }
-	  }, {
-	    key: 'handlePhaseChange',
-	    value: function handlePhaseChange(e) {
-	      this.setState({ phase: e.target.value });
-	    }
-	  }, {
-	    key: 'handleSalaryChange',
-	    value: function handleSalaryChange(e) {
-	      this.setState({ expected_salary: e.target.value });
-	    }
-	  }, {
-	    key: 'handleLocationChange',
-	    value: function handleLocationChange(e) {
-	      this.setState({ location: e.target.value });
-	    }
-	  }, {
-	    key: 'handleContactNameChange',
-	    value: function handleContactNameChange(e) {
-	      this.setState({ inside_contact_name: e.target.value });
-	    }
-	  }, {
-	    key: 'handleContactEmailChange',
-	    value: function handleContactEmailChange(e) {
-	      this.setState({ inside_contact_email: e.target.value });
-	    }
-	  }, {
-	    key: 'handleNotesChange',
-	    value: function handleNotesChange(e) {
-	      this.setState({ notes: e.target.value });
-	    }
-	  }, {
-	    key: 'handleRemoteChange',
-	    value: function handleRemoteChange(e) {
-	      this.setState({ remote: e.target.checked });
-	    }
-	  }, {
-	    key: 'handleSubmit',
-	    value: function handleSubmit(e) {
-	      e.preventDefault();
-	      var company = this.state.company.trim();
-	      var listing_url = this.state.listing_url.trim();
-	      var phase = this.state.phase.trim();
-	      var expected_salary = this.state.expected_salary;
-	      var location = this.state.location.trim();
-	      var inside_contact_name = this.state.inside_contact_name.trim();
-	      var inside_contact_email = this.state.inside_contact_email.trim();
-	      var notes = this.state.notes.trim();
-	      var remote = this.state.remote;
-
-	      if (!company || !listing_url) {
-	        return;
-	      }
-
-	      $('#newApplicationForm').modal('toggle');
-
-	      this.props.onNewAppSubmit({
-	        company: company,
-	        listing_url: listing_url,
-	        phase: phase,
-	        expected_salary: expected_salary,
-	        location: location,
-	        inside_contact_name: inside_contact_name,
-	        inside_contact_email: inside_contact_email,
-	        notes: notes,
-	        remote: remote
-	      });
-	      // Reset State
-	      this.setState({
-	        company: '',
-	        listing_url: '',
-	        phase: 'saved',
-	        expected_salary: 0,
-	        location: '',
-	        inside_contact_name: '',
-	        inside_contact_email: '',
-	        notes: '',
-	        remote: false
-	      });
-	    }
-	  }, {
-	    key: 'capitalizeCompany',
-	    value: function capitalizeCompany(companyName) {
-	      return companyName.charAt(0).toUpperCase() + companyName.slice(1);
-	    }
-	  }, {
-	    key: 'generateTitle',
-	    value: function generateTitle(companyName) {
-	      if (companyName == '') {
-	        return 'New Company';
-	      } else {
-	        return this.capitalizeCompany(this.state.company);
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'modal fade', id: 'newApplicationForm', tabIndex: '-1', role: 'dialog' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'modal-dialog' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'modal-content' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'modal-header' },
-	              this.generateTitle(this.state.company)
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'modal-body' },
-	              _react2.default.createElement(
-	                'form',
-	                { className: 'commentForm',
-	                  onSubmit: this.handleSubmit },
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'company-input' },
-	                    'Company *'
-	                  ),
-	                  _react2.default.createElement('input', {
-	                    className: 'form-control',
-	                    type: 'text',
-	                    id: 'company-input',
-	                    placeholder: 'Adelie, LLC',
-	                    value: this.state.company,
-	                    onChange: this.handleCompanyChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'listing-input' },
-	                    'Job Listing URL *'
-	                  ),
-	                  _react2.default.createElement('input', {
-	                    className: 'form-control',
-	                    type: 'text',
-	                    id: 'listing-input',
-	                    placeholder: 'http://jobs.com/listing/xxx',
-	                    value: this.state.listing_url,
-	                    onChange: this.handleUrlChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'phase-input' },
-	                    'Phase *'
-	                  ),
-	                  _react2.default.createElement(
-	                    'select',
-	                    {
-	                      id: 'phase-input',
-	                      className: 'form-control',
-	                      onChange: this.handlePhaseChange, value: this.state.phase, name: 'select' },
-	                    _react2.default.createElement(
-	                      'option',
-	                      { value: 'saved' },
-	                      'Saved'
-	                    ),
-	                    _react2.default.createElement(
-	                      'option',
-	                      { value: 'applied' },
-	                      'Applied'
-	                    ),
-	                    _react2.default.createElement(
-	                      'option',
-	                      { value: 'interviewing' },
-	                      'Interviewing'
-	                    ),
-	                    _react2.default.createElement(
-	                      'option',
-	                      { value: 'offered' },
-	                      'Offered'
-	                    )
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'salary-input' },
-	                    'Salary'
-	                  ),
-	                  _react2.default.createElement('input', {
-	                    className: 'form-control',
-	                    type: 'text',
-	                    id: 'salary-input',
-	                    placeholder: '60,000',
-	                    value: this.state.expected_salary,
-	                    onChange: this.handleSalaryChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'location-input' },
-	                    'Location'
-	                  ),
-	                  _react2.default.createElement('input', {
-	                    className: 'form-control',
-	                    type: 'text',
-	                    placeholder: 'New York, NY',
-	                    value: this.state.location,
-	                    onChange: this.handleLocationChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'contact-name-input' },
-	                    'Internal Contact'
-	                  ),
-	                  _react2.default.createElement('input', {
-	                    className: 'form-control',
-	                    type: 'text',
-	                    id: 'contact-name-input',
-	                    placeholder: 'Bob Jones',
-	                    value: this.state.inside_contact_name,
-	                    onChange: this.handleContactNameChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'contact-email-input' },
-	                    'Internal Contact Email'
-	                  ),
-	                  _react2.default.createElement('input', {
-	                    className: 'form-control',
-	                    type: 'text',
-	                    id: 'contact-email-input',
-	                    placeholder: 'bjones@jobs.com',
-	                    value: this.state.inside_contact_email,
-	                    onChange: this.handleContactEmailChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'notes-input' },
-	                    'Notes'
-	                  ),
-	                  _react2.default.createElement('textarea', {
-	                    className: 'form-control',
-	                    type: 'text',
-	                    id: 'notes',
-	                    placeholder: 'Notes?',
-	                    value: this.state.notes,
-	                    onChange: this.handleNotesChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement(
-	                    'label',
-	                    { htmlFor: 'remote' },
-	                    'Remote'
-	                  ),
-	                  _react2.default.createElement('input', {
-	                    className: 'form-control',
-	                    type: 'checkbox',
-	                    id: 'remote',
-	                    defaultChecked: this.state.remote,
-	                    onChange: this.handleRemoteChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'form-group' },
-	                  _react2.default.createElement('input', {
-	                    className: 'btn btn-primary form-control',
-	                    type: 'submit',
-	                    value: 'Add New Job' })
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'modal-footer' },
-	              _react2.default.createElement(
-	                'button',
-	                { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
-	                'Close'
-	              )
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return NewApplicationForm;
-	}(_react2.default.Component);
-
-	exports.default = NewApplicationForm;
-
-/***/ },
-/* 196 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(7);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _jquery = __webpack_require__(197);
+	var _jquery = __webpack_require__(194);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -24067,7 +23455,7 @@
 	exports.default = ModifyApplicationForm;
 
 /***/ },
-/* 197 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {"use strict";var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};/*!
@@ -25715,10 +25103,10 @@
 	// (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
 	// and CommonJS for browser emulators (#13566)
 	if(!noGlobal){window.jQuery=window.$=jQuery;}return jQuery;});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(198)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(195)(module)))
 
 /***/ },
-/* 198 */
+/* 195 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -25735,7 +25123,7 @@
 	};
 
 /***/ },
-/* 199 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25750,7 +25138,395 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ModifyApplicationForm = __webpack_require__(196);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // NewApplicationForm.jsx
+	// Handles submit logic for submitting new forms.
+
+	var NewApplicationForm = function (_React$Component) {
+	  _inherits(NewApplicationForm, _React$Component);
+
+	  function NewApplicationForm(props) {
+	    _classCallCheck(this, NewApplicationForm);
+
+	    var _this = _possibleConstructorReturn(this, (NewApplicationForm.__proto__ || Object.getPrototypeOf(NewApplicationForm)).call(this, props));
+
+	    _this.state = {
+	      company: '',
+	      listing_url: '',
+	      phase: 'saved',
+	      expected_salary: 0,
+	      location: '',
+	      inside_contact_name: '',
+	      inside_contact_email: '',
+	      notes: '',
+	      remote: 0
+	    };
+	    // this.props = this.props.bind(this);
+	    _this.handleCompanyChange = _this.handleCompanyChange.bind(_this);
+	    _this.handleUrlChange = _this.handleUrlChange.bind(_this);
+	    _this.handlePhaseChange = _this.handlePhaseChange.bind(_this);
+	    _this.handleSalaryChange = _this.handleSalaryChange.bind(_this);
+	    _this.handleSalaryChange = _this.handleSalaryChange.bind(_this);
+	    _this.handleLocationChange = _this.handleLocationChange.bind(_this);
+	    _this.handleContactNameChange = _this.handleContactNameChange.bind(_this);
+	    _this.handleContactEmailChange = _this.handleContactEmailChange.bind(_this);
+	    _this.handleNotesChange = _this.handleNotesChange.bind(_this);
+	    _this.handleRemoteChange = _this.handleRemoteChange.bind(_this);
+	    _this.handleSubmit = _this.handleSubmit.bind(_this);
+	    _this.capitalizeCompany = _this.capitalizeCompany.bind(_this);
+	    _this.generateTitle = _this.generateTitle.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(NewApplicationForm, [{
+	    key: 'handleCompanyChange',
+	    value: function handleCompanyChange(e) {
+	      this.setState({ company: e.target.value });
+	    }
+	  }, {
+	    key: 'handleUrlChange',
+	    value: function handleUrlChange(e) {
+	      this.setState({ listing_url: e.target.value });
+	    }
+	  }, {
+	    key: 'handlePhaseChange',
+	    value: function handlePhaseChange(e) {
+	      this.setState({ phase: e.target.value });
+	    }
+	  }, {
+	    key: 'handleSalaryChange',
+	    value: function handleSalaryChange(e) {
+	      this.setState({ expected_salary: e.target.value });
+	    }
+	  }, {
+	    key: 'handleLocationChange',
+	    value: function handleLocationChange(e) {
+	      this.setState({ location: e.target.value });
+	    }
+	  }, {
+	    key: 'handleContactNameChange',
+	    value: function handleContactNameChange(e) {
+	      this.setState({ inside_contact_name: e.target.value });
+	    }
+	  }, {
+	    key: 'handleContactEmailChange',
+	    value: function handleContactEmailChange(e) {
+	      this.setState({ inside_contact_email: e.target.value });
+	    }
+	  }, {
+	    key: 'handleNotesChange',
+	    value: function handleNotesChange(e) {
+	      this.setState({ notes: e.target.value });
+	    }
+	  }, {
+	    key: 'handleRemoteChange',
+	    value: function handleRemoteChange(e) {
+	      this.setState({ remote: e.target.checked });
+	    }
+	  }, {
+	    key: 'handleSubmit',
+	    value: function handleSubmit(e) {
+	      e.preventDefault();
+	      var company = this.state.company.trim();
+	      var listing_url = this.state.listing_url.trim();
+	      var phase = this.state.phase.trim();
+	      var expected_salary = this.state.expected_salary;
+	      var location = this.state.location.trim();
+	      var inside_contact_name = this.state.inside_contact_name.trim();
+	      var inside_contact_email = this.state.inside_contact_email.trim();
+	      var notes = this.state.notes.trim();
+	      var remote = this.state.remote;
+
+	      if (!company || !listing_url) {
+	        return;
+	      }
+
+	      $('#newApplicationForm').modal('toggle');
+
+	      this.props.onNewAppSubmit({
+	        company: company,
+	        listing_url: listing_url,
+	        phase: phase,
+	        expected_salary: expected_salary,
+	        location: location,
+	        inside_contact_name: inside_contact_name,
+	        inside_contact_email: inside_contact_email,
+	        notes: notes,
+	        remote: remote
+	      });
+	      // Reset State
+	      this.setState({
+	        company: '',
+	        listing_url: '',
+	        phase: 'saved',
+	        expected_salary: 0,
+	        location: '',
+	        inside_contact_name: '',
+	        inside_contact_email: '',
+	        notes: '',
+	        remote: false
+	      });
+	    }
+	  }, {
+	    key: 'capitalizeCompany',
+	    value: function capitalizeCompany(companyName) {
+	      return companyName.charAt(0).toUpperCase() + companyName.slice(1);
+	    }
+	  }, {
+	    key: 'generateTitle',
+	    value: function generateTitle(companyName) {
+	      if (companyName == '') {
+	        return 'New Company';
+	      } else {
+	        return this.capitalizeCompany(this.state.company);
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'modal fade', id: 'newApplicationForm', tabIndex: '-1', role: 'dialog' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'modal-dialog' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'modal-content' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'modal-header' },
+	              this.generateTitle(this.state.company)
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'modal-body' },
+	              _react2.default.createElement(
+	                'form',
+	                { className: 'commentForm',
+	                  onSubmit: this.handleSubmit },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'company-input' },
+	                    'Company *'
+	                  ),
+	                  _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    id: 'company-input',
+	                    placeholder: 'Adelie, LLC',
+	                    value: this.state.company,
+	                    onChange: this.handleCompanyChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'listing-input' },
+	                    'Job Listing URL *'
+	                  ),
+	                  _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    id: 'listing-input',
+	                    placeholder: 'http://jobs.com/listing/xxx',
+	                    value: this.state.listing_url,
+	                    onChange: this.handleUrlChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'phase-input' },
+	                    'Phase *'
+	                  ),
+	                  _react2.default.createElement(
+	                    'select',
+	                    {
+	                      id: 'phase-input',
+	                      className: 'form-control',
+	                      onChange: this.handlePhaseChange, value: this.state.phase, name: 'select' },
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'saved' },
+	                      'Saved'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'applied' },
+	                      'Applied'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'interviewing' },
+	                      'Interviewing'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'offered' },
+	                      'Offered'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'salary-input' },
+	                    'Salary'
+	                  ),
+	                  _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    id: 'salary-input',
+	                    placeholder: '60,000',
+	                    value: this.state.expected_salary,
+	                    onChange: this.handleSalaryChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'location-input' },
+	                    'Location'
+	                  ),
+	                  _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    placeholder: 'New York, NY',
+	                    value: this.state.location,
+	                    onChange: this.handleLocationChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'contact-name-input' },
+	                    'Internal Contact'
+	                  ),
+	                  _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    id: 'contact-name-input',
+	                    placeholder: 'Bob Jones',
+	                    value: this.state.inside_contact_name,
+	                    onChange: this.handleContactNameChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'contact-email-input' },
+	                    'Internal Contact Email'
+	                  ),
+	                  _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    id: 'contact-email-input',
+	                    placeholder: 'bjones@jobs.com',
+	                    value: this.state.inside_contact_email,
+	                    onChange: this.handleContactEmailChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'notes-input' },
+	                    'Notes'
+	                  ),
+	                  _react2.default.createElement('textarea', {
+	                    className: 'form-control',
+	                    type: 'text',
+	                    id: 'notes',
+	                    placeholder: 'Notes?',
+	                    value: this.state.notes,
+	                    onChange: this.handleNotesChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement(
+	                    'label',
+	                    { htmlFor: 'remote' },
+	                    'Remote'
+	                  ),
+	                  _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'checkbox',
+	                    id: 'remote',
+	                    defaultChecked: this.state.remote,
+	                    onChange: this.handleRemoteChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'form-group' },
+	                  _react2.default.createElement('input', {
+	                    className: 'btn btn-primary form-control',
+	                    type: 'submit',
+	                    value: 'Add New Job' })
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'modal-footer' },
+	              _react2.default.createElement(
+	                'button',
+	                { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+	                'Close'
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return NewApplicationForm;
+	}(_react2.default.Component);
+
+	exports.default = NewApplicationForm;
+
+/***/ },
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ModifyApplicationForm = __webpack_require__(193);
 
 	var _ModifyApplicationForm2 = _interopRequireDefault(_ModifyApplicationForm);
 
@@ -25863,6 +25639,231 @@
 	}(_react2.default.Component);
 
 	exports.default = ApplicationItem;
+
+/***/ },
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // InspirationBox.jsx 
+	// Renders a random quote.
+
+	var InspirationBox = function (_React$Component) {
+	  _inherits(InspirationBox, _React$Component);
+
+	  function InspirationBox(props) {
+	    _classCallCheck(this, InspirationBox);
+
+	    var _this = _possibleConstructorReturn(this, (InspirationBox.__proto__ || Object.getPrototypeOf(InspirationBox)).call(this, props));
+
+	    _this.randomIndex = _this.randomIndex.bind(_this);
+	    _this.getQuote = _this.getQuote.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(InspirationBox, [{
+	    key: "randomIndex",
+	    value: function randomIndex(quoteBoxSize) {
+	      return Math.floor(Math.random() * quoteBoxSize + 1);
+	    }
+	  }, {
+	    key: "getQuote",
+	    value: function getQuote() {
+	      var quotes = [{
+	        quote: "A little more persistence, a little more effort, and what seemed hopeless failure may turn to glorious success.",
+	        author: "Elbert Hubbard"
+	      }, {
+	        quote: "Success is the result of perfection, hard work, learning from failure, loyalty, and persistence. ",
+	        author: "Colin Powell"
+	      }, {
+	        quote: "Paralyze resistance with persistence.",
+	        author: "Woody Hayes"
+	      }, {
+	        quote: "Quantity and persistence will get you the outcomes you need.",
+	        author: "James Altucher"
+	      }, {
+	        quote: "Choose a job you love, and you will never have to work a day in your life.",
+	        author: "Confucius"
+	      }, {
+	        quote: "The beginning is the most important part of the work.",
+	        author: "Plato"
+	      }, {
+	        quote: "Opportunities are usually disguised as hard work, so most people don't recognize them.",
+	        author: "Ann Landers"
+	      }, {
+	        quote: "“One important key to success is self-confidence. An important key to self-confidence is preparation.”",
+	        author: "Arthur Ashe"
+	      }, {
+	        quote: "Success consists of going from failure to failure without loss of enthusiasm.",
+	        author: "Winston Churchill"
+	      }, {
+	        quote: "Do one thing everyday that scares you.",
+	        author: "Eleanor Roosevelt"
+	      }, {
+	        quote: "Take risks: if you win, you will be happy; if you lose, you will be wise.",
+	        author: "Unknown"
+	      }, {
+	        quote: "Only those who dare to fail greatly can ever achieve greatly.",
+	        author: "Robert F. Kennedy"
+	      }, {
+	        quote: "Whenever you are asked if you can do a job, tell ‘em, ‘Certainly I can!’ Then get busy and find out how to do it.",
+	        author: "Theodore Roosevelt"
+	      }];
+
+	      var randomNumber = this.randomIndex(quotes.length);
+	      var quote = quotes[randomNumber].quote;
+	      var author = quotes[randomNumber].author;
+
+	      var fullQuote = {
+	        quote: quote,
+	        author: author
+	      };
+
+	      return fullQuote;
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var quote = this.getQuote();
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "inspiration-box jumbotron" },
+	        _react2.default.createElement(
+	          "p",
+	          { className: "quote-text" },
+	          quote.quote
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "quote-author" },
+	          quote.author
+	        )
+	      );
+	    }
+	  }]);
+
+	  return InspirationBox;
+	}(_react2.default.Component);
+
+	exports.default = InspirationBox;
+
+/***/ },
+/* 199 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Navbar.jsx
+	// Handles login and logout logic
+	// Renders Navbar
+
+	var Navbar = function (_React$Component) {
+	  _inherits(Navbar, _React$Component);
+
+	  function Navbar(props) {
+	    _classCallCheck(this, Navbar);
+
+	    var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
+
+	    _this.basicIsLoggedIn = _this.basicIsLoggedIn.bind(_this);
+	    _this.logout = _this.logout.bind(_this);
+	    return _this;
+	  }
+
+	  // Only checks for existence of token, not actual valid login.
+
+
+	  _createClass(Navbar, [{
+	    key: "basicIsLoggedIn",
+	    value: function basicIsLoggedIn() {
+	      if (localStorage.getItem("api_token")) {
+	        return true;
+	      } else {
+	        return false;
+	      }
+	    }
+	  }, {
+	    key: "logout",
+	    value: function logout() {
+	      localStorage.removeItem("api_token");
+	      // Refresh the page
+	      window.location.href = "/";
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "nav",
+	        { className: "navbar navbar-default" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "container-fluid" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "navbar-header" },
+	            _react2.default.createElement(
+	              "a",
+	              { className: "navbar-brand", href: "#" },
+	              _react2.default.createElement(
+	                "p",
+	                { className: "mosu-logo" },
+	                "MOSU v0.2.1 alpha"
+	              )
+	            )
+	          ),
+	          this.basicIsLoggedIn() ? _react2.default.createElement(
+	            "div",
+	            { className: "pull-right" },
+	            _react2.default.createElement(
+	              "a",
+	              {
+	                onClick: this.logout,
+	                className: "btn btn-secondary" },
+	              "Logout"
+	            )
+	          ) : null
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Navbar;
+	}(_react2.default.Component);
+
+	exports.default = Navbar;
 
 /***/ }
 /******/ ]);
