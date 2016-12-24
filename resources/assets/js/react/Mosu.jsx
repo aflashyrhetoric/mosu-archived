@@ -4,6 +4,7 @@
 
 import React from 'react';
 import ApplicationList from './ApplicationList';
+import $ from 'jquery';
 
 export default class Mosu extends React.Component {
     constructor(props) {
@@ -132,6 +133,7 @@ export default class Mosu extends React.Component {
     }
 
     // When component is loaded successfully
+
     componentDidMount() {
         this.loadJobAppDataFromServer();
     }
@@ -145,7 +147,11 @@ export default class Mosu extends React.Component {
         return (
             <div className="container__mosu container">
 
-                <ApplicationList data={this.state.data} callbackAppSubmit={this.handleModifyApplicationSubmit} onNewAppSubmit={this.handleNewApplicationSubmit} handleDelete={this.handleDelete}/>
+                <ApplicationList 
+                    data={this.state.data} 
+                    callbackAppSubmit={this.handleModifyApplicationSubmit} 
+                    onNewAppSubmit={this.handleNewApplicationSubmit} 
+                    handleDelete={this.handleDelete} />
             </div>
         )
     }

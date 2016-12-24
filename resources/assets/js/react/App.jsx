@@ -13,7 +13,6 @@ let page, hasToken;
 /* If API_TOKEN is undefined, display login*/
 if (!localStorage.getItem("api_token")) {
     page = <Auth />;
-    hasToken = true;
 } else {
     page = 	<Mosu url="/api/v1/jobapplications" pollInterval="2000" />;
 }
@@ -24,7 +23,8 @@ ReactDOM.render(
 		{ !hasToken ?
 			<div className="container__mosu">
 				<InspirationBox />
-			</div> : null
+			</div> 
+      : null
 		}
 		{ page }
 	</div>

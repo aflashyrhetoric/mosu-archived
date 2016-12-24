@@ -3,6 +3,7 @@
 // Renders NewApplicationForm.js
 
 import React from 'react';
+import ModifyApplicationForm from './ModifyApplicationForm';
 import NewApplicationForm from './NewApplicationForm';
 import ApplicationItem from './ApplicationItem';
 
@@ -10,6 +11,7 @@ export default class ApplicationList extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     let callbackAppSubmit = this.props.callbackAppSubmit;
     let handleDelete = this.props.handleDelete;
@@ -19,9 +21,8 @@ export default class ApplicationList extends React.Component {
           key={jobApp.id} 
           jobApp={jobApp}
           handleDelete= { handleDelete }
-          callbackAppSubmit={ callbackAppSubmit }> 
-          { jobApp.phase }
-        </ApplicationItem>
+          callbackAppSubmit={ callbackAppSubmit } />
+          // { jobApp.phase }
       );
     });
     let plural = (jobAppNodes.length == 0 || jobAppNodes.length > 1) ? 's' : ''

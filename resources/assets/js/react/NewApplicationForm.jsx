@@ -16,7 +16,7 @@ export default class NewApplicationForm extends React.Component {
         inside_contact_email: '',
         notes: '',
         remote: 0
-    };
+    }
     // this.props = this.props.bind(this);
     this.handleCompanyChange = this.handleCompanyChange.bind(this);
     this.handleUrlChange = this.handleUrlChange.bind(this);
@@ -32,6 +32,7 @@ export default class NewApplicationForm extends React.Component {
     this.capitalizeCompany = this.capitalizeCompany.bind(this);
     this.generateTitle = this.generateTitle.bind(this);
   }
+  
   handleCompanyChange(e) {
       this.setState({ company: e.target.value});
   }

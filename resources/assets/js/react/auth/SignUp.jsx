@@ -3,6 +3,7 @@
 // Renders Signup Form
 
 import React from 'react';
+import Alert from './../utils/Alert';
 
 export default class SignUp extends React.Component {
     constructor(props) {
@@ -51,7 +52,7 @@ export default class SignUp extends React.Component {
     render() {
     var errorBox;
     if(this.state.error){
-        errorBox = <App.Utils.Alert 
+        errorBox = <Alert 
                        type="danger" 
                        emphasisText="Input invalid." 
                        text="Please check messages and try again."

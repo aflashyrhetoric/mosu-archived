@@ -2,8 +2,13 @@
 // Handles toggling of modal
 // Auth container component
 
-import React from 'react';
+import React, {PropTypes} from 'react';
 import App from './../App';
+import Login from './Login';
+import SignUp from './SignUp';
+import $ from 'jquery';
+// require('./Login');
+// require('./SignUp');
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -11,7 +16,7 @@ export default class Form extends React.Component {
 
     this.state = {
       newUser: true
-    };
+    }
   }
 
   toggleSignUpAndLogin() {
@@ -71,14 +76,11 @@ export default class Form extends React.Component {
     let headingToBeUsed;
   	let prompt;
   	if(this.state.newUser){
-      formToBeUsed = <App.Auth.Login handleUserLogin={this.handleUserLogin} />;
+      formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
       headingToBeUsed = "Login";
       prompt = ["New to Mosu?", "Sign Up"];
-  	} else {
-      formToBeUsed = <App.Auth.SignUp handleUserSignup={this.handleUserSignup} />;
-      headingToBeUsed = "Welcome To Mosu!";
-      prompt = ["Already a user?", "Login"];
   	}
+    
     return (
 			<div className="
         col-xs-12 

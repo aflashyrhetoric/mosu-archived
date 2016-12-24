@@ -5,6 +5,11 @@
 import React from 'react';
 
 export default class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.basicIsLoggedIn = this.basicIsLoggedIn.bind(this);
+    this.logout = this.logout.bind(this);
+  }
 
   // Only checks for existence of token, not actual valid login.
   basicIsLoggedIn() {

@@ -14,12 +14,12 @@ export default class Auth extends React.Component {
         // };
     }
 
+    // <Introduction />
     render() {
         return (
             <div className="container-fluid container__introduction">
                 <div className="row">
-                    // <Introduction />
-                    // <Form />
+                    <Form />
                 </div>
                 <div className="row">
                     <div className="col-xs-12 
@@ -59,11 +59,7 @@ export default class Auth extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="alert alert-info tac">
-                        <p>Coded with love by Kevin Oh. Logo by Rebecca Choi.</p>
-                    </div>
-                </div>
+
             </div>
         );
     }

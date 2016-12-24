@@ -3,14 +3,17 @@
 // Renders LoginForm
 
 import React from 'react';
+import Alert from './../utils/Alert';
 
 export default class Login extends React.Component {
-  getInitialState() {
-    return {
+  constructor(props) {
+      super(props);
+
+      this.state = {
         email: '',
         password: '',
         error: ''
-    };
+      };
   }
 
   handleEmailChange(e) {
@@ -43,7 +46,7 @@ export default class Login extends React.Component {
   render() {
     let errorBox;
     if(this.state.error) {
-        errorBox = <App.Utils.Alert 
+        errorBox = <Alert 
                        type="danger" 
                        emphasisText="Input invalid." 
                        text="Please check messages and try again."
