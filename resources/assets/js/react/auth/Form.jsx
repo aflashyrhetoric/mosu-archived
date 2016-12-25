@@ -67,13 +67,19 @@ export default class Form extends React.Component {
         }.bind(this)
     });
   }
+  
   render() {
+    let formToBeUsed = '';
+    let headingToBeUsed = '';
+    let prompt = '';
 
-  	if(this.state.newUser) {
-      const formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
-      const headingToBeUsed = 'Login';
-      const prompt = ["New to Mosu?", "Sign Up"];
-  	}
+  	if( this.state.newUser ) {
+      let formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
+      let headingToBeUsed = 'Login';
+      let prompt = ["New to Mosu?", "Sign Up"];
+  	} else {
+      console.log("Nothing")
+    }
     
     return (
 			<div className="
@@ -82,7 +88,9 @@ export default class Form extends React.Component {
         col-lg-3 col-lg-offset-3
         container__introduction-right
         tac">
-        <h1 className="heading__join"> { headingToBeUsed } </h1>
+        <h1 className="heading__join"> 
+          { headingToBeUsed } 
+        </h1>
 			  <div className="auth-signup">
   			  { formToBeUsed }
 			  </div>

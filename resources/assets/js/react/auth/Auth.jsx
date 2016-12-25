@@ -4,6 +4,7 @@
 
 import React from 'react';
 import Introduction from './../Introduction';
+import Form from './Form';
 
 export default class Auth extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ export default class Auth extends React.Component {
             <div className="container-fluid container__introduction">
                 <div className="row">
                     <Introduction />
+                    <Form />
                 </div>
                 <div className="row">
                     <div className="col-xs-12 

@@ -10,6 +10,9 @@
       type="image/png" 
       href="/favicon.png">
 
+
+    <!-- Tether Bootstrap JS component -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ url('bower_components/normalize.css/normalize.css') }}">
 	<link rel="stylesheet" href="{{ url('css/app.css') }}">

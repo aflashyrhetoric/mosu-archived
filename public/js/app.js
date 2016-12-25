@@ -5004,11 +5004,16 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var formToBeUsed = '';
+	      var headingToBeUsed = '';
+	      var prompt = '';
 	
 	      if (this.state.newUser) {
 	        var _formToBeUsed = _react2.default.createElement(_Login2.default, { handleUserLogin: this.handleUserLogin });
 	        var _headingToBeUsed = 'Login';
 	        var _prompt = ["New to Mosu?", "Sign Up"];
+	      } else {
+	        console.log("Nothing");
 	      }
 	
 	      return _react2.default.createElement(
@@ -5017,9 +5022,7 @@
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'heading__join' },
-	          ' ',
-	          headingToBeUsed,
-	          ' '
+	          headingToBeUsed
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -5067,6 +5070,10 @@
 	
 	var _Introduction2 = _interopRequireDefault(_Introduction);
 	
+	var _Form = __webpack_require__(41);
+	
+	var _Form2 = _interopRequireDefault(_Form);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5098,7 +5105,8 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'row' },
-	                    _react2.default.createElement(_Introduction2.default, null)
+	                    _react2.default.createElement(_Introduction2.default, null),
+	                    _react2.default.createElement(_Form2.default, null)
 	                ),
 	                _react2.default.createElement(
 	                    'div',
