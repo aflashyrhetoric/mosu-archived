@@ -8,13 +8,15 @@ import Mosu from './Mosu';
 import InspirationBox from './InspirationBox';
 import Navbar from './Navbar';
 
-let page, hasToken;
+let page = null;
+let hasToken = false;
 
 /* If API_TOKEN is undefined, display login*/
 if (!localStorage.getItem("api_token")) {
     page = <Auth />;
 } else {
-    page = 	<Mosu url="/api/v1/jobapplications" pollInterval="2000" />;
+    hasToken = true;
+    page = <Mosu url="/api/v1/jobapplications" pollInterval="2000" />;
 }
 
 ReactDOM.render(

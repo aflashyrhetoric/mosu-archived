@@ -1,6 +1,7 @@
 // App.js
 // Import everything using WebPack
 
+
 // SCSS
 require ('./../sass/app.scss');
 
@@ -23,5 +24,4 @@ require('./react/InspirationBox');
 require('./react/ApplicationItem');
 require('./react/ApplicationList');
 require('./react/Mosu');
-// require('./react/Error');
-require('./react/App');
+require('./react/App.jsx');

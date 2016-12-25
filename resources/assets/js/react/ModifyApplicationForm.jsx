@@ -3,7 +3,7 @@
 // Renders ModifyApplicationForm
 
 import React from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 export default class ModifyApplicationForm extends React.Component {
     constructor(props) {

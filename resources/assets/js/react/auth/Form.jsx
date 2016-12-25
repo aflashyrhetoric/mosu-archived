@@ -2,13 +2,9 @@
 // Handles toggling of modal
 // Auth container component
 
-import React, {PropTypes} from 'react';
-import App from './../App';
+import React from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
-import $ from 'jquery';
-// require('./Login');
-// require('./SignUp');
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -31,31 +27,31 @@ export default class Form extends React.Component {
         type: 'POST',
         data: newUser,
         // Token gets sent. Blank ? Signup : Main
-        beforeSend: function (xhr) {
+        beforeSend (xhr) {
           let authHeaderText = "Bearer " + localStorage.getItem('api_token');
           xhr.setRequestHeader('Authorization', authHeaderText);
         },
         success: function(data) {
             // Set false so login renders
-            this.setState({ newUser: false });
-        }.bind(this),
+            this.setState({ 'newUser': false });
+        },
         error: function(xhr, status, err) {
             console.error(this.props.url, status, err.toString());
-        }.bind(this),
+        },
         complete: function() {
             this.setState({loading: false});
             // Refresh the page
             window.location.href = "/";
-        }.bind(this)
+        }
     });
   }
   handleUserLogin(loginInfo) {
     // console.log(loginInfo);
     $.ajax({
-        url: '/api/v1/login',
-        dataType: 'json',
-        type: 'POST',
-        data: loginInfo,
+        "url": '/api/v1/login',
+        "dataType": 'json',
+        "type": 'POST',
+        "data": loginInfo,
         success: function(data) {
           // Save api_key data to localStorage
           localStorage.setItem('api_token', data);
@@ -72,13 +68,11 @@ export default class Form extends React.Component {
     });
   }
   render() {
-  	let formToBeUsed;
-    let headingToBeUsed;
-  	let prompt;
-  	if(this.state.newUser){
-      formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
-      headingToBeUsed = "Login";
-      prompt = ["New to Mosu?", "Sign Up"];
+
+  	if(this.state.newUser) {
+      const formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
+      const headingToBeUsed = 'Login';
+      const prompt = ["New to Mosu?", "Sign Up"];
   	}
     
     return (

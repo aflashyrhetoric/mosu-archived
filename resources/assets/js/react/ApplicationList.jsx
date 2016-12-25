@@ -39,8 +39,7 @@ export default class ApplicationList extends React.Component {
         {/* Heading */}
         <div className="card card-block tac">
           <h2 className="card-title">
-            {jobAppNodes.length}
-            Active Application{plural}</h2>
+            {jobAppNodes.length} Active Application{plural}</h2>
         </div>
 
         {/* Job Application Item */}

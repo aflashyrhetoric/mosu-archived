@@ -30,5 +30,8 @@ module.exports = {
     resolve: {
         // you can now require('file') instead of require('file.coffee')
         extensions: ['', '.js', '.jsx', '.json']
-    }
+    },
+    devtool: [
+        "source-map"
+    ]
 };

@@ -6,15 +6,20 @@ import React from 'react';
 export default class InspirationBox extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      currentQuote: ''
+    }
+
     this.randomIndex = this.randomIndex.bind(this);
-    this.getQuote = this.getQuote.bind(this);
+    this.setQuote = this.setQuote.bind(this);
   }
 
   randomIndex(quoteBoxSize) {
     return Math.floor((Math.random() * quoteBoxSize) + 1);
   }
 
-  getQuote() {
+  setQuote() {
     let quotes = [
         { 
           quote: "A little more persistence, a little more effort, and what seemed hopeless failure may turn to glorious success.",
@@ -75,23 +80,22 @@ export default class InspirationBox extends React.Component {
     let author = quotes[randomNumber].author;
 
     let fullQuote = {
-      quote: quote,
-      author: author,
+      "quote": quote,
+      "author": author,
     };
     
-    return fullQuote;
+    this.setState({ currentQuote: this.fullQuote });
 
   }
 
   render() {
-    let quote = this.getQuote();
     return (
       <div className="inspiration-box jumbotron">
         <p className="quote-text">
-          { quote.quote }
+          { this.state.currentQuote.quote }
         </p>
         <p className="quote-author">
-          { quote.author }
+          { this.state.currentQuote.author }
         </p>
       </div>
     );
