@@ -8,6 +8,8 @@ require ('./../sass/app.scss');
 // utils 
 require('./react/utils/Alert');
 
+require('tether');
+
 // auth
 require('./react/auth/AuthNavbar');
 require('./react/auth/SignUp');

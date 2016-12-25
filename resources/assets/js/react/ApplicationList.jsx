@@ -24,12 +24,12 @@ export default class ApplicationList extends React.Component {
             jobApp={jobApp}
             handleDelete={handleDelete}
             callbackAppSubmit={callbackAppSubmit}/>
-        // { jobApp.phase }
         );
       });
-    let plural = (jobAppNodes.length == 0 || jobAppNodes.length > 1)
-      ? 's'
-      : ''
+
+    let plural = 
+    (jobAppNodes.length == 0 || jobAppNodes.length > 1)
+      ? 's' : ''
 
     return (
       <div

@@ -253,8 +253,7 @@ export default class ModifyApplicationForm extends React.Component {
 
 
                         <div className="form-group">
-                        <input
-                          className="btn btn-primary btn-lg form-control" 
+                        <input className="btn btn-primary btn-lg form-control" 
                           type="submit" 
                           value="Update" />
                         </div>

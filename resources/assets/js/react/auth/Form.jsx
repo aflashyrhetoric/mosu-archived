@@ -10,9 +10,17 @@ export default class Form extends React.Component {
   constructor(props) {
     super(props);
 
+    this.formToBeUsed = '';
+    this.headingToBeUsed = '';
+    this.prompt = '';
+
     this.state = {
       newUser: true
     }
+
+    this.toggleSignUpAndLogin = this.toggleSignUpAndLogin.bind(this);
+    this.handleUserLogin = this.handleUserLogin.bind(this);
+    this.handleUserSignup = this.handleUserSignup.bind(this);
   }
 
   toggleSignUpAndLogin() {
@@ -69,14 +77,11 @@ export default class Form extends React.Component {
   }
   
   render() {
-    let formToBeUsed = '';
-    let headingToBeUsed = '';
-    let prompt = '';
 
   	if( this.state.newUser ) {
-      let formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
-      let headingToBeUsed = 'Login';
-      let prompt = ["New to Mosu?", "Sign Up"];
+      this.formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
+      this.headingToBeUsed = 'Login';
+      this.prompt = ["New to Mosu?", "Sign Up"];
   	} else {
       console.log("Nothing")
     }
@@ -89,16 +94,16 @@ export default class Form extends React.Component {
         container__introduction-right
         tac">
         <h1 className="heading__join"> 
-          { headingToBeUsed } 
+          { this.headingToBeUsed } 
         </h1>
 			  <div className="auth-signup">
-  			  { formToBeUsed }
+  			  { this.formToBeUsed }
 			  </div>
 			  <br/>
 				<p>
-					{ prompt[0] +" "}
+					{ this.prompt[0] +" "}
 					<a onClick={this.toggleSignUpAndLogin} 
-					href="#">{ prompt[1] }</a></p>
+					href="#">{ this.prompt[1] }</a></p>
 			</div>
     );
   }

@@ -81,16 +81,27 @@ class JobApplicationsController extends ApiController
     }
     else {
       $jobapp->update([
-        'company' => $request['company'],
-        'listing_url' => $request['listing_url'],
-        'phase' => $request['phase'],
-        'expected_salary' => $request['expected_salary'],
-        'location' => $request['location'],
-        'inside_contact_name' => $request['inside_contact_name'],
-        'inside_contact_email' => $request['inside_contact_email'],
-        'notes' => $request['notes'],
-        'remote' => $request['remote']
+        'company' => 'company',
+        'listing_url' => 'http://company.com',
+        'phase' => 'saved',
+        'expected_salary' => 15000,
+        'location' => 'New York',
+        'inside_contact_name' => 'Joe',
+        'inside_contact_email' => 'company@gmail.com',
+        'notes' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum laboriosam placeat asperiores delectus, optio ducimus, itaque non ad voluptatum accusamus.',
+        'remote' => true
       ]);
+      
+      //   'company' => $request['company'],
+      //   'listing_url' => $request['listing_url'],
+      //   'phase' => $request['phase'],
+      //   'expected_salary' => $request['expected_salary'],
+      //   'location' => $request['location'],
+      //   'inside_contact_name' => $request['inside_contact_name'],
+      //   'inside_contact_email' => $request['inside_contact_email'],
+      //   'notes' => $request['notes'],
+      //   'remote' => $request['remote']
+      // ]);
 
       return $this->respondUpdated();
     }  

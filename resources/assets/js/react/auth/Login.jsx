@@ -9,11 +9,16 @@ export default class Login extends React.Component {
   constructor(props) {
       super(props);
 
+      this.errorBox = '';
+
       this.state = {
         email: '',
         password: '',
         error: ''
       };
+      this.handleEmailChange = this.handleEmailChange.bind(this);
+      this.handlePasswordChange = this.handlePasswordChange.bind(this);
+      this.submitLoginForm = this.submitLoginForm.bind(this);
   }
 
   handleEmailChange(e) {
@@ -57,7 +62,7 @@ export default class Login extends React.Component {
     return (
       <form onSubmit={ this.submitLoginForm } >
         {/* Conditionally display error messages */}
-        { errorBox }
+        { this.errorBox }
         <fieldset className="form-group">
           <label htmlFor="email">Email</label>
           <input 
