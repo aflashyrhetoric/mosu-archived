@@ -96,15 +96,15 @@ export default class Mosu extends React.Component {
     handleModifyApplicationSubmit(jobApplication, id) {
 
         $.ajax({
-          url: this.props.url + '/update/' + id,
+          url: `${this.props.url}/update/${id}`,
           dataType: 'json',
           type: 'POST',
           data: jobApplication,
           success: function(data) {
-            this.setState({ data: data })
+            // this.setState({ data: data })
           }.bind(this),
           error: function(xhr, status, err) {
-            console.error(this.props.url, status, err.toString());
+            // console.error(this.props.url, status, err.toString());
           }.bind(this)
         });
     }

@@ -1,6 +1,6 @@
 module.exports = {
     entry: [
-        './resources/assets/js/index.jsx'
+        './src/index.jsx'
         // './resources/assets/js/react.js',
     ],
     output: {

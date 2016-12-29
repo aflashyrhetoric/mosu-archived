@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "prod": "webpack --production",
-    "dev": "webpack --watch",
+    "dev": "webpack --watch --progress --colors",
     "test": "jest"
   },
   "devDependencies": {

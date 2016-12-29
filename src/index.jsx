@@ -3,12 +3,12 @@
 
 
 // SCSS
-require ('./../sass/app.scss');
+require ('./../resources/assets/sass/app.scss');
 
 // utils 
 require('./react/utils/Alert');
 
-require('tether');
+// require('tether');
 
 // auth
 require('./react/auth/AuthNavbar');

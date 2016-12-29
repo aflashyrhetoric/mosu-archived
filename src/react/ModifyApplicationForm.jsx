@@ -72,7 +72,7 @@ export default class ModifyApplicationForm extends React.Component {
       e.preventDefault();
       let id = this.state.id;
       // Hide Modal after setting ID
-      $('#modifyApplicationForm' + id).modal('hide');
+      $(`#modifyApplicationForm${id}`).modal('hide');
       let company = this.state.company.trim();
       let listing_url = this.state.listing_url.trim();
       let phase = this.state.phase.trim();
@@ -81,24 +81,21 @@ export default class ModifyApplicationForm extends React.Component {
       let inside_contact_name = this.state.inside_contact_name.trim();
       let inside_contact_email = this.state.inside_contact_email.trim();
       let notes = this.state.notes.trim();
-      if(this.state.remote){
-        let remote = 1;
-      } else {
-        let remote = 0;
-      }
+      let remote = this.state.remote ? 1 : 0;
       if (!company || !listing_url) {
         return;
       }
+      // Call 
       this.props.callbackAppSubmit({
-          company: company,
-          listing_url: listing_url,
-          phase: phase,
-          expected_salary: expected_salary,
-          location: location,
-          inside_contact_name: inside_contact_name, 
-          inside_contact_email: inside_contact_email,
-          notes: notes,
-          remote: remote
+          company,
+          listing_url,
+          phase,
+          expected_salary,
+          location,
+          inside_contact_name,
+          inside_contact_email,
+          notes,
+          remote
       }, id);
     }
 
