@@ -1,4 +1,4 @@
-# Mosu 0.1.0
+# Mosu 0.2.0
 
 ## Use it. Get hired. Forget about it.
 
