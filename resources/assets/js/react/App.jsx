@@ -1,5 +1,6 @@
-var page;
-var hasToken;
+let page;
+let hasToken;
+
 // If API_TOKEN is undefined, display login
 if (! localStorage.getItem("api_token")) {
 	page = <App.Views.Auth />;

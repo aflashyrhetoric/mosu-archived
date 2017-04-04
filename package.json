@@ -6,8 +6,11 @@
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.0",
+    "enzyme": "^2.8.0",
     "gulp": "^3.9.1",
-    "laravel-elixir": "^5.0.0"
+    "laravel-elixir": "^5.0.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "dependencies": {
     "babel-core": "^6.18.0",
