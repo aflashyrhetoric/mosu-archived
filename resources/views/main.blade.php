@@ -6,10 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>Mosu.IO</title>
-	<link rel="icon" 
-      type="image/png" 
-      href="/favicon.png">
-
+	<link rel="icon" type="image/png" href="/favicon.png">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ url('css/app.css') }}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -41,7 +38,6 @@
 	<script type="text/babel" src=" {{ url('js/app.js') }} "></script>
 	<!-- Assorted Scripts -->	
 	{{-- <script type="text/javascript" src="{{ url('js/scripts.js') }}"></script> --}}
-
 
 	<!-- Tracking Code -->
 	<script>
