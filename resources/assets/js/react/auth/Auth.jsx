@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import Introduction from './../Introduction.jsx';
 
 class Auth extends Component {
 	render() {
 		return (
 			<div className="container-fluid container__introduction">
 				<div className="row">
-					<App.Views.Introduction />
-					<App.Auth.Form />
+					<Introduction />
+					<Form />
 				</div>
 				<div className="row">
 					<div className="col-xs-12 

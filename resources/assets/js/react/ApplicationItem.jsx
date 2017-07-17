@@ -8,6 +8,7 @@ class ApplicationItem extends Component {
     this.state = {
        company:     this.props.jobApp.company,
        listing_url: this.props.jobApp.listing_url,
+       notes:       this.props.jobApp.notes,
        phase:       this.props.jobApp.phase  
     }
   }
@@ -23,6 +24,10 @@ class ApplicationItem extends Component {
 
   showModal() {
     $('#modifyApplicationForm' + this.props.jobApp.id).modal('toggle');
+  }
+
+  updateNotes(newNotes) {
+    this.setState({ notes: newNotes})
   }
 
   updateItemColor(newPhase) {

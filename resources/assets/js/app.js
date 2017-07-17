@@ -5,10 +5,10 @@
 // require ('./../sass/app.scss');
 
 // Bootstrap
-require('./bootstrap');
+// require('./bootstrap');
 
-require('react');
-require('react-dom');
+// require('react');
+// require('react-dom');
 
 // Mosu Auth
 require('./react/utils/Alert.jsx');
@@ -29,4 +29,3 @@ require('./react/ApplicationList.jsx');
 require('./react/Mosu.jsx');
 require('./react/Error.jsx');
 require('./react/App.jsx');
-

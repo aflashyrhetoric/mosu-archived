@@ -11,7 +11,7 @@ class Form extends Component {
     }
   }
 
-  toggleSignUpAndLogin(){
+  toggleSignUpAndLogin() {
   	var toggle = !this.state.newUser;
   	this.setState({ newUser: toggle });
   }
