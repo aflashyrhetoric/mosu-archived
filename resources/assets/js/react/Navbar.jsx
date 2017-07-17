@@ -1,18 +1,22 @@
-App.Views.Navbar = React.createClass({
+import React, {Component} from 'react';
+
+class Navbar extends Component {
   // Only checks for existence of token, not actual valid login.
-  basicIsLoggedIn: function(){
+  basicIsLoggedIn() {
     if(localStorage.getItem("api_token")){
       return true;
     } else {
       return false;
     }
-  },
-  logout: function(){
+  }
+
+  logout() {
     localStorage.removeItem("api_token");
     // Refresh the page
     window.location.href = "/";
-  },
-  render: function() {
+  }
+
+  render() {
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
@@ -33,4 +37,6 @@ App.Views.Navbar = React.createClass({
       </nav>
     );
   }
-});
+}
+
+export default Navbar;

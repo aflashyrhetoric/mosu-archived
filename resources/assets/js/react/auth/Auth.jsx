@@ -1,5 +1,8 @@
-App.Views.Auth = React.createClass({
-	render: function(){
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Auth extends Component {
+	render() {
 		return (
 			<div className="container-fluid container__introduction">
 				<div className="row">
@@ -44,4 +47,4 @@ App.Views.Auth = React.createClass({
 			</div>
 		);
 	}
-});
+}

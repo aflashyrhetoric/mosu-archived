@@ -1,25 +1,35 @@
-App.Views.ApplicationItem = React.createClass({
-  getInitialState: function() {
-      return {
-         company:     this.props.jobApp.company,
-         listing_url: this.props.jobApp.listing_url,
-         phase:       this.props.jobApp.phase  
-      };
-  },
-  updateCompanyName: function(newCompanyName){
+import React, {Component} from 'react';
+import ModifyApplicationForm from './ModifyApplicationForm.jsx';
+
+
+class ApplicationItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+       company:     this.props.jobApp.company,
+       listing_url: this.props.jobApp.listing_url,
+       phase:       this.props.jobApp.phase  
+    }
+  }
+
+  updateCompanyName(newCompanyName) {
     // var job_applications = this.state.data;
     this.setState({ company: newCompanyName });
-  },
-  updateListingUrl: function(newUrl){
+  }
+
+  updateListingUrl(newUrl) {
     this.setState({ listing_url: newUrl });
-  },
-  showModal: function(){
+  }
+
+  showModal() {
     $('#modifyApplicationForm' + this.props.jobApp.id).modal('toggle');
-  },
-  updateItemColor: function(newPhase){
+  }
+
+  updateItemColor(newPhase) {
     this.setState({ phase: newPhase})
-  },
-  render: function() {
+  }
+
+  render() {
     // Set snippet
     if(this.props.jobApp.notes.length == 0) {
       var snippet = String.fromCharCode('U+00A0');
@@ -38,7 +48,7 @@ App.Views.ApplicationItem = React.createClass({
             <a className="btn btn_viewListing btn-secondary" target="_blank" href={this.state.listing_url}> View Listing </a>
             <button type="button" onClick={this.showModal} className="btn btn-secondary">Manage</button>
 
-            <App.Views.ModifyApplicationForm
+            <ModifyApplicationForm
                 jobApp={this.props.jobApp}
                 callbackAppSubmit={this.props.callbackAppSubmit}
                 handleDelete={this.props.handleDelete}
@@ -51,4 +61,6 @@ App.Views.ApplicationItem = React.createClass({
       </div>
     );
   }
-});
+}
+
+export default ApplicationItem;

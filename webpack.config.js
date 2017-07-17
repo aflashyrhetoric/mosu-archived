@@ -1,33 +1,119 @@
-module.exports = {
+const webpack = require('webpack');
+const path = require('path');
+
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+
+process.traceDeprecation = true;
+
+var config = {
+  devtool: 'inline-source-map',
 	entry: './resources/assets/js/app.js',
 	output: {
 		filename: 'public/js/app.js'       
 	},
-	module: {
-		loaders: [
-		{ test: /\.coffee$/, loader: 'coffee-loader' },
-		{
-			test: /\.js$/,
-			loader: 'babel-loader',
-			query: {
-				presets: ['es2015', 'react']
-			}
-		},
-		{
-			test: /\.jsx$/,
-			loader: 'babel-loader',
-			query: {
-				presets: ['es2015', 'react']
-			}
-		},
-		{
-			test: /\.scss$/,
-			loader: 'style-loader!css-loader!sass-loader',
-		},
-		]
-	},
-	resolve: {
-		// you can now require('file') instead of require('file.coffee')
-		extensions: ['', '.js', '.jsx', '.json'] 
-	}
-};
+  externals: {
+    // require("jquery") is external and available
+    //  on the global var jQuery
+    "jquery": "jQuery"
+  },
+  module: {
+    rules: [
+    {
+      test: /\.js$/,
+      exclude: [/node_modules/],
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          presets: ['react']
+        }
+      }]
+    },
+    {
+      test: /\.jsx$/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015', 'react']
+      }
+    },
+    {
+      test: /\.(svg|png)$/,
+      use: [{
+        loader: 'url-loader',
+          options: { limit: 10000 } // Convert images < 10k to base64 strings
+        }]
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+          'css-loader'
+          ]
+        })
+      },
+      {
+        test: /\.scss$/,
+        exclude: [/node_modules/],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+          {
+            loader: 'css-loader',
+            options: { url: true, importLoaders: 1, sourceMap: true }
+          },
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: { url: true, sourceMap: true }
+          },
+          'import-glob-loader'
+          ]
+        })
+      },
+      {
+        test: /\.sass$/,
+        exclude: [/node_modules/],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+          {
+            loader: 'css-loader',
+            options: { url: true, importLoaders: 1, sourceMap: true }
+          },
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: { url: true, sourceMap: true }
+          },
+          'import-glob-loader'
+          ]
+        })
+      }
+      ]
+    },
+    plugins: [
+    new ExtractTextPlugin({
+      filename: "./app.css",
+      allChunks: true
+    }),
+    // new StyleLintPlugin({
+    //   files: "./src/scss/**/*.scss"
+    // }),
+    new webpack.ProvidePlugin({
+      "$": "jquery",
+      "jQuery": "jquery",
+      "window.jQuery": "jquery" //This is for Velocity works under jquery
+    }),
+    ],
+    watchOptions: {
+      ignored: /node_modules/
+    }
+  }
+
+
+  if (process.env.NODE_ENV === 'production') {
+    config.devtool = '';
+  }
+
+  module.exports = config

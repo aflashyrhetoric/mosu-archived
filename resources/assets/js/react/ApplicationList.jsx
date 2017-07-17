@@ -1,16 +1,20 @@
-App.Views.ApplicationList = React.createClass({
-  render: function() {
+import React, {Component} from 'react';
+import NewApplicationForm from './NewApplicationForm.jsx';
+import ApplicationItem from './ApplicationItem.jsx';
+
+class ApplicationList extends Component {
+  render() {
     let callbackAppSubmit = this.props.callbackAppSubmit;
     let handleDelete = this.props.handleDelete;
     let jobAppNodes = this.props.data.map(function(jobApp) {
       return  (
-        <App.Views.ApplicationItem 
+        <ApplicationItem 
           key={jobApp.id} 
           jobApp={jobApp}
           handleDelete= { handleDelete }
           callbackAppSubmit={ callbackAppSubmit }> 
           { jobApp.phase }
-        </App.Views.ApplicationItem>
+        </ApplicationItem>
       );
     });
     let plural = (jobAppNodes.length == 0 || jobAppNodes.length > 1) ? 's' : ''
@@ -35,7 +39,7 @@ App.Views.ApplicationList = React.createClass({
                   </button>
             </div>
         </div>
-        <App.Views.NewApplicationForm 
+        <NewApplicationForm 
             onNewAppSubmit={this.props.onNewAppSubmit}
             />
 
@@ -44,4 +48,6 @@ App.Views.ApplicationList = React.createClass({
       </div>
     );
   }
-});
+}
+
+export default ApplicationList;

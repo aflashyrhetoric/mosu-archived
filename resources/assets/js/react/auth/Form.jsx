@@ -1,14 +1,22 @@
-App.Auth.Form = React.createClass({
-  getInitialState: function(){
-  	return {
-  		newUser: true
-  	}
-  },
-  toggleSignUpAndLogin: function(){
+import React, {Component} from 'react';
+import Login from './Login.jsx';
+import SignUp from './SignUp.jsx';
+
+class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      newUser: true
+    }
+  }
+
+  toggleSignUpAndLogin(){
   	var toggle = !this.state.newUser;
   	this.setState({ newUser: toggle });
-  },
-  handleUserSignup: function(newUser){
+  }
+
+  handleUserSignup(newUser){
     $.ajax({
         url: '/api/v1/signup',
         dataType: 'json',
@@ -32,8 +40,8 @@ App.Auth.Form = React.createClass({
             window.location.href = "/";
         }.bind(this)
     });
-  },
-  handleUserLogin: function(loginInfo){
+  }
+  handleUserLogin(loginInfo){
     // console.log(loginInfo);
     $.ajax({
         url: '/api/v1/login',
@@ -54,17 +62,17 @@ App.Auth.Form = React.createClass({
             window.location.href = "/";
         }.bind(this)
     });
-  },
-  render: function() {
+  }
+  render() {
   	var formToBeUsed;
     var headingToBeUsed;
   	var prompt;
   	if(this.state.newUser){
-      formToBeUsed = <App.Auth.Login handleUserLogin={this.handleUserLogin} />;
+      formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
       headingToBeUsed = "Login";
       prompt = ["New to Mosu?", "Sign Up"];
   	} else {
-      formToBeUsed = <App.Auth.SignUp handleUserSignup={this.handleUserSignup} />;
+      formToBeUsed = <SignUp handleUserSignup={this.handleUserSignup} />;
       headingToBeUsed = "Welcome To Mosu!";
       prompt = ["Already a user?", "Login"];
   	}
@@ -75,9 +83,11 @@ App.Auth.Form = React.createClass({
         col-lg-3 col-lg-offset-3
         container__introduction-right
         tac">
-        <h1 className="heading__join"> { headingToBeUsed } </h1>
+        <h1 className="heading__join">
+          { headingToBeUsed } 
+        </h1>
 			  <div className="auth-signup">
-			  { formToBeUsed }
+  			  { formToBeUsed }
 			  </div>
 			  <br/>
 				<p>
@@ -87,4 +97,6 @@ App.Auth.Form = React.createClass({
 			</div>
     );
   }
-});
+}
+
+export default Form;

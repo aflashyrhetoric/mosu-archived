@@ -1,18 +1,26 @@
-App.Auth.Login = React.createClass({
-  getInitialState: function(){
-    return {
+import React, { Component } from 'react';
+import Alert from './../utils/Alert.jsx';
+
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
         email: '',
         password: '',
         error: ''
-    };
-  },
-  handleEmailChange: function(e) {
+    }
+  }
+
+  handleEmailChange(e) {
       this.setState({ email: e.target.value});
-  },   
-  handlePasswordChange: function(e) {
+  }
+
+  handlePasswordChange(e) {
       this.setState({ password: e.target.value});
-  },   
-  submitLoginForm: function(e){
+  }
+
+  submitLoginForm(e){
     e.preventDefault();
     var email = this.state.email.trim();
     var password = this.state.password.trim();
@@ -29,11 +37,12 @@ App.Auth.Login = React.createClass({
       password: password
     });
 
-  },
-  render: function() {
+  }
+
+  render() {
     var errorBox;
     if(this.state.error){
-        errorBox = <App.Utils.Alert 
+        errorBox = <Alert 
                        type="danger" 
                        emphasisText="Input invalid." 
                        text="Please check messages and try again."
@@ -63,4 +72,6 @@ App.Auth.Login = React.createClass({
       </form> 
     );
   }
-});
+}
+
+export default Login;

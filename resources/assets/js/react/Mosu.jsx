@@ -1,13 +1,17 @@
-App.Views.Mosu = React.createClass({
-	getInitialState: function() {
-		return {
+import React, {Component} from 'react';
+
+class Mosu extends Component {
+	constructor(props) {
+		super(props);
+		
+		this.state = {
 			loading: false,
 			error: null,
 			ajaxError: null,
 			data: [],
 		};
-	},
-	loadJobAppDataFromServer: function() {
+	}
+	loadJobAppDataFromServer() {
 		this.setState({loading: true});
 		$.ajax({
 			url: this.props.url,
@@ -33,8 +37,8 @@ App.Views.Mosu = React.createClass({
 				setTimeout(this.loadJobAppDataFromServer, this.props.pollInterval);
 			}.bind(this)
 		});
-	},
-	handleNewApplicationSubmit: function(jobApplication) {
+	}
+	handleNewApplicationSubmit(jobApplication) {
 		// If current state is empty
 	    if(this.state.data){
 	    	var job_applications = [];
@@ -52,7 +56,7 @@ App.Views.Mosu = React.createClass({
 	      dataType: 'json',
 	      type: 'POST',
 	      data: jobApplication,
-		  beforeSend: function(xhr) {
+		  beforeSend(xhr) {
 			var authHeaderText = "Bearer " + localStorage.getItem('api_token');
 		    xhr.setRequestHeader('Authorization', authHeaderText);
 		  },
@@ -69,8 +73,9 @@ App.Views.Mosu = React.createClass({
 	      	this.loadJobAppDataFromServer();	
 	      }.bind(this)
 	    });
-	},
-	handleModifyApplicationSubmit: function(jobApplication, id) {
+	}
+
+	handleModifyApplicationSubmit(jobApplication, id) {
         $.ajax({
 	      url: this.props.url + '/update/' + id,
 	      dataType: 'json',
@@ -83,8 +88,8 @@ App.Views.Mosu = React.createClass({
 	        console.error(this.props.url, status, err.toString());
 	      }.bind(this)
 	    });
-	},
-	handleDelete: function(id){
+	}
+	handleDelete(id){
         $.ajax({
 	      url: this.props.url + '/delete/' + id,
 	      type: 'POST',
@@ -109,16 +114,16 @@ App.Views.Mosu = React.createClass({
 	    } else {
 		    var job_applications = this.state.data;
 	    }
-	},
+	}
 	// When component is loaded successfully
-	componentDidMount: function() {
+	componentDidMount() {
 		this.loadJobAppDataFromServer();
-	},
-	componentDidUpdate: function(){
+	}
+	componentDidUpdate(){
 		// var updated_job_list = this.state.data;
 		// this.setState({ data: updated_job_list })
-	},
-	render: function() {
+	}
+	render() {
 		return (
 			<div className="container__mosu container">
 
@@ -131,4 +136,6 @@ App.Views.Mosu = React.createClass({
 			</div>
 		);
 	}
-});
+}
+
+export default Mosu;
