@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 class NewApplicationForm extends Component {
 
@@ -15,54 +15,45 @@ class NewApplicationForm extends Component {
       notes: '',
       remote: 0
     };
-    this.handleCompanyChange = this.handleCompanyChange.bind(this);
-    this.handleUrlChange = this.handleUrlChange.bind(this);
-    this.handlePhaseChange = this.handlePhaseChange.bind(this);
-    this.handleSalaryChange = this.handleSalaryChange.bind(this);
-    this.handleLocationChange = this.handleLocationChange.bind(this);
-    this.handleContactNameChange = this.handleContactNameChange.bind(this);
-    this.handleContactEmailChange = this.handleContactEmailChange.bind(this);
-    this.handleNotesChange = this.handleNotesChange.bind(this);
-    this.handleRemoteChange = this.handleRemoteChange.bind(this);
-
   }
-  handleCompanyChange(e) {
+  
+  handleCompanyChange = (e) => {
       this.setState({ company: e.target.value});
   }
 
-  handleUrlChange(e) {
+  handleUrlChange = (e) => {
       this.setState({ listing_url: e.target.value});
   }
 
-  handlePhaseChange(e) {
+  handlePhaseChange = (e) => {
       this.setState({ phase: e.target.value});
   }
 
-  handleSalaryChange(e) {
+  handleSalaryChange = (e) => {
       this.setState({ expected_salary: e.target.value});
   }
 
-  handleLocationChange(e) {
+  handleLocationChange = (e) => {
       this.setState({ location: e.target.value});
   }
 
-  handleContactNameChange(e) {
+  handleContactNameChange = (e) => {
       this.setState({ inside_contact_name: e.target.value});
   }
 
-  handleContactEmailChange(e) {
+  handleContactEmailChange = (e) => {
       this.setState({ inside_contact_email: e.target.value});
   }
 
-  handleNotesChange(e) {
+  handleNotesChange = (e) => {
       this.setState({ notes: e.target.value});
   }
 
-  handleRemoteChange(e) {
+  handleRemoteChange = (e) => {
       this.setState({ remote: e.target.checked });
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
       e.preventDefault();
       let company = this.state.company.trim();
       let listing_url = this.state.listing_url.trim();
@@ -104,10 +95,10 @@ class NewApplicationForm extends Component {
           remote: false,
       });
   }
-  capitalizeCompany(companyName) {
+  capitalizeCompany = (companyName) => {
     return companyName.charAt(0).toUpperCase() + companyName.slice(1);
   }
-  generateTitle(companyName){
+  generateTitle = (companyName) => {
     if(companyName == ''){
       return 'New Company'
     } else {
@@ -225,9 +216,9 @@ class NewApplicationForm extends Component {
                   </div>
                   <div className="form-group">
                   <input
-                  className="btn btn-primary form-control" 
-                  type="submit" 
-                  value="Add New Job" />
+                    className="btn btn-primary form-control" 
+                    type="submit" 
+                    value="Add New Job" />
                   </div>
                 </form>         
             </div>

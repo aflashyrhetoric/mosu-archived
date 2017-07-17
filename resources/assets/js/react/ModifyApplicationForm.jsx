@@ -17,62 +17,63 @@ class ModifyApplicationForm extends Component {
       remote:         this.props.jobApp.remote
     }
   }
-  handleCompanyChange(e) {
+
+  handleCompanyChange = (e) => {
     this.setState({ company: e.target.value});
     this.props.updateCompanyName(e.target.value);
   }
 
-  handleUrlChange(e) {
+  handleUrlChange = (e) => {
     this.setState({ listing_url: e.target.value});
     this.props.updateListingUrl( e.target.value );
   }   
 
-  handlePhaseChange(e) {
+  handlePhaseChange = (e) => {
     this.setState({ phase: e.target.value});
     this.props.updateItemColor( e.target.value );
   }   
 
-  handleSalaryChange(e) {
+  handleSalaryChange = (e) => {
     this.setState({ expected_salary: e.target.value});
   }    
 
-  handleLocationChange(e) {
+  handleLocationChange = (e) => {
     this.setState({ location: e.target.value});
   }    
 
-  handleContactNameChange(e) {
+  handleContactNameChange = (e) => {
     this.setState({ inside_contact_name: e.target.value});
   }    
 
-  handleContactEmailChange(e) {
+  handleContactEmailChange = (e) => {
     this.setState({ inside_contact_email: e.target.value});
   } 
 
-  handleNotesChange(e) {
+  handleNotesChange = (e) => {
     this.setState({ notes: e.target.value});
   }      
 
-  handleRemoteChange(e) {
+  handleRemoteChange = (e) => {
     this.setState({ remote: e.target.checked });
   }      
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
-    var id = this.state.id;
+    let id = this.state.id;
     // Hide Modal after setting ID
     $('#modifyApplicationForm' + id).modal('hide');
-    var company = this.state.company.trim();
-    var listing_url = this.state.listing_url.trim();
-    var phase = this.state.phase.trim();
-    var expected_salary = this.state.expected_salary;
-    var location = this.state.location.trim();
-    var inside_contact_name = this.state.inside_contact_name.trim();
-    var inside_contact_email = this.state.inside_contact_email.trim();
-    var notes = this.state.notes.trim();
+    let company = this.state.company.trim();
+    let listing_url = this.state.listing_url.trim();
+    let phase = this.state.phase.trim();
+    let expected_salary = this.state.expected_salary;
+    let location = this.state.location.trim();
+    let inside_contact_name = this.state.inside_contact_name.trim();
+    let inside_contact_email = this.state.inside_contact_email.trim();
+    let notes = this.state.notes.trim();
     if(this.state.remote){
-      var remote = 1;
+      let remote = 1;
     } else {
-      var remote = 0;
+      let remote = 0;
     }
     if (!company || !listing_url) {
       return;
@@ -90,17 +91,17 @@ class ModifyApplicationForm extends Component {
     }, id);
   }
 
-  handleDelete(){
-    var id = this.state.id;
+  handleDelete = () => {
+    let id = this.state.id;
     // Delete record
     this.props.handleDelete(id);
   }
 
-  capitalizeCompany(companyName) {
+  capitalizeCompany = (companyName) => {
     return companyName.charAt(0).toUpperCase() + companyName.slice(1);
   }
 
-  generateTitle(companyName){
+  generateTitle = (companyName) => {
     if(companyName == ''){
       return 'New Company'
     } else {

@@ -13,33 +13,33 @@ class ApplicationItem extends Component {
     }
   }
 
-  updateCompanyName(newCompanyName) {
-    // var job_applications = this.state.data;
+  updateCompanyName = (newCompanyName) => {
+    // let job_applications = this.state.data;
     this.setState({ company: newCompanyName });
   }
 
-  updateListingUrl(newUrl) {
+  updateListingUrl = (newUrl) => {
     this.setState({ listing_url: newUrl });
   }
 
-  showModal() {
+  showModal = () => {
     $('#modifyApplicationForm' + this.props.jobApp.id).modal('toggle');
   }
 
-  updateNotes(newNotes) {
+  updateNotes = (newNotes) => {
     this.setState({ notes: newNotes})
   }
 
-  updateItemColor(newPhase) {
+  updateItemColor (newPhase) => {
     this.setState({ phase: newPhase})
   }
 
   render() {
     // Set snippet
     if(this.props.jobApp.notes.length == 0) {
-      var snippet = String.fromCharCode('U+00A0');
+      let snippet = String.fromCharCode('U+00A0');
     } else {
-      var snippet = this.props.jobApp.notes.substring(0, 24) + " (...)";
+      let snippet = this.props.jobApp.notes.substring(0, 24) + " (...)";
     }
     return (
       <div className="application-item col-xs-12 col-sm-6 col-md-6 col-lg-4">

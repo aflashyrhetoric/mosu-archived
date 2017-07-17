@@ -6,20 +6,20 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 process.traceDeprecation = true;
 
+// config.devtool = "inline-source-map";
+
 var config = {
-  devtool: 'inline-source-map',
-	entry: './resources/assets/js/app.js',
-	output: {
-		filename: 'public/js/app.js'       
-	},
+  entry: './resources/assets/js/app.js',
+  output: {
+    filename: 'public/js/app.js'
+  },
   externals: {
     // require("jquery") is external and available
     //  on the global var jQuery
     "jquery": "jQuery"
   },
   module: {
-    rules: [
-    {
+    rules: [{
       test: /\.js$/,
       exclude: [/node_modules/],
       use: [{
@@ -28,71 +28,80 @@ var config = {
           presets: ['react']
         }
       }]
-    },
-    {
+    }, {
       test: /\.jsx$/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'react']
-      }
-    },
-    {
+      exclude: [/node_modules/],
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          presets: ['es2015', 'react']
+        }
+      }]
+    }, {
       test: /\.(svg|png)$/,
       use: [{
         loader: 'url-loader',
-          options: { limit: 10000 } // Convert images < 10k to base64 strings
-        }]
-      },
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
+        options: {
+          limit: 10000
+        } // Convert images < 10k to base64 strings
+      }]
+    }, {
+      test: /\.css$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [
           'css-loader'
-          ]
-        })
-      },
-      {
-        test: /\.scss$/,
-        exclude: [/node_modules/],
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-          {
+        ]
+      })
+    }, {
+      test: /\.scss$/,
+      exclude: [/node_modules/],
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [{
             loader: 'css-loader',
-            options: { url: true, importLoaders: 1, sourceMap: true }
+            options: {
+              url: true,
+              importLoaders: 1,
+              sourceMap: true
+            }
           },
-          'postcss-loader',
-          {
+          'postcss-loader', {
             loader: 'sass-loader',
-            options: { url: true, sourceMap: true }
+            options: {
+              url: true,
+              sourceMap: true
+            }
           },
           'import-glob-loader'
-          ]
-        })
-      },
-      {
-        test: /\.sass$/,
-        exclude: [/node_modules/],
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-          {
+        ]
+      })
+    }, {
+      test: /\.sass$/,
+      exclude: [/node_modules/],
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [{
             loader: 'css-loader',
-            options: { url: true, importLoaders: 1, sourceMap: true }
+            options: {
+              url: true,
+              importLoaders: 1,
+              sourceMap: true
+            }
           },
-          'postcss-loader',
-          {
+          'postcss-loader', {
             loader: 'sass-loader',
-            options: { url: true, sourceMap: true }
+            options: {
+              url: true,
+              sourceMap: true
+            }
           },
           'import-glob-loader'
-          ]
-        })
-      }
-      ]
-    },
-    plugins: [
+        ]
+      })
+    }]
+  },
+  plugins: [
     new ExtractTextPlugin({
       filename: "./app.css",
       allChunks: true
@@ -105,15 +114,15 @@ var config = {
       "jQuery": "jquery",
       "window.jQuery": "jquery" //This is for Velocity works under jquery
     }),
-    ],
-    watchOptions: {
-      ignored: /node_modules/
-    }
+  ],
+  watchOptions: {
+    ignored: /node_modules/
   }
+}
 
 
-  if (process.env.NODE_ENV === 'production') {
-    config.devtool = '';
-  }
+if (process.env.NODE_ENV === 'production') {
+  config.devtool = '';
+}
 
-  module.exports = config
+module.exports = config

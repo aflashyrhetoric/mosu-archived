@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "prod": "gulp --production",
-    "dev": "gulp watch"
+    "dev": "webpack --watch --progress"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.0",

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ApplicationList from './ApplicationList.jsx';
+import $ from 'jquery';
 
 class Mosu extends Component {
 	constructor(props) {
@@ -11,14 +12,9 @@ class Mosu extends Component {
 			ajaxError: null,
 			data: []
 		};
-		this.loadJobAppDataFromServer = this.loadJobAppDataFromServer.bind(this);
-		this.handleNewApplicationSubmit = this.handleNewApplicationSubmit.bind(this);
-		this.handleModifyApplicationSubmit = this.handleModifyApplicationSubmit.bind(this);
-		this.loadJobAppDataFromServer = this.loadJobAppDataFromServer.bind(this);
-		this.handleDelete = this.handleDelete.bind(this);
 	}
 
-	loadJobAppDataFromServer() {
+	loadJobAppDataFromServer = () => {
 		this.setState({loading: true});
 		$.ajax({
 			url: this.props.url,
@@ -46,7 +42,7 @@ class Mosu extends Component {
 		});
 	}
 
-	handleNewApplicationSubmit(jobApplication) {
+	handleNewApplicationSubmit = (jobApplication) => {
 		// If current state is empty
 	    if(this.state.data) {
 	    	let job_applications = [];
@@ -83,7 +79,7 @@ class Mosu extends Component {
 	    });
 	}
 
-	handleModifyApplicationSubmit(jobApplication, id) {
+	handleModifyApplicationSubmit = (jobApplication, id) => {
     $.ajax({
 	    url: this.props.url + '/update/' + id,
 	    dataType: 'json',
@@ -97,7 +93,7 @@ class Mosu extends Component {
 	    }.bind(this)
 	  });
 	}
-	handleDelete(id){
+	handleDelete = (id) => {
         $.ajax({
 	      url: this.props.url + '/delete/' + id,
 	      type: 'POST',

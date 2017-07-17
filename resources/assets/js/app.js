@@ -7,9 +7,6 @@
 // Bootstrap
 // require('./bootstrap');
 
-// require('react');
-// require('react-dom');
-
 // Mosu Auth
 require('./react/utils/Alert.jsx');
 require('./react/auth/Navbar.jsx');
