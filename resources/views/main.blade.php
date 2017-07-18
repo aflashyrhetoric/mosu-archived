@@ -17,9 +17,6 @@
 	<!-- MOSU APP -->
 	<div id="app"></div>
 
-
-	<!-- React -->
-	<!-- Redux -->
 	<!-- Babel -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 	<!-- Google WebFonts -->

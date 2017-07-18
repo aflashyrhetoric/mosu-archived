@@ -17,83 +17,84 @@ class NewApplicationForm extends Component {
     };
   }
   
+  
   handleCompanyChange = (e) => {
-      this.setState({ company: e.target.value});
+    this.setState({ company: e.target.value});
   }
 
   handleUrlChange = (e) => {
-      this.setState({ listing_url: e.target.value});
+    this.setState({ listing_url: e.target.value});
   }
 
   handlePhaseChange = (e) => {
-      this.setState({ phase: e.target.value});
+    this.setState({ phase: e.target.value});
   }
 
   handleSalaryChange = (e) => {
-      this.setState({ expected_salary: e.target.value});
+    this.setState({ expected_salary: e.target.value});
   }
 
   handleLocationChange = (e) => {
-      this.setState({ location: e.target.value});
+    this.setState({ location: e.target.value});
   }
 
   handleContactNameChange = (e) => {
-      this.setState({ inside_contact_name: e.target.value});
+    this.setState({ inside_contact_name: e.target.value});
   }
 
   handleContactEmailChange = (e) => {
-      this.setState({ inside_contact_email: e.target.value});
+    this.setState({ inside_contact_email: e.target.value});
   }
 
   handleNotesChange = (e) => {
-      this.setState({ notes: e.target.value});
+    this.setState({ notes: e.target.value});
   }
 
   handleRemoteChange = (e) => {
-      this.setState({ remote: e.target.checked });
+    this.setState({ remote: e.target.checked });
   }
 
   handleSubmit = (e) => {
-      e.preventDefault();
-      let company = this.state.company.trim();
-      let listing_url = this.state.listing_url.trim();
-      let phase = this.state.phase.trim();
-      let expected_salary = this.state.expected_salary;
-      let location = this.state.location.trim();
-      let inside_contact_name = this.state.inside_contact_name.trim();
-      let inside_contact_email = this.state.inside_contact_email.trim();
-      let notes = this.state.notes.trim();
-      let remote = this.state.remote;
+    e.preventDefault();
+    let company = this.state.company.trim();
+    let listing_url = this.state.listing_url.trim();
+    let phase = this.state.phase.trim();
+    let expected_salary = this.state.expected_salary;
+    let location = this.state.location.trim();
+    let inside_contact_name = this.state.inside_contact_name.trim();
+    let inside_contact_email = this.state.inside_contact_email.trim();
+    let notes = this.state.notes.trim();
+    let remote = this.state.remote;
 
-      if (!company || !listing_url) {
-        return;
-      }
+    if (!company || !listing_url) {
+      return;
+    }
 
-      $('#newApplicationForm').modal('toggle');
+    $('#newApplicationForm').modal('toggle');
 
-      this.props.onNewAppSubmit({
-          company: company,
-          listing_url: listing_url,
-          phase: phase,
-          expected_salary: expected_salary,
-          location: location,
-          inside_contact_name: inside_contact_name, 
-          inside_contact_email: inside_contact_email,
-          notes: notes,
-          remote: remote
-      });
-      // Reset State
-      this.setState({
-          company: '',
-          listing_url: '',
-          phase: 'saved',
-          expected_salary: 0,
-          location: '',
-          inside_contact_name: '',
-          inside_contact_email: '',
-          notes: '',
-          remote: false,
-      });
+    this.props.onNewAppSubmit({
+        company: company,
+        listing_url: listing_url,
+        phase: phase,
+        expected_salary: expected_salary,
+        location: location,
+        inside_contact_name: inside_contact_name, 
+        inside_contact_email: inside_contact_email,
+        notes: notes,
+        remote: remote
+    });
+    // Reset State
+    this.setState({
+        company: '',
+        listing_url: '',
+        phase: 'saved',
+        expected_salary: 0,
+        location: '',
+        inside_contact_name: '',
+        inside_contact_email: '',
+        notes: '',
+        remote: false,
+    });
   }
   capitalizeCompany = (companyName) => {
     return companyName.charAt(0).toUpperCase() + companyName.slice(1);
