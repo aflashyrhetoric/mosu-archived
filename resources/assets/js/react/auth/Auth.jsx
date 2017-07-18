@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Introduction from './../Introduction.jsx';
+import Form from './Form.jsx';
 
 class Auth extends Component {
+	constructor(props) {
+		super(props);
+	}
+	
 	render() {
 		return (
 			<div className="container-fluid container__introduction">
@@ -49,3 +54,5 @@ class Auth extends Component {
 		);
 	}
 }
+
+export default Auth;

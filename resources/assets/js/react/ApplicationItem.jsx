@@ -11,26 +11,27 @@ class ApplicationItem extends Component {
        notes:       this.props.jobApp.notes,
        phase:       this.props.jobApp.phase  
     }
+    this.updateCompanyName = this.updateCompanyName.bind(this);
   }
 
-  updateCompanyName = (newCompanyName) => {
+  updateCompanyName(newCompanyName) {
     // let job_applications = this.state.data;
     this.setState({ company: newCompanyName });
   }
 
-  updateListingUrl = (newUrl) => {
+  updateListingUrl(newUrl) {
     this.setState({ listing_url: newUrl });
   }
 
-  showModal = () => {
+  showModal() {
     $('#modifyApplicationForm' + this.props.jobApp.id).modal('toggle');
   }
 
-  updateNotes = (newNotes) => {
+  updateNotes(newNotes) {
     this.setState({ notes: newNotes})
   }
 
-  updateItemColor (newPhase) => {
+  updateItemColor (newPhase) {
     this.setState({ phase: newPhase})
   }
 

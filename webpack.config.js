@@ -6,7 +6,6 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 process.traceDeprecation = true;
 
-// config.devtool = "inline-source-map";
 
 var config = {
   entry: './resources/assets/js/app.js',
@@ -25,7 +24,7 @@ var config = {
       use: [{
         loader: 'babel-loader',
         options: {
-          presets: ['react']
+          presets: ['es2015', 'react']
         }
       }]
     }, {
@@ -120,6 +119,8 @@ var config = {
   }
 }
 
+// Enable for sourcemaps, but higher compile time and lag
+// config.devtool = "inline-source-map";
 
 if (process.env.NODE_ENV === 'production') {
   config.devtool = '';

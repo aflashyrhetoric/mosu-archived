@@ -10,6 +10,10 @@ class Login extends Component {
         password: '',
         error: ''
     }
+
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.submitLoginForm = this.submitLoginForm.bind(this);
   }
 
   handleEmailChange(e) {
@@ -22,8 +26,8 @@ class Login extends Component {
 
   submitLoginForm(e){
     e.preventDefault();
-    var email = this.state.email.trim();
-    var password = this.state.password.trim();
+    let email = this.state.email.trim();
+    let password = this.state.password.trim();
 
     // Super basic validation
     if (!email || !password) {
@@ -36,20 +40,19 @@ class Login extends Component {
       email: email,
       password: password
     });
-
   }
 
   render() {
-    var errorBox;
+    let errorBox;
     if(this.state.error){
         errorBox = <Alert 
-                       type="danger" 
-                       emphasisText="Input invalid." 
-                       text="Please check messages and try again."
-                   />;
+                    type="danger" 
+                    emphasisText="Input invalid." 
+                    text="Please check messages and try again."/>;
     } else {
         errorBox = '';
     }
+    
     return (
       <form onSubmit={ this.submitLoginForm } >
         {/* Conditionally display error messages */}

@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 
 class InspirationBox extends Component {
+  constructor(props) {
+    super(props);
+    this.randomIndex = this.randomIndex.bind(this);
+    this.getQuote = this.getQuote.bind(this);
+  }
 
   randomIndex(quoteBoxSize) {
     return Math.floor((Math.random() * quoteBoxSize) + 1);

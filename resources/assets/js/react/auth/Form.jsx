@@ -9,10 +9,13 @@ class Form extends Component {
     this.state = {
       newUser: true
     }
+    this.toggleSignUpAndLogin = this.toggleSignUpAndLogin.bind(this)
+    this.handleUserLogin = this.handleUserLogin.bind(this)
+    this.handleUserSignup = this.handleUserSignup.bind(this)
   }
 
   toggleSignUpAndLogin() {
-  	var toggle = !this.state.newUser;
+  	let toggle = !this.state.newUser;
   	this.setState({ newUser: toggle });
   }
 
@@ -24,7 +27,7 @@ class Form extends Component {
         data: newUser,
         // Token gets sent. Blank ? Signup : Main
         beforeSend: function (xhr) {
-          var authHeaderText = "Bearer " + localStorage.getItem('api_token');
+          let authHeaderText = "Bearer " + localStorage.getItem('api_token');
           xhr.setRequestHeader('Authorization', authHeaderText);
         },
         success: function(data) {
@@ -64,9 +67,10 @@ class Form extends Component {
     });
   }
   render() {
-  	var formToBeUsed;
-    var headingToBeUsed;
-  	var prompt;
+    let formToBeUsed;
+    let headingToBeUsed;
+    let prompt;
+
   	if(this.state.newUser){
       formToBeUsed = <Login handleUserLogin={this.handleUserLogin} />;
       headingToBeUsed = "Login";

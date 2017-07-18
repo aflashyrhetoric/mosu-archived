@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
   // Only checks for existence of token, not actual valid login.
   basicIsLoggedIn() {
     if(localStorage.getItem("api_token")) {
